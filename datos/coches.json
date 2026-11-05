@@ -135,7 +135,35 @@
     "id": "hyundai-i20n-obed",
     "dueno": "obed",
     "marca": "Hyundai",
-    "modelo": "i20 N",
+    "modelo": "i20 N rojo",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "honda-civic",
+    "dueno": "obed",
+    "marca": "Honda",
+    "modelo": "Civic",
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
@@ -194,34 +222,6 @@
     "modelo": "S2000",
     "apodo": "",
     "silueta": "descapotable",
-    "motor_tipo": "En línea",
-    "resumen": "[Por completar: una frase sobre el coche]",
-    "descripcion": [
-      "[Por completar: historia del coche y lo que se le ha hecho.]"
-    ],
-    "ficha": [
-      {
-        "campo": "Motor",
-        "valor": "[Por completar]"
-      },
-      {
-        "campo": "Año",
-        "valor": "[Por completar]"
-      },
-      {
-        "campo": "Modificaciones",
-        "valor": "[Por completar]"
-      }
-    ],
-    "galeria": []
-  },
-  {
-    "id": "honda-civic",
-    "dueno": "javi",
-    "marca": "Honda",
-    "modelo": "Civic",
-    "apodo": "",
-    "silueta": "compacto",
     "motor_tipo": "En línea",
     "resumen": "[Por completar: una frase sobre el coche]",
     "descripcion": [
