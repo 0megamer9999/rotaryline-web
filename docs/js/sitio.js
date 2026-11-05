@@ -19,15 +19,15 @@
     });
   });
 
-  // Vídeos de YouTube con fachada: el reproductor solo se carga al pulsar.
-  document.querySelectorAll("[data-youtube]").forEach(function (el) {
+  // YouTube, Instagram y TikTok con fachada: el reproductor solo se carga al pulsar.
+  document.querySelectorAll("[data-marco]").forEach(function (el) {
     el.addEventListener("click", function () {
-      var id = el.getAttribute("data-youtube");
       var marco = document.createElement("iframe");
-      marco.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) + "?autoplay=1&rel=0";
-      marco.title = el.getAttribute("data-titulo") || "Vídeo de YouTube";
+      marco.src = el.getAttribute("data-marco");
+      marco.title = el.getAttribute("data-titulo") || "Vídeo";
       marco.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen";
       marco.allowFullscreen = true;
+      marco.className = el.className.replace("fachada", "marco");
       el.replaceWith(marco);
       marco.focus();
     });

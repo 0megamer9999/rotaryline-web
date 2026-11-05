@@ -7,31 +7,42 @@
 <meta name="description" content="Rotary&amp;Line es un club de aficionados al motor. El nombre junta dos mecánicas: el rotativo (el Mazda RX-8 de Mario) y el motor en línea (el BMW E39 de Pepe).">
 <meta name="theme-color" content="#070707">
 <link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="stylesheet" href="css/estilos.css">
+<link rel="stylesheet" href="css/estilos.css?v=mw3ybj3a">
 </head>
 <body>
 <a class="salto" href="#contenido">Saltar al contenido</a>
 <header class="cabecera">
   <div class="contenedor">
     <a class="marca" href="index.html" aria-label="Rotary&amp;Line, ir al inicio">
-      <img src="img/emblema.webp" width="44" height="44" alt="">
-      <b>ROTARY<i>&amp;</i>LINE</b>
+      <img src="img/logo.webp" width="300" height="228" alt="">
     </a>
     <button class="boton-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">&#9776;</button>
     <nav aria-label="Principal">
       <ul class="menu" id="menu">
-        <li class="con-sub"><a href="index.html">El club</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar las partes del club">&#9662;</button>
+        <li class="con-sub"><a href="index.html">El club</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: El club">&#9662;</button>
           <ul class="submenu">
             <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
-            <li><a href="index.html#pepe">Pepe</a></li>
-            <li><a href="index.html#mario">Mario</a></li>
-            <li><a href="index.html#ejemplo-miembro">Miembro (ejemplo)</a></li>
-            <li><a href="index.html#trabajos">Trabajos</a></li>
+            <li><a href="index.html#filosofia">Filosofía</a></li>
+            <li class="sep"><a href="coches/bmw-e39.html">BMW E39 – Pepe</a></li>
+            <li><a href="coches/mazda-rx8.html">Mazda RX-8 – Mario</a></li>
+            <li><a href="coches/opel-astra-tt.html">Opel Astra TT – Anna</a></li>
+            <li><a href="coches/hyundai-i20n-dani.html">Hyundai i20 N azul – Dani</a></li>
+            <li><a href="coches/hyundai-i20n-obed.html">Hyundai i20 N – Obed</a></li>
+            <li><a href="coches/ford-fiesta-st-line.html">Ford Fiesta ST-Line – Barbas</a></li>
+            <li><a href="coches/honda-s2000.html">Honda S2000 – Javi</a></li>
+            <li><a href="coches/honda-civic.html">Honda Civic – Javi</a></li>
+            <li class="sep"><a href="index.html#trabajos">Trabajos</a></li>
             <li><a href="index.html#historias">Historias</a></li>
           </ul></li>
-        <li><a href="videos.html">Vídeos</a></li>
+        <li class="con-sub"><a href="redes.html">Redes sociales</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: Redes sociales">&#9662;</button>
+          <ul class="submenu">
+            <li><a href="redes.html#youtube">YouTube</a></li>
+            <li><a href="redes.html#instagram">Instagram</a></li>
+            <li><a href="redes.html#tiktok">TikTok</a></li>
+          </ul></li>
         <li><a href="eventos.html" aria-current="page">Eventos</a></li>
-        <li><a href="aplicaciones.html">Aplicaciones</a></li>
+        <li><a href="garaje.html">Aplicación Garaje</a></li>
+        <li><a href="taller.html">Programa Taller</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
@@ -43,7 +54,7 @@
     <p class="etiqueta">Ven a vernos</p>
     <h1><em>EVENTOS</em></h1>
     <div class="filete"></div>
-    <p class="texto">A qué eventos va cada coche, para que puedas pasarte a verlos. Filtra por coche o por fecha.</p>
+    <p class="texto">Quién va a cada evento, con qué coche y si estará en la expo. Filtra por coche o quédate solo con los próximos.</p>
   </div>
 </section>
 <section class="seccion">
@@ -52,15 +63,26 @@
       <button class="chip" type="button" data-filtro-coche="" aria-pressed="true">Todos</button>
       <button class="chip" type="button" data-filtro-coche="bmw-e39" aria-pressed="false">BMW E39</button>
       <button class="chip" type="button" data-filtro-coche="mazda-rx8" aria-pressed="false">Mazda RX-8</button>
-      <button class="chip" type="button" data-filtro-coche="ejemplo-coche" aria-pressed="false">[Por completar: marca] [Por completar: modelo]</button>
+      <button class="chip" type="button" data-filtro-coche="opel-astra-tt" aria-pressed="false">Opel Astra TT</button>
+      <button class="chip" type="button" data-filtro-coche="hyundai-i20n-dani" aria-pressed="false">Hyundai i20 N azul</button>
+      <button class="chip" type="button" data-filtro-coche="hyundai-i20n-obed" aria-pressed="false">Hyundai i20 N</button>
+      <button class="chip" type="button" data-filtro-coche="ford-fiesta-st-line" aria-pressed="false">Ford Fiesta ST-Line</button>
+      <button class="chip" type="button" data-filtro-coche="honda-s2000" aria-pressed="false">Honda S2000</button>
+      <button class="chip" type="button" data-filtro-coche="honda-civic" aria-pressed="false">Honda Civic</button>
       <label><input type="checkbox" id="solo-proximos"> Solo los próximos</label>
     </div>
     <div id="lista-eventos">
-      <article class="evento" data-fecha="2027-01-01" data-coches="bmw-e39 mazda-rx8">
-      <div class="fecha">1 ENE<small>2027</small></div>
-      <div><h3><span class="hueco">[Por completar: nombre del evento]</span> <span class="ejemplo">Ejemplo</span></h3>
-      <p class="nota" style="margin:0 0 6px"><span class="hueco">[Por completar: fecha]</span> &middot; <span class="hueco">[Por completar: lugar]</span></p>
-      <p>Ejemplo de evento: cambia la fecha (formato AAAA-MM-DD), el lugar y los coches que van. Los coches se nombran por su id de coches.json.</p><div class="coches"><a class="insignia rojo" href="coches/bmw-e39.html" style="text-decoration:none">BMW E39</a><a class="insignia rojo" href="coches/mazda-rx8.html" style="text-decoration:none">Mazda RX-8</a></div></div></article>
+<div class="tabla-envoltura"><table class="tabla-eventos">
+    <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th><th>Quién</th><th>Coche</th><th>En la expo</th></tr></thead>
+    <tbody class="evento" data-fecha="2027-01-01" data-coches="bmw-e39 mazda-rx8">
+      <tr><td rowspan="2" class="fecha">1 ENE<small>2027</small></td>
+        <td rowspan="2"><b><span class="hueco">[Por completar: nombre del evento]</span></b> <span class="ejemplo">Ejemplo</span><br><span class="nota"><span class="hueco">[Por completar: fecha]</span></span></td>
+        <td rowspan="2"><span class="hueco">[Por completar: lugar]</span></td>
+        <td>Pepe</td><td><a href="coches/bmw-e39.html">BMW E39</a></td><td><span class="insignia rojo">Sí</span></td></tr>
+      <tr>
+        <td>Mario</td><td><a href="coches/mazda-rx8.html">Mazda RX-8</a></td><td><span class="nota">No</span></td></tr>
+    </tbody>
+  </table></div>
     </div>
     <p id="sin-eventos" class="texto" hidden>No hay eventos con ese filtro.</p>
   </div>
@@ -78,9 +100,10 @@
         <h2>Secciones</h2>
         <ul>
           <li><a href="index.html">El club</a></li>
-          <li><a href="videos.html">Vídeos</a></li>
+          <li><a href="redes.html">Redes sociales</a></li>
           <li><a href="eventos.html">Eventos</a></li>
-          <li><a href="aplicaciones.html">Aplicaciones</a></li>
+          <li><a href="garaje.html">Aplicación Garaje</a></li>
+          <li><a href="taller.html">Programa Taller</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
@@ -93,9 +116,9 @@
         </ul>
       </div>
     </div>
-    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="aviso-legal.html">Aviso legal</a></p>
+    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="aviso-legal.html">Aviso legal</a> &middot; <a href="privacidad.html">Privacidad</a> &middot; <a href="cookies.html">Cookies</a></p>
   </div>
 </footer>
-<script src="js/sitio.js" defer></script>
+<script src="js/sitio.js?v=mw3ybj3a" defer></script>
 </body>
 </html>

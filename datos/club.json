@@ -31,19 +31,24 @@
     {
       "texto": "El club",
       "pagina": "index",
-      "desplegable": true
+      "desplegable": "club"
     },
     {
-      "texto": "Vídeos",
-      "pagina": "videos"
+      "texto": "Redes sociales",
+      "pagina": "redes",
+      "desplegable": "redes"
     },
     {
       "texto": "Eventos",
       "pagina": "eventos"
     },
     {
-      "texto": "Aplicaciones",
-      "pagina": "aplicaciones"
+      "texto": "Aplicación Garaje",
+      "pagina": "garaje"
+    },
+    {
+      "texto": "Programa Taller",
+      "pagina": "taller"
     },
     {
       "texto": "Tienda",
@@ -54,5 +59,8 @@
       "texto": "Contacto",
       "pagina": "contacto"
     }
+  ],
+  "filosofia": [
+    "[Por completar: la filosofía del club. Qué os une, cómo entendéis los coches y qué buscáis con Rotary&Line.]"
   ]
 }

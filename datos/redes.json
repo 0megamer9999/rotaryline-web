@@ -1,0 +1,20 @@
+{
+  "texto": [
+    "[Por completar: unas líneas sobre lo que contamos en redes. Vídeos largos en YouTube y clips cortos en Instagram y TikTok.]"
+  ],
+  "youtube": {
+    "id": "",
+    "titulo": "[Por completar: último vídeo de YouTube]",
+    "nota": "Poner el id del último vídeo (lo que va tras watch?v=)."
+  },
+  "instagram": {
+    "codigo": "",
+    "titulo": "[Por completar: último reel de Instagram]",
+    "nota": "Poner el código del último reel (lo que va tras /reel/)."
+  },
+  "tiktok": {
+    "id": "",
+    "titulo": "[Por completar: penúltimo vídeo de TikTok]",
+    "nota": "El penúltimo, para que no coincida con el reel de Instagram. Poner el número largo del enlace (tras /video/)."
+  }
+}

@@ -13,7 +13,7 @@ const club = leerJson("club.json");
 const miembros = leerJson("miembros.json");
 const coches = leerJson("coches.json");
 const eventos = leerJson("eventos.json");
-const videos = leerJson("videos.json");
+const redes = leerJson("redes.json");
 const proyectos = leerJson("proyectos.json");
 const historias = leerJson("historias.json");
 const siluetas = leerJson("siluetas.json");
@@ -52,9 +52,14 @@ function menuHtml(raiz, actual) {
   return paginasActivas
     .map((m) => {
       if (!m.desplegable) return `        <li><a href="${raiz}${m.pagina}.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a></li>`;
-      const sub = [["quienes-somos", "Quiénes somos"], ...miembros.map((p) => [p.id, p.nombre.replace(/^\[.*?\]\s*/, "") || "Miembro (ejemplo)"]), ["trabajos", "Trabajos"], ["historias", "Historias"]]
-        .map(([id, txt]) => `            <li><a href="${raiz}index.html#${id}">${esc(txt)}</a></li>`).join("\n");
-      return `        <li class="con-sub"><a href="${raiz}index.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar las partes del club">&#9662;</button>
+      // [href, texto, ¿separador antes?]
+      const partes = m.desplegable === "club"
+        ? [["index.html#quienes-somos", "Quiénes somos"], ["index.html#filosofia", "Filosofía"],
+           ...coches.map((c, i) => [`coches/${c.id}.html`, `${nombreCoche(c)} – ${miembros.find((p) => p.id === c.dueno)?.nombre ?? ""}`, i === 0]),
+           ["index.html#trabajos", "Trabajos", true], ["index.html#historias", "Historias"]]
+        : [["redes.html#youtube", "YouTube"], ["redes.html#instagram", "Instagram"], ["redes.html#tiktok", "TikTok"]];
+      const sub = partes.map(([href, txt, sep]) => `            <li${sep ? ' class="sep"' : ""}><a href="${raiz}${href}">${esc(txt)}</a></li>`).join("\n");
+      return `        <li class="con-sub"><a href="${raiz}${m.pagina}.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: ${esc(m.texto)}">&#9662;</button>
           <ul class="submenu">
 ${sub}
           </ul></li>`;
@@ -67,12 +72,14 @@ const redesPie = (() => {
 })();
 
 const base = plantilla("base");
+const VERSION = Date.now().toString(36);
 function pagina({ ruta, pagina: clave, titulo, descripcion, contenido, raiz = "" }) {
   const html = rellenar(base, {
     titulo: esc(titulo === club.nombre ? `${club.nombre} · Club de coches` : `${titulo} · ${club.nombre}`),
     descripcion: esc(descripcion ?? club.descripcion),
     raiz,
     menu: menuHtml(raiz, clave),
+    version: VERSION,
     menu_pie: paginasActivas.map((m) => `          <li><a href="${raiz}${m.pagina}.html">${esc(m.texto)}</a></li>`).join("\n"),
     redes_pie: redesPie,
     lema: esc(club.lema),
@@ -93,26 +100,45 @@ function tarjetaCoche(c, raiz = "") {
         <h3>${t(nombreCoche(c))}</h3><p>${dueno ? "De " + t(dueno.nombre) + ". " : ""}${t(c.resumen)}</p><span class="mas">Ver el coche &rarr;</span></div></a>`;
 }
 
-function tarjetaEvento(e, c = null) {
+/** Un evento = un <tbody> con una fila por persona y coche que va. Los datos del evento ocupan la primera fila (rowspan). */
+function filasEvento(e, raiz = "") {
   const [a, m, d] = e.fecha.split("-");
-  const chips = e.coches.map(cocheDe).filter(Boolean).map((x) => `<a class="insignia rojo" href="coches/${x.id}.html" style="text-decoration:none">${t(nombreCoche(x))}</a>`).join("");
-  const enlace = e.enlace ? ` <a href="${esc(e.enlace)}" rel="noopener">Más información</a>` : "";
-  return `<article class="evento" data-fecha="${esc(e.fecha)}" data-coches="${esc(e.coches.join(" "))}">
-      <div class="fecha">${Number(d)} ${MESES[Number(m) - 1].toUpperCase()}<small>${a}</small></div>
-      <div><h3>${t(e.nombre)}${insigniaEjemplo(e)}</h3>
-      <p class="nota" style="margin:0 0 6px">${t(e.fecha_texto)} &middot; ${t(e.lugar)}</p>
-      <p>${t(e.texto)}${enlace}</p><div class="coches">${chips}</div></div></article>`;
+  const van = e.asistentes.length ? e.asistentes : [{ miembro: "", coche: "", expo: false }];
+  const n = van.length;
+  const enlace = e.enlace ? `<br><a href="${esc(e.enlace)}" rel="noopener">Más información</a>` : "";
+  const filas = van.map((x, i) => {
+    const c = cocheDe(x.coche); const p = miembros.find((q) => q.id === x.miembro);
+    const expo = !e.hay_expo ? '<span class="nota">Sin expo</span>' : x.expo ? '<span class="insignia rojo">Sí</span>' : '<span class="nota">No</span>';
+    const cab = i === 0 ? `<td rowspan="${n}" class="fecha">${Number(d)} ${MESES[Number(m) - 1].toUpperCase()}<small>${a}</small></td>
+        <td rowspan="${n}"><b>${t(e.nombre)}</b>${insigniaEjemplo(e)}<br><span class="nota">${t(e.fecha_texto)}</span>${enlace}</td>
+        <td rowspan="${n}">${t(e.lugar)}</td>` : "";
+    return `      <tr>${cab}
+        <td>${p ? t(p.nombre) : "—"}</td><td>${c ? `<a href="${raiz}coches/${c.id}.html">${t(nombreCoche(c))}</a>` : "—"}</td><td>${expo}</td></tr>`;
+  }).join("\n");
+  return `    <tbody class="evento" data-fecha="${esc(e.fecha)}" data-coches="${esc(e.asistentes.map((x) => x.coche).join(" "))}">
+${filas}
+    </tbody>`;
 }
+const tablaEventos = (lista, raiz = "") => `<div class="tabla-envoltura"><table class="tabla-eventos">
+    <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th><th>Quién</th><th>Coche</th><th>En la expo</th></tr></thead>
+${lista.map((e) => filasEvento(e, raiz)).join("\n")}
+  </table></div>`;
 
-function tarjetaVideo(v) {
-  const miniatura = v.miniatura ? `<img src="${esc(v.miniatura)}" alt="" loading="lazy">` : "";
+/** Fachada de una red: no carga nada de fuera hasta que se pulsa. */
+function fachadaRed(tipo, dato) {
   const play = `<span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></span>`;
-  const aviso = v.ejemplo ? '<span class="aviso-hueco">Ejemplo, sin miniatura</span>' : "";
-  const fachada = v.id
-    ? `<button class="fachada" type="button" data-youtube="${esc(v.id)}" data-titulo="${esc(v.titulo)}" aria-label="Reproducir: ${esc(v.titulo)}">${miniatura}${play}${aviso}</button>`
-    : `<a class="fachada" href="${esc(club.redes.youtube.url)}" rel="noopener" aria-label="Ver en YouTube: ${esc(v.titulo)}">${miniatura}${play}${aviso}</a>`;
-  return `<article class="tarjeta video">${fachada}
-      <div class="cuerpo"><h3>${t(v.titulo)}${insigniaEjemplo(v)}</h3><p class="nota">${t(v.fecha)}</p><p>${t(v.texto)}</p></div></article>`;
+  const marcos = {
+    youtube: dato.id && `https://www.youtube-nocookie.com/embed/${encodeURIComponent(dato.id)}?autoplay=1&rel=0`,
+    instagram: dato.codigo && `https://www.instagram.com/reel/${encodeURIComponent(dato.codigo)}/embed`,
+    tiktok: dato.id && `https://www.tiktok.com/embed/v2/${encodeURIComponent(dato.id)}`,
+  };
+  const nombre = { youtube: "YouTube", instagram: "Instagram", tiktok: "TikTok" }[tipo];
+  const perfil = club.redes[tipo].url;
+  const cuerpo = marcos[tipo]
+    ? `<button class="fachada ${tipo}" type="button" data-marco="${esc(marcos[tipo])}" data-titulo="${esc(dato.titulo)}" aria-label="Ver en ${nombre}: ${esc(dato.titulo)}">${play}<span class="aviso-red">Al pulsar se carga ${nombre}</span></button>`
+    : `<a class="fachada ${tipo}" href="${esc(perfil)}" rel="noopener" aria-label="Ir a ${nombre}">${play}<span class="aviso-hueco">[Por completar: ${esc(dato.titulo.replace(/^\[Por completar: |\]$/g, ""))}]</span></a>`;
+  return `<article class="red" id="${tipo}"><p class="etiqueta">${nombre}</p>${cuerpo}
+      <h3>${t(dato.titulo)}</h3><p><a href="${esc(perfil)}" rel="noopener">${esc(club.redes[tipo].texto)} en ${nombre} &rarr;</a></p></article>`;
 }
 
 const parrafos = (arr) => arr.map((p) => `      <p>${t(p)}</p>`).join("\n");
@@ -149,24 +175,25 @@ const historiaHtml = (h) => {
   const cs = h.coches.map(cocheDe).filter(Boolean).map((c) => `<a class="insignia" href="coches/${c.id}.html">${t(nombreCoche(c))}</a>`).join(" ");
   return `      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota">${t(h.fecha)}${h.ejemplo ? ' <span class="ejemplo">Ejemplo</span>' : ""}</p><h3>${t(h.titulo)}</h3><p>${t(h.texto)}</p>${cs}</div></article>`;
 };
-const textosAcceso = { videos: "Los vídeos del canal", eventos: "A qué eventos va cada coche", aplicaciones: "Garaje y Talleres", contacto: "Correo e Instagram", tienda: "Los productos del club" };
+const textosAcceso = { redes: "YouTube, Instagram y TikTok", eventos: "Quién va a cada evento y con qué coche", garaje: "El mantenimiento de tus vehículos", taller: "Para talleres, en desarrollo", contacto: "Correo e Instagram", tienda: "Los productos del club" };
 pagina({
   ruta: "index.html", pagina: "index", titulo: club.nombre,
   contenido: usar("inicio", {
     lema: esc(club.lema),
     texto_club: parrafos(club.quienes_somos),
+    filosofia: parrafos(club.filosofia),
     portada_coches: reales.slice(0, 2).map((c) => `      <a href="coches/${c.id}.html">${silueta(c.silueta)}<div class="pie"><span>${esc(nombreCoche(c))}</span><span>${esc(c.motor_tipo)}</span></div></a>`).join("\n"),
     miembros: miembros.map(bloqueMiembro).join("\n"),
     trabajos: proyectos.map(trabajoHtml).join("\n"),
     historias: historias.map(historiaHtml).join("\n"),
-    accesos: paginasActivas.filter((m) => !m.desplegable).map((m) => `  <a href="${m.pagina}.html"><b>${esc(m.texto)}</b><span>${esc(textosAcceso[m.pagina] ?? "")}</span></a>`).join("\n"),
+    accesos: paginasActivas.filter((m) => m.desplegable !== "club").map((m) => `  <a href="${m.pagina}.html"><b>${esc(m.texto)}</b><span>${esc(textosAcceso[m.pagina] ?? "")}</span></a>`).join("\n"),
   }),
 });
 
 // Una página por coche
 for (const c of coches) {
   const dueno = miembros.find((m) => m.id === c.dueno);
-  const suyos = eventosOrdenados.filter((e) => e.coches.includes(c.id));
+  const suyos = eventosOrdenados.filter((e) => e.asistentes.some((x) => x.coche === c.id));
   const galeria = c.galeria.length
     ? c.galeria.map((g) => `      <figure><img src="../${esc(g.archivo)}" alt="${esc(g.alt)}" loading="lazy"><figcaption class="nota">${t(g.alt)}</figcaption></figure>`).join("\n")
     : [1, 2, 3].map(() => `      <div class="hueco-foto">[Por completar: foto del coche]</div>`).join("\n");
@@ -182,32 +209,35 @@ for (const c of coches) {
       descripcion: parrafos(c.descripcion),
       ficha: c.ficha.map((f) => `        <div><dt>${esc(f.campo)}</dt><dd>${t(f.valor)}</dd></div>`).join("\n"),
       galeria,
-      eventos: suyos.length ? suyos.map((e) => tarjetaEvento(e).replace(/href="coches\//g, 'href="')).join("\n") : '    <p class="texto">Todavía no hay eventos para este coche.</p>',
+      eventos: suyos.length ? tablaEventos(suyos, "../") : '    <p class="texto">Todavía no hay eventos para este coche.</p>',
     }),
   });
 }
 
-// Vídeos
+// Redes sociales: lo último de cada red, con fachada
 pagina({
-  ruta: "videos.html", pagina: "videos", titulo: "Vídeos",
-  contenido: usar("videos", { canal: esc(club.redes.youtube.url), videos: videos.map(tarjetaVideo).join("\n") }),
+  ruta: "redes.html", pagina: "redes", titulo: "Redes sociales",
+  contenido: usar("redes", {
+    texto: parrafos(redes.texto),
+    redes: ["youtube", "instagram", "tiktok"].map((k) => fachadaRed(k, redes[k])).join("\n"),
+  }),
 });
 
-// Eventos
+// Eventos: quién va, con qué coche y si está en la expo
 pagina({
   ruta: "eventos.html", pagina: "eventos", titulo: "Eventos",
   contenido: usar("eventos", {
     chips: `      <button class="chip" type="button" data-filtro-coche="" aria-pressed="true">Todos</button>\n` +
       coches.map((c) => `      <button class="chip" type="button" data-filtro-coche="${c.id}" aria-pressed="false">${esc(nombreCoche(c))}</button>`).join("\n"),
-    eventos: eventosOrdenados.map((e) => "      " + tarjetaEvento(e)).join("\n"),
+    eventos: tablaEventos(eventosOrdenados),
   }),
 });
 
-// Aplicaciones
+// Aplicación Garaje y Programa Taller, cada uno en su página
 const figura = (archivo, pie) => `      <figure><img src="${archivo}" alt="${esc(pie)}" width="1640" height="860" loading="lazy"><figcaption>${esc(pie)}</figcaption></figure>`;
 pagina({
-  ruta: "aplicaciones.html", pagina: "aplicaciones", titulo: "Aplicaciones",
-  contenido: usar("aplicaciones", {
+  ruta: "garaje.html", pagina: "garaje", titulo: "Aplicación Garaje",
+  contenido: usar("garaje", {
     descarga_windows: esc(club.garaje.descarga_windows),
     descarga_android: esc(club.garaje.descarga_android),
     capturas_garaje: [
@@ -216,6 +246,11 @@ pagina({
       figura("img/garaje-3-registro.webp", "Registro de cada trabajo realizado"),
       figura("img/garaje-4-documentos.webp", "Documentos del vehículo"),
     ].join("\n"),
+  }),
+});
+pagina({
+  ruta: "taller.html", pagina: "taller", titulo: "Programa Taller",
+  contenido: usar("taller", {
     capturas_talleres: [1, 2, 3].map(() => `      <div class="hueco-foto">[Por completar: captura de Talleres]</div>`).join("\n"),
   }),
 });
@@ -239,6 +274,8 @@ pagina({
   ruta: "aviso-legal.html", pagina: "aviso-legal", titulo: "Aviso legal",
   contenido: usar("aviso-legal", { correo: t(club.correo), dominio: esc(club.dominio) }),
 });
+pagina({ ruta: "privacidad.html", pagina: "privacidad", titulo: "Privacidad", contenido: usar("privacidad", { correo: t(club.correo), dominio: esc(club.dominio) }) });
+pagina({ ruta: "cookies.html", pagina: "cookies", titulo: "Cookies", contenido: usar("cookies", { dominio: esc(club.dominio) }) });
 pagina({ ruta: "404.html", pagina: "", titulo: "Página no encontrada", contenido: plantilla("404") });
 
 // Tienda (solo si está activada en club.json)

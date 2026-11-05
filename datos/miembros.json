@@ -5,7 +5,9 @@
     "rol": "Fundador del club y del canal",
     "texto": "Lleva el canal de vídeo y programa el Garaje, la aplicación del club. Su coche: un BMW E39.",
     "instagram": "https://www.instagram.com/rotaryinline/",
-    "coches": ["bmw-e39"]
+    "coches": [
+      "bmw-e39"
+    ]
   },
   {
     "id": "mario",
@@ -13,15 +15,59 @@
     "rol": "Miembro del club",
     "texto": "Dueño de un Mazda RX-8 con motor rotativo, el que da nombre a la primera mitad del club.",
     "instagram": "https://www.instagram.com/terrizamario/",
-    "coches": ["mazda-rx8"]
+    "coches": [
+      "mazda-rx8"
+    ]
   },
   {
-    "id": "ejemplo-miembro",
-    "ejemplo": true,
-    "nombre": "[Por completar: nombre]",
-    "rol": "[Por completar: rol]",
-    "texto": "Ejemplo de ficha de miembro. Copia este bloque en miembros.json para añadir a alguien nuevo.",
+    "id": "anna",
+    "nombre": "Anna",
+    "rol": "Miembro del club",
+    "texto": "[Por completar: quién es y qué le gusta de los coches]",
     "instagram": "",
-    "coches": ["ejemplo-coche"]
+    "coches": [
+      "opel-astra-tt"
+    ]
+  },
+  {
+    "id": "dani",
+    "nombre": "Dani",
+    "rol": "Miembro del club",
+    "texto": "[Por completar: quién es y qué le gusta de los coches]",
+    "instagram": "",
+    "coches": [
+      "hyundai-i20n-dani"
+    ]
+  },
+  {
+    "id": "obed",
+    "nombre": "Obed",
+    "rol": "Miembro del club",
+    "texto": "[Por completar: quién es y qué le gusta de los coches]",
+    "instagram": "",
+    "coches": [
+      "hyundai-i20n-obed"
+    ]
+  },
+  {
+    "id": "barbas",
+    "nombre": "Barbas",
+    "rol": "Miembro del club",
+    "texto": "[Por completar: quién es y qué le gusta de los coches]",
+    "instagram": "",
+    "coches": [
+      "ford-fiesta-st-line"
+    ]
+  },
+  {
+    "id": "javi",
+    "nombre": "Javi",
+    "rol": "Miembro del club",
+    "texto": "[Por completar: quién es y qué le gusta de los coches]",
+    "instagram": "",
+    "coches": [
+      "honda-s2000",
+      "honda-civic"
+    ]
   }
 ]

@@ -14,11 +14,26 @@
       "[Por completar: historia del coche, cuándo lo compró y qué le ha hecho.]"
     ],
     "ficha": [
-      { "campo": "Motor", "valor": "[Por completar: motor, cilindrada y potencia]" },
-      { "campo": "Año", "valor": "[Por completar]" },
-      { "campo": "Carrocería", "valor": "[Por completar: berlina o touring]" },
-      { "campo": "Kilómetros", "valor": "[Por completar]" },
-      { "campo": "Modificaciones", "valor": "Llantas Style 37, alerón tipo GT, faldón ALPINA, doble escape izquierdo, suspensión rebajada (por confirmar)" }
+      {
+        "campo": "Motor",
+        "valor": "[Por completar: motor, cilindrada y potencia]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Carrocería",
+        "valor": "[Por completar: berlina o touring]"
+      },
+      {
+        "campo": "Kilómetros",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "Llantas Style 37, alerón tipo GT, faldón ALPINA, doble escape izquierdo, suspensión rebajada (por confirmar)"
+      }
     ],
     "galeria": []
   },
@@ -37,28 +52,194 @@
       "[Por completar: historia del coche y modificaciones confirmadas por Mario.]"
     ],
     "ficha": [
-      { "campo": "Motor", "valor": "Rotativo (modelo exacto: [Por completar])" },
-      { "campo": "Año", "valor": "2006" },
-      { "campo": "Color", "valor": "Negro" },
-      { "campo": "Kilómetros", "valor": "Unos 150.000 (a octubre de 2026)" },
-      { "campo": "Modificaciones", "valor": "[Por completar: lista confirmada por Mario]" }
+      {
+        "campo": "Motor",
+        "valor": "Rotativo (modelo exacto: [Por completar])"
+      },
+      {
+        "campo": "Año",
+        "valor": "2006"
+      },
+      {
+        "campo": "Color",
+        "valor": "Negro"
+      },
+      {
+        "campo": "Kilómetros",
+        "valor": "Unos 150.000 (a octubre de 2026)"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar: lista confirmada por Mario]"
+      }
     ],
     "galeria": []
   },
   {
-    "id": "ejemplo-coche",
-    "ejemplo": true,
-    "dueno": "ejemplo-miembro",
-    "marca": "[Por completar: marca]",
-    "modelo": "[Por completar: modelo]",
+    "id": "opel-astra-tt",
+    "dueno": "anna",
+    "marca": "Opel",
+    "modelo": "Astra TT",
     "apodo": "",
     "silueta": "compacto",
-    "motor_tipo": "[Por completar]",
-    "resumen": "Ejemplo de ficha de coche. Copia este bloque en coches.json para añadir uno nuevo.",
-    "descripcion": ["[Por completar: descripción del coche.]"],
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
     "ficha": [
-      { "campo": "Motor", "valor": "[Por completar]" },
-      { "campo": "Año", "valor": "[Por completar]" }
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "hyundai-i20n-dani",
+    "dueno": "dani",
+    "marca": "Hyundai",
+    "modelo": "i20 N azul",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "hyundai-i20n-obed",
+    "dueno": "obed",
+    "marca": "Hyundai",
+    "modelo": "i20 N",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "ford-fiesta-st-line",
+    "dueno": "barbas",
+    "marca": "Ford",
+    "modelo": "Fiesta ST-Line",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "honda-s2000",
+    "dueno": "javi",
+    "marca": "Honda",
+    "modelo": "S2000",
+    "apodo": "",
+    "silueta": "descapotable",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "honda-civic",
+    "dueno": "javi",
+    "marca": "Honda",
+    "modelo": "Civic",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "En línea",
+    "resumen": "[Por completar: una frase sobre el coche]",
+    "descripcion": [
+      "[Por completar: historia del coche y lo que se le ha hecho.]"
+    ],
+    "ficha": [
+      {
+        "campo": "Motor",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Año",
+        "valor": "[Por completar]"
+      },
+      {
+        "campo": "Modificaciones",
+        "valor": "[Por completar]"
+      }
     ],
     "galeria": []
   }

@@ -76,25 +76,27 @@ p { margin: 0 0 1em; }
 .ejemplo { display: inline-block; font-family: var(--f-cond); font-weight: 700; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; background: var(--pendiente); color: #111; padding: 2px 8px; border-radius: 4px; vertical-align: middle; }
 
 /* ---------- cabecera: barra roja con franja negra ---------- */
-.cabecera { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #d60000, #a80000); border-bottom: 6px solid #000; box-shadow: 0 4px 0 var(--rojo-vivo), 0 10px 24px rgb(0 0 0 / 0.6); }
-.cabecera .contenedor { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 72px; }
-.marca { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.marca img { width: 48px; height: 48px; border-radius: 50%; background: #000; border: 2px solid #000; }
-.marca b { font-family: var(--f-display); font-weight: 400; font-size: 32px; letter-spacing: 3px; line-height: 1; color: #fff; }
+.cabecera { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #ff1a0a 0%, #d40000 30%, #8a0000 68%, #2a0000 100%); border-bottom: 1px solid rgb(255 255 255 / 0.08); box-shadow: 0 12px 28px rgb(0 0 0 / 0.55); }
+.cabecera .contenedor { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; min-height: 92px; max-width: none; padding-inline: 20px 28px; }
+.cabecera nav { display: flex; }
+.marca { display: flex; align-items: center; text-decoration: none; margin-right: auto; }
+.marca img { width: auto; height: 84px; display: block; filter: drop-shadow(0 2px 6px rgb(0 0 0 / 0.5)); }
+.marca b { display: none; font-family: var(--f-display); font-weight: 400; font-size: 32px; letter-spacing: 3px; line-height: 1; color: #fff; }
 .marca b i { color: #000; font-style: normal; }
 .menu { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; align-items: stretch; }
 .menu > li { position: relative; display: flex; }
-.menu a { display: block; padding: 26px 14px; font-family: var(--f-cond); font-weight: 700; font-size: 16px; letter-spacing: 0.2em; text-transform: uppercase; color: #fff; text-decoration: none; }
+.menu a { display: flex; align-items: center; padding: 0 11px; font-family: var(--f-cond); font-weight: 700; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase; color: #fff; text-decoration: none; white-space: nowrap; text-shadow: 0 1px 2px rgb(0 0 0 / 0.4); }
 .menu a:hover { background: rgb(0 0 0 / 0.28); color: #fff; }
 .menu a[aria-current="page"] { background: #000; color: #fff; }
 .abre-sub { background: none; border: 0; color: #fff; width: 28px; margin-left: -10px; cursor: pointer; font-size: 14px; }
-.submenu { display: none; position: absolute; left: 0; top: 100%; min-width: 240px; list-style: none; margin: 6px 0 0; padding: 8px 0; background: #000; border-top: 4px solid var(--rojo-vivo); box-shadow: 0 14px 30px rgb(0 0 0 / 0.7); }
+.submenu { display: none; position: absolute; left: 0; top: 100%; min-width: 260px; list-style: none; margin: 0; padding: 8px 0; background: #0a0a0a; border-top: 3px solid var(--rojo-vivo); box-shadow: 0 14px 30px rgb(0 0 0 / 0.7); }
+.submenu li.sep { border-top: 1px solid #2a2a2a; margin-top: 6px; padding-top: 6px; }
 .con-sub:hover > .submenu, .con-sub:focus-within > .submenu, .con-sub.abierto > .submenu { display: block; }
-.submenu a { padding: 12px 20px; font-size: 15px; background: none; }
+.submenu a { padding: 10px 20px; font-size: 15px; background: none; letter-spacing: 0.08em; }
 .submenu a:hover { background: var(--rojo); }
 .boton-menu { display: none; background: #000; border: 0; color: #fff; border-radius: var(--radio-control); width: 48px; height: 48px; font-size: 24px; cursor: pointer; }
 
-@media (max-width: 960px) {
+@media (max-width: 800px) {
   .boton-menu { display: block; }
   .menu { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; background: #000; border-bottom: 4px solid var(--rojo-vivo); padding: 4px 0 12px; max-height: calc(100vh - 80px); overflow-y: auto; }
   .menu.abierto { display: flex; }
@@ -273,3 +275,27 @@ h3.gigante { font-size: clamp(44px, 7vw, 84px); }
 .accesos b { font-family: var(--f-display); font-weight: 400; font-size: 44px; letter-spacing: 2px; line-height: 1; }
 .accesos span { color: var(--gris-claro); font-family: var(--f-cond); letter-spacing: 0.15em; text-transform: uppercase; font-size: 14px; }
 .accesos a:hover span { color: #fff; }
+
+/* ---------- eventos en tabla ---------- */
+.tabla-envoltura { overflow-x: auto; border: 1px solid var(--linea); border-radius: var(--radio); }
+.tabla-eventos { width: 100%; border-collapse: collapse; font-size: 16px; }
+.tabla-eventos th { text-align: left; font-family: var(--f-cond); font-size: 13px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gris); padding: 14px 16px; background: #0d0d0d; border-bottom: 2px solid var(--rojo); }
+.tabla-eventos td { padding: 12px 16px; border-bottom: 1px solid var(--linea); vertical-align: top; }
+.tabla-eventos tbody.evento:nth-of-type(even) { background: rgb(255 255 255 / 0.025); }
+.tabla-eventos tbody.evento + tbody.evento tr:first-child td { border-top: 2px solid #2a2a2a; }
+.tabla-eventos td.fecha { font-family: var(--f-display); font-size: 30px; line-height: 1; color: var(--rojo-vivo); white-space: nowrap; }
+.tabla-eventos td.fecha small { display: block; font-family: var(--f-cond); font-size: 13px; letter-spacing: 0.2em; color: var(--gris); margin-top: 4px; }
+.tabla-eventos tbody[hidden] { display: none; }
+
+/* ---------- redes sociales: lo último de cada una ---------- */
+.redes { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 28px; align-items: start; }
+.red h3 { margin: 14px 0 6px; }
+.fachada, .marco { position: relative; display: grid; place-items: center; width: 100%; border: 1px solid var(--linea); border-radius: var(--radio); background: radial-gradient(circle at 50% 40%, #2a0000, #0a0a0a 70%); color: #fff; cursor: pointer; text-decoration: none; overflow: hidden; }
+.fachada.youtube, .marco.youtube { aspect-ratio: 16 / 9; }
+.fachada.instagram, .fachada.tiktok, .marco.instagram, .marco.tiktok { aspect-ratio: 9 / 16; max-height: 640px; }
+.fachada .play { width: 72px; height: 72px; border-radius: 50%; background: var(--rojo); display: grid; place-items: center; box-shadow: 0 6px 20px rgb(0 0 0 / 0.5); }
+.fachada .play svg { width: 30px; height: 30px; margin-left: 4px; }
+.fachada:hover .play { background: var(--rojo-vivo); }
+.fachada .aviso-red, .fachada .aviso-hueco { position: absolute; bottom: 12px; left: 12px; right: 12px; font-size: 13px; text-align: center; color: var(--gris); }
+.fachada .aviso-hueco { color: #f5c400; }
+@media (max-width: 900px) { .redes { grid-template-columns: 1fr; } }
