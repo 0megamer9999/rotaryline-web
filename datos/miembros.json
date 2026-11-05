@@ -7,17 +7,19 @@
     "instagram": "https://www.instagram.com/rotaryinline/",
     "coches": [
       "bmw-e39"
-    ]
+    ],
+    "foto": "img/fotos/pepe-e39.webp"
   },
   {
     "id": "mario",
     "nombre": "Mario",
     "rol": "Miembro del club",
-    "texto": "Dueño de un Mazda RX-8 con motor rotativo, el que da nombre a la primera mitad del club.",
+    "texto": "Cofundador del club. Antes del RX-8 tenía un Toledo; el RX-8 es el que da nombre a la primera mitad de Rotary&Line.",
     "instagram": "https://www.instagram.com/terrizamario/",
     "coches": [
       "mazda-rx8"
-    ]
+    ],
+    "foto": "img/fotos/mario-rx8.webp"
   },
   {
     "id": "anna",
@@ -37,7 +39,8 @@
     "instagram": "",
     "coches": [
       "hyundai-i20n-dani"
-    ]
+    ],
+    "foto": "img/fotos/dani-i20n.webp"
   },
   {
     "id": "obed",
@@ -48,17 +51,19 @@
     "coches": [
       "hyundai-i20n-obed",
       "honda-civic"
-    ]
+    ],
+    "foto": "img/fotos/obed-i20n.webp"
   },
   {
     "id": "barbas",
     "nombre": "Barbas",
     "rol": "Miembro del club",
-    "texto": "[Por completar: quién es y qué le gusta de los coches]",
+    "texto": "Alejandro, el Barbas del club. [Por completar: quién es y qué le gusta de los coches]",
     "instagram": "",
     "coches": [
       "ford-fiesta-st-line"
-    ]
+    ],
+    "foto": "img/fotos/barbas-fiesta.webp"
   },
   {
     "id": "javi",
@@ -68,6 +73,7 @@
     "instagram": "",
     "coches": [
       "honda-s2000"
-    ]
+    ],
+    "foto": "img/fotos/javi-s2000.webp"
   }
 ]

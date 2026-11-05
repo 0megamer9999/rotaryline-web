@@ -4,9 +4,11 @@
   "lema": "Rotativo y motor en línea. Un club, dos formas de entender el motor.",
   "descripcion": "Rotary&Line es un club de aficionados al motor. El nombre junta dos mecánicas: el rotativo (el Mazda RX-8 de Mario) y el motor en línea (el BMW E39 de Pepe).",
   "quienes_somos": [
-    "Rotary&Line nace de dos coches y dos amigos: un Mazda RX-8 con motor rotativo y un BMW E39 con motor en línea. De ahí el nombre.",
-    "Contamos en vídeo lo que hacemos con ellos: mantenimiento, modificaciones, viajes y circuitos. Y vamos a los eventos para que quien quiera pueda vernos y charlar de coches.",
-    "[Por completar: historia del club, desde cuándo existe y qué buscáis. Texto de Pepe.]"
+    "Rotary&Line nace de dos amigos, Pepe y Mario, incluso antes de que llegara el RX-8: Mario todavía tenía un Toledo y quería comprarse un RX-8. Y se lo compró.",
+    "Los dos veníamos de otros clubes, pero nos faltaba algo. O eran muy pasotas o muy estrictos, y ninguno seguía de verdad nuestra forma de entender los coches. Así que decidimos montar nuestro propio club, para quienes compartieran esa filosofía.",
+    "Empezó siendo algo pequeño y crece despacio, y no nos preocupa. Como buen club, lo que buscamos es que quien esté con nosotros comparta de verdad nuestra filosofía. Tiene que ser gente cercana: no puede entrar cualquiera.",
+    "Hoy el club ya está asentado y es cerrado. Lo formamos gente que se conoce y se tiene mucha confianza, y es muy raro que alguien entre. Pero sí queremos compartir con todo el mundo lo que el club significa para nosotros.",
+    "Somos un grupo de amigos con una misma filosofía y pasión por los coches, que disfruta de ir a eventos juntos y de este mundillo de corazón. Ahora que tenemos una base, tenemos muchos proyectos en mente, con los coches y como club, y queremos enseñarlos. De ahí nuestras redes sociales y nuestras aplicaciones."
   ],
   "correo": "[Por completar: correo del club]",
   "redes": {
@@ -61,6 +63,21 @@
     }
   ],
   "filosofia": [
-    "[Por completar: la filosofía del club. Qué os une, cómo entendéis los coches y qué buscáis con Rotary&Line.]"
+    {
+      "titulo": "En la carretera",
+      "parrafos": [
+        "Nos gusta correr y disfrutar de la carretera: la montaña, los tramos y, cuando toca, coger cierta velocidad. Pero no verás a nadie del club poniendo en peligro a otros usuarios de la vía.",
+        "No vamos a ir a 200 por una autopista con tráfico, ni a 150 cruzando un pueblo por el que hay que ir a 50. Quien quiera formar parte del club, además de cumplir muchos otros requisitos, tiene que respetar esto."
+      ]
+    },
+    {
+      "titulo": "En el club",
+      "parrafos": [
+        "Un respeto profundo por el proyecto personal de cada uno. Si un miembro nos dice que su proyecto es un 50 cc, adelante. Lo que nos une es la pasión por el coche: tener el tuyo, personalizarlo y dejarlo como a ti te gusta.",
+        "No buscamos el coche más potente del planeta ni el de mejor gama. No aspiramos a tener un BMW M8 o un Nissan Skyline R32 por sí mismos: si tuviéramos un M8, le pondríamos unas roscadas, y si tuviéramos un Skyline, le haríamos una repro. Aceptamos cualquier coche, siempre que haya pasión por el motor y ganas de hacer tuyo un vehículo que podría tener cualquiera.",
+        "Por eso cada coche del club tiene su propia filosofía. El i20 N de Dani es casi todo estética, con algo práctico como los muelles de la suspensión. El RX-8 de Mario, en cambio, a simple vista cuesta distinguirlo de uno de serie. Y el Fiesta del Barbas va al otro extremo: modificaciones económicas, un coche seguro y unas llantas especiales, algo más anchas, para tener un coche de diario sensato que también se disfruta en curvas.",
+        "Ninguno nos compramos un coche para dejarlo tal cual. Queremos darle alma a ese vehículo que un día compramos de serie."
+      ]
+    }
   ]
 }

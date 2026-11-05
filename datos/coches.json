@@ -35,7 +35,13 @@
         "valor": "Llantas Style 37, alerón tipo GT, faldón ALPINA, doble escape izquierdo, suspensión rebajada (por confirmar)"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/pepe-e39.webp",
+        "alt": "Pepe con su BMW E39"
+      }
+    ],
+    "foto": "img/fotos/pepe-e39.webp"
   },
   {
     "id": "mazda-rx8",
@@ -73,7 +79,13 @@
         "valor": "[Por completar: lista confirmada por Mario]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/mario-rx8.webp",
+        "alt": "Mario con su Mazda RX-8"
+      }
+    ],
+    "foto": "img/fotos/mario-rx8.webp"
   },
   {
     "id": "opel-astra-tt",
@@ -111,7 +123,7 @@
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
-    "resumen": "[Por completar: una frase sobre el coche]",
+    "resumen": "Casi todo estética, con algo práctico como los muelles de la suspensión.",
     "descripcion": [
       "[Por completar: historia del coche y lo que se le ha hecho.]"
     ],
@@ -129,7 +141,13 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/dani-i20n.webp",
+        "alt": "Dani con su Hyundai i20 N azul"
+      }
+    ],
+    "foto": "img/fotos/dani-i20n.webp"
   },
   {
     "id": "hyundai-i20n-obed",
@@ -157,7 +175,13 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/obed-i20n.webp",
+        "alt": "El Hyundai i20 N rojo de Obed"
+      }
+    ],
+    "foto": "img/fotos/obed-i20n.webp"
   },
   {
     "id": "honda-civic",
@@ -195,7 +219,7 @@
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
-    "resumen": "[Por completar: una frase sobre el coche]",
+    "resumen": "Modificaciones económicas y llantas especiales, algo más anchas: un coche de diario sensato que se disfruta en curvas.",
     "descripcion": [
       "[Por completar: historia del coche y lo que se le ha hecho.]"
     ],
@@ -213,7 +237,13 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/barbas-fiesta.webp",
+        "alt": "El Ford Fiesta ST-Line del Barbas en la montaña"
+      }
+    ],
+    "foto": "img/fotos/barbas-fiesta.webp"
   },
   {
     "id": "honda-s2000",
@@ -241,6 +271,12 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/javi-s2000.webp",
+        "alt": "El Honda S2000 de Javi en un evento"
+      }
+    ],
+    "foto": "img/fotos/javi-s2000.webp"
   }
 ]

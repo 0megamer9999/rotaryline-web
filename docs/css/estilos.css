@@ -79,8 +79,8 @@ p { margin: 0 0 1em; }
 .cabecera { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, #ff1a0a 0%, #d40000 30%, #8a0000 68%, #2a0000 100%); border-bottom: 1px solid rgb(255 255 255 / 0.08); box-shadow: 0 12px 28px rgb(0 0 0 / 0.55); }
 .cabecera .contenedor { display: flex; align-items: stretch; justify-content: space-between; gap: 16px; min-height: 92px; max-width: none; padding-inline: 16px 14px; }
 .cabecera nav { display: flex; }
-.marca { position: relative; display: block; width: 214px; flex: none; margin-right: auto; text-decoration: none; }
-.marca img { position: absolute; top: 6px; left: 0; height: 138px; width: auto; z-index: 60; filter: drop-shadow(0 8px 10px rgb(0 0 0 / 0.75)) drop-shadow(0 0 2px rgb(0 0 0 / 0.6)); }
+.marca { position: relative; display: block; width: 140px; flex: none; margin-right: auto; text-decoration: none; }
+.marca img { position: absolute; top: 4px; left: 0; width: 132px; height: 132px; border-radius: 50%; border: 3px solid #000; box-shadow: 0 0 0 2px var(--rojo-vivo), 0 10px 22px rgb(0 0 0 / 0.75); z-index: 60; background: #000; }
 .marca b { display: none; font-family: var(--f-display); font-weight: 400; font-size: 32px; letter-spacing: 3px; line-height: 1; color: #fff; }
 .marca b i { color: #000; font-style: normal; }
 .menu { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; align-items: stretch; }
@@ -299,3 +299,19 @@ h3.gigante { font-size: clamp(44px, 7vw, 84px); }
 .fachada .aviso-red, .fachada .aviso-hueco { position: absolute; bottom: 12px; left: 12px; right: 12px; font-size: 13px; text-align: center; color: var(--gris); }
 .fachada .aviso-hueco { color: #f5c400; }
 @media (max-width: 900px) { .redes { grid-template-columns: 1fr; } }
+
+/* ---------- fotos ---------- */
+.persona-foto.con-foto { background-size: cover; background-position: center; }
+.marco-coche.con-foto { padding: 0; aspect-ratio: 16 / 10; overflow: hidden; }
+.marco-coche.con-foto img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.tarjeta:hover .marco-coche.con-foto img { transform: scale(1.04); }
+.mosaico { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-self: start; }
+.mosaico a { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 6px; }
+.mosaico img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.mosaico a:hover img { transform: scale(1.06); }
+.mosaico span { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px 8px 6px; font-family: var(--f-cond); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / .85)); }
+.filosofia-parte { margin-top: 28px; border-left: 3px solid var(--rojo); padding-left: 20px; }
+.filosofia-parte h3 { font-family: var(--f-display); font-size: 34px; letter-spacing: 2px; font-weight: 400; margin: 0 0 8px; color: #fff; }
+
+/* que la barra fija no tape el principio de cada sección al saltar a ella */
+[id] { scroll-margin-top: 120px; }

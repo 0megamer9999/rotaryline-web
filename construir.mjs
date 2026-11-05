@@ -95,7 +95,7 @@ const usar = (nombre, valores) => rellenar(plantilla(nombre), valores, nombre);
 function tarjetaCoche(c, raiz = "") {
   const dueno = miembros.find((m) => m.id === c.dueno);
   return `<a class="tarjeta" href="${raiz}coches/${c.id}.html">
-        <div class="marco-coche">${silueta(c.silueta)}</div>
+        <div class="marco-coche${c.foto ? " con-foto" : ""}">${c.foto ? `<img src="${raiz}${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy">` : silueta(c.silueta)}</div>
         <div class="cuerpo"><span class="insignia rojo">${esc(c.motor_tipo)}</span>${c.ejemplo ? '<span class="ejemplo" style="align-self:flex-start">Ejemplo</span>' : ""}
         <h3>${t(nombreCoche(c))}</h3><p>${dueno ? "De " + t(dueno.nombre) + ". " : ""}${t(c.resumen)}</p><span class="mas">Ver el coche &rarr;</span></div></a>`;
 }
@@ -160,7 +160,7 @@ const bloqueMiembro = (m, i) => {
   const ig = m.instagram ? `<p><a href="${esc(m.instagram)}" rel="noopener">Instagram</a></p>` : "";
   const ini = esc([...(m.nombre.replace(/^\[.*?\]\s*/, "") || "?")][0] ?? "?").toUpperCase();
   return `  <article class="persona${i % 2 ? " inversa" : ""}" id="${esc(m.id)}">
-    <div class="persona-foto"><span class="inicial" aria-hidden="true">${ini}</span><span class="falta">[Por completar: foto de ${esc(m.nombre.replace(/^\[.*?\]\s*/, "") || "la persona")}]</span></div>
+    ${m.foto ? `<div class="persona-foto con-foto" style="background-image:url('${esc(m.foto)}')" role="img" aria-label="${esc(m.nombre)}"></div>` : `<div class="persona-foto"><span class="inicial" aria-hidden="true">${ini}</span><span class="falta">[Por completar: foto de ${esc(m.nombre)}]</span></div>`}
     <div class="persona-texto"><p class="etiqueta">${t(m.rol)}</p><h3 class="gigante">${t(m.nombre)}${insigniaEjemplo(m)}</h3>
       <p class="texto">${t(m.texto)}</p>${ig}
       <p class="subtitulo">Sus coches</p>
@@ -181,8 +181,8 @@ pagina({
   contenido: usar("inicio", {
     lema: esc(club.lema),
     texto_club: parrafos(club.quienes_somos),
-    filosofia: parrafos(club.filosofia),
-    portada_coches: reales.slice(0, 2).map((c) => `      <a href="coches/${c.id}.html">${silueta(c.silueta)}<div class="pie"><span>${esc(nombreCoche(c))}</span><span>${esc(c.motor_tipo)}</span></div></a>`).join("\n"),
+    filosofia: club.filosofia.map((f) => `      <div class="filosofia-parte"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
+    portada_coches: reales.filter((c) => c.foto).map((c) => `      <a href="coches/${c.id}.html"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
     miembros: miembros.map(bloqueMiembro).join("\n"),
     trabajos: proyectos.map(trabajoHtml).join("\n"),
     historias: historias.map(historiaHtml).join("\n"),
