@@ -1,25 +1,61 @@
-<section class="portada rayado">
-  <div class="contenedor">
+<section class="hero">
+  <div class="foto-fondo" aria-hidden="true"><span>[Por completar: foto de portada, los dos coches juntos]</span></div>
+  <div class="contenedor hero-cuerpo">
     <p class="etiqueta">Club de coches</p>
     <h1>ROTARY<em>&amp;</em>LINE</h1>
-    <div class="filete"></div>
     <p class="lema">{{lema}}</p>
     <div class="fila-botones">
-      <a class="boton primario" href="quienes-somos.html">Conoce el club</a>
+      <a class="boton primario" href="#quienes-somos">Conoce el club</a>
       <a class="boton" href="eventos.html">Dónde vernos</a>
     </div>
-    <div class="portada-coches">
+  </div>
+</section>
+<div class="banda-roja" aria-hidden="true"><div class="cinta"><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span><i>&#9670;</i><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span><i>&#9670;</i><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span></div></div>
+
+<section class="bloque" id="quienes-somos">
+  <div class="contenedor dos-col">
+    <div>
+      <p class="etiqueta">El club</p>
+      <h2 class="gigante">QUIÉNES <em>SOMOS</em></h2>
+      <div class="texto">
+{{texto_club}}
+      </div>
+    </div>
+    <div class="duo-siluetas">
 {{portada_coches}}
     </div>
   </div>
 </section>
 
-<section class="seccion">
+<section class="bloque negro" id="personas">
   <div class="contenedor">
-    <p class="etiqueta">Explora</p>
-    <h2>Todo el <em>club</em></h2>
+    <p class="etiqueta">La gente y sus coches</p>
+    <h2 class="gigante">LAS <em>PERSONAS</em></h2>
+  </div>
+{{miembros}}
+</section>
+
+<section class="bloque" id="trabajos">
+  <div class="contenedor">
+    <p class="etiqueta">Lo que hacemos</p>
+    <h2 class="gigante">TODOS LOS <em>TRABAJOS</em></h2>
+    <p class="texto">Proyectos del club y trabajos hechos en los coches.</p>
     <div class="rejilla">
-{{accesos}}
+{{trabajos}}
     </div>
   </div>
+</section>
+
+<section class="bloque roja" id="historias">
+  <div class="contenedor">
+    <p class="etiqueta">Lo que nos ha pasado</p>
+    <h2 class="gigante">LAS <em>HISTORIAS</em></h2>
+    <div class="historias">
+{{historias}}
+    </div>
+  </div>
+</section>
+
+<section class="accesos">
+{{accesos}}
 </section>

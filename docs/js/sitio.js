@@ -10,6 +10,15 @@
     });
   }
 
+  // Desplegable de «El club»
+  document.querySelectorAll(".abre-sub").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var li = b.parentNode;
+      var abierto = li.classList.toggle("abierto");
+      b.setAttribute("aria-expanded", abierto ? "true" : "false");
+    });
+  });
+
   // Vídeos de YouTube con fachada: el reproductor solo se carga al pulsar.
   document.querySelectorAll("[data-youtube]").forEach(function (el) {
     el.addEventListener("click", function () {

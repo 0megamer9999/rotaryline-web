@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ejemplo-historia-1",
+    "ejemplo": true,
+    "titulo": "[Por completar: título de la historia]",
+    "fecha": "[Por completar]",
+    "texto": "Ejemplo de historia del club: un viaje, una avería, cómo llegó un coche. Copia este bloque en historias.json para añadir otra.",
+    "coches": ["bmw-e39"]
+  },
+  {
+    "id": "ejemplo-historia-2",
+    "ejemplo": true,
+    "titulo": "[Por completar: otra historia]",
+    "fecha": "[Por completar]",
+    "texto": "[Por completar: el texto lo escribe Pepe.]",
+    "coches": []
+  }
+]

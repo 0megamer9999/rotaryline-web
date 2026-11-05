@@ -4,27 +4,50 @@
     "titulo": "Garaje",
     "estado": "Disponible",
     "texto": "Programa gratuito para Windows y app de móvil para llevar el mantenimiento de tus coches y motos: recordatorios, registro de trabajos y documentos.",
-    "enlace": { "texto": "Ver Garaje", "url": "aplicaciones.html#garaje" }
+    "enlace": {
+      "texto": "Ver Garaje",
+      "url": "aplicaciones.html#garaje"
+    },
+    "tipo": "proyecto"
   },
   {
     "id": "talleres",
     "titulo": "Talleres",
     "estado": "En desarrollo",
     "texto": "La versión de Garaje pensada para talleres. Todavía en desarrollo.",
-    "enlace": { "texto": "Ver Talleres", "url": "aplicaciones.html#talleres" }
+    "enlace": {
+      "texto": "Ver Talleres",
+      "url": "aplicaciones.html#talleres"
+    },
+    "tipo": "proyecto"
   },
   {
     "id": "canal",
     "titulo": "El canal",
     "estado": "En marcha desde septiembre de 2026",
     "texto": "Un vídeo largo de YouTube y varios clips cortos en Instagram, TikTok y Shorts. Mantenimiento, viajes, circuito y los coches del club.",
-    "enlace": { "texto": "Ver los vídeos", "url": "videos.html" }
+    "enlace": {
+      "texto": "Ver los vídeos",
+      "url": "videos.html"
+    },
+    "tipo": "proyecto"
   },
   {
     "id": "e39-3d",
     "titulo": "El E39 en 3D",
     "estado": "En marcha",
     "texto": "Un modelo 3D del BMW E39 de Pepe con la librea del club, hecho en Blender a partir de fotos del coche real.",
+    "enlace": null,
+    "tipo": "proyecto"
+  },
+  {
+    "id": "ejemplo-trabajo",
+    "ejemplo": true,
+    "tipo": "coche",
+    "coche": "bmw-e39",
+    "titulo": "[Por completar: trabajo hecho en un coche]",
+    "estado": "[Por completar]",
+    "texto": "Ejemplo de trabajo en un coche (mantenimiento, modificación, reparación). Pon en \"coche\" el id del coche.",
     "enlace": null
   },
   {
@@ -33,6 +56,7 @@
     "titulo": "[Por completar: proyecto]",
     "estado": "[Por completar]",
     "texto": "Ejemplo de proyecto. Copia este bloque en proyectos.json para añadir otro.",
-    "enlace": null
+    "enlace": null,
+    "tipo": "proyecto"
   }
 ]

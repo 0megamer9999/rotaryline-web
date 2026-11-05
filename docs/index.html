@@ -20,9 +20,15 @@
     <button class="boton-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">&#9776;</button>
     <nav aria-label="Principal">
       <ul class="menu" id="menu">
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li><a href="quienes-somos.html">Quiénes somos</a></li>
-        <li><a href="proyectos.html">Proyectos</a></li>
+        <li class="con-sub"><a href="index.html" aria-current="page">El club</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar las partes del club">&#9662;</button>
+          <ul class="submenu">
+            <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
+            <li><a href="index.html#pepe">Pepe</a></li>
+            <li><a href="index.html#mario">Mario</a></li>
+            <li><a href="index.html#ejemplo-miembro">Miembro (ejemplo)</a></li>
+            <li><a href="index.html#trabajos">Trabajos</a></li>
+            <li><a href="index.html#historias">Historias</a></li>
+          </ul></li>
         <li><a href="videos.html">Vídeos</a></li>
         <li><a href="eventos.html">Eventos</a></li>
         <li><a href="aplicaciones.html">Aplicaciones</a></li>
@@ -32,36 +38,104 @@
   </div>
 </header>
 <main id="contenido">
-<section class="portada rayado">
-  <div class="contenedor">
+<section class="hero">
+  <div class="foto-fondo" aria-hidden="true"><span>[Por completar: foto de portada, los dos coches juntos]</span></div>
+  <div class="contenedor hero-cuerpo">
     <p class="etiqueta">Club de coches</p>
     <h1>ROTARY<em>&amp;</em>LINE</h1>
-    <div class="filete"></div>
     <p class="lema">Rotativo y motor en línea. Un club, dos formas de entender el motor.</p>
     <div class="fila-botones">
-      <a class="boton primario" href="quienes-somos.html">Conoce el club</a>
+      <a class="boton primario" href="#quienes-somos">Conoce el club</a>
       <a class="boton" href="eventos.html">Dónde vernos</a>
     </div>
-    <div class="portada-coches">
+  </div>
+</section>
+<div class="banda-roja" aria-hidden="true"><div class="cinta"><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span><i>&#9670;</i><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span><i>&#9670;</i><span>Rotativo</span><i>&#9670;</i><span>Motor en línea</span></div></div>
+
+<section class="bloque" id="quienes-somos">
+  <div class="contenedor dos-col">
+    <div>
+      <p class="etiqueta">El club</p>
+      <h2 class="gigante">QUIÉNES <em>SOMOS</em></h2>
+      <div class="texto">
+      <p>Rotary&amp;Line nace de dos coches y dos amigos: un Mazda RX-8 con motor rotativo y un BMW E39 con motor en línea. De ahí el nombre.</p>
+      <p>Contamos en vídeo lo que hacemos con ellos: mantenimiento, modificaciones, viajes y circuitos. Y vamos a los eventos para que quien quiera pueda vernos y charlar de coches.</p>
+      <p><span class="hueco">[Por completar: historia del club, desde cuándo existe y qué buscáis. Texto de Pepe.]</span></p>
+      </div>
+    </div>
+    <div class="duo-siluetas">
       <a href="coches/bmw-e39.html"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M9 54 L8 46 Q8 43 12 43 L30 41 L48 28 L84 27 L103 41 L122 42 Q131 43 132 49 L132 54"/><path d="M9 54 L21.6 54 A11.5 11.5 0 0 1 44.4 54 L95.6 54 A11.5 11.5 0 0 1 118.4 54 L132 54"/><path d="M35 41 L50 31 L83 31 L95 41 Z" stroke-width="1.6"/><path d="M64 31 L64 41" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="33" cy="55.5" r="8.5"/><circle cx="33" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="107" cy="55.5" r="8.5"/><circle cx="107" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg><div class="pie"><span>BMW E39</span><span>En línea</span></div></a>
       <a href="coches/mazda-rx8.html"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M10 54 L9 48 Q9 45 13 44 L38 42 L58 30 L78 29 L100 43 L123 45 Q131 46 132 50 L132 54"/><path d="M10 54 L21.6 54 A11.5 11.5 0 0 1 44.4 54 L95.6 54 A11.5 11.5 0 0 1 118.4 54 L132 54"/><path d="M50 41 L62 33 L77 33 L91 41 Z" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="33" cy="55.5" r="8.5"/><circle cx="33" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="107" cy="55.5" r="8.5"/><circle cx="107" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg><div class="pie"><span>Mazda RX-8</span><span>Rotativo</span></div></a>
     </div>
   </div>
 </section>
 
-<section class="seccion">
+<section class="bloque negro" id="personas">
   <div class="contenedor">
-    <p class="etiqueta">Explora</p>
-    <h2>Todo el <em>club</em></h2>
+    <p class="etiqueta">La gente y sus coches</p>
+    <h2 class="gigante">LAS <em>PERSONAS</em></h2>
+  </div>
+  <article class="persona" id="pepe">
+    <div class="persona-foto"><span class="inicial" aria-hidden="true">P</span><span class="falta">[Por completar: foto de Pepe]</span></div>
+    <div class="persona-texto"><p class="etiqueta">Fundador del club y del canal</p><h3 class="gigante">Pepe</h3>
+      <p class="texto">Lleva el canal de vídeo y programa el Garaje, la aplicación del club. Su coche: un BMW E39.</p><p><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></p>
+      <p class="subtitulo">Sus coches</p>
+      <div class="rejilla"><a class="tarjeta" href="coches/bmw-e39.html">
+        <div class="marco-coche"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M9 54 L8 46 Q8 43 12 43 L30 41 L48 28 L84 27 L103 41 L122 42 Q131 43 132 49 L132 54"/><path d="M9 54 L21.6 54 A11.5 11.5 0 0 1 44.4 54 L95.6 54 A11.5 11.5 0 0 1 118.4 54 L132 54"/><path d="M35 41 L50 31 L83 31 L95 41 Z" stroke-width="1.6"/><path d="M64 31 L64 41" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="33" cy="55.5" r="8.5"/><circle cx="33" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="107" cy="55.5" r="8.5"/><circle cx="107" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg></div>
+        <div class="cuerpo"><span class="insignia rojo">En línea</span>
+        <h3>BMW E39</h3><p>De Pepe. El motor en línea del club. Librea roja, negra y dorada de Rotary&amp;Line.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
+  <article class="persona inversa" id="mario">
+    <div class="persona-foto"><span class="inicial" aria-hidden="true">M</span><span class="falta">[Por completar: foto de Mario]</span></div>
+    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Mario</h3>
+      <p class="texto">Dueño de un Mazda RX-8 con motor rotativo, el que da nombre a la primera mitad del club.</p><p><a href="https://www.instagram.com/terrizamario/" rel="noopener">Instagram</a></p>
+      <p class="subtitulo">Sus coches</p>
+      <div class="rejilla"><a class="tarjeta" href="coches/mazda-rx8.html">
+        <div class="marco-coche"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M10 54 L9 48 Q9 45 13 44 L38 42 L58 30 L78 29 L100 43 L123 45 Q131 46 132 50 L132 54"/><path d="M10 54 L21.6 54 A11.5 11.5 0 0 1 44.4 54 L95.6 54 A11.5 11.5 0 0 1 118.4 54 L132 54"/><path d="M50 41 L62 33 L77 33 L91 41 Z" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="33" cy="55.5" r="8.5"/><circle cx="33" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="107" cy="55.5" r="8.5"/><circle cx="107" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg></div>
+        <div class="cuerpo"><span class="insignia rojo">Rotativo</span>
+        <h3>Mazda RX-8</h3><p>De Mario. El rotativo del club. Negro, de 2006, con el motor ya abierto una vez.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
+  <article class="persona" id="ejemplo-miembro">
+    <div class="persona-foto"><span class="inicial" aria-hidden="true">?</span><span class="falta">[Por completar: foto de la persona]</span></div>
+    <div class="persona-texto"><p class="etiqueta"><span class="hueco">[Por completar: rol]</span></p><h3 class="gigante"><span class="hueco">[Por completar: nombre]</span> <span class="ejemplo">Ejemplo</span></h3>
+      <p class="texto">Ejemplo de ficha de miembro. Copia este bloque en miembros.json para añadir a alguien nuevo.</p>
+      <p class="subtitulo">Sus coches</p>
+      <div class="rejilla"><a class="tarjeta" href="coches/ejemplo-coche.html">
+        <div class="marco-coche"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M16 54 L15 46 Q15 42 19 41 L42 27 L78 27 L96 41 L116 43 Q124 44 125 49 L125 54"/><path d="M16 54 L25.6 54 A11.5 11.5 0 0 1 48.4 54 L89.6 54 A11.5 11.5 0 0 1 112.4 54 L125 54"/><path d="M31 40 L46 31 L77 31 L88 40 Z" stroke-width="1.6"/><path d="M62 31 L62 40" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="37" cy="55.5" r="8.5"/><circle cx="37" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="101" cy="55.5" r="8.5"/><circle cx="101" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg></div>
+        <div class="cuerpo"><span class="insignia rojo">[Por completar]</span><span class="ejemplo" style="align-self:flex-start">Ejemplo</span>
+        <h3><span class="hueco">[Por completar: marca]</span> <span class="hueco">[Por completar: modelo]</span></h3><p>De <span class="hueco">[Por completar: nombre]</span>. Ejemplo de ficha de coche. Copia este bloque en coches.json para añadir uno nuevo.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
+</section>
+
+<section class="bloque" id="trabajos">
+  <div class="contenedor">
+    <p class="etiqueta">Lo que hacemos</p>
+    <h2 class="gigante">TODOS LOS <em>TRABAJOS</em></h2>
+    <p class="texto">Proyectos del club y trabajos hechos en los coches.</p>
     <div class="rejilla">
-      <a class="tarjeta" href="quienes-somos.html"><div class="cuerpo"><h3>Quiénes somos</h3><p>El club, sus miembros y sus coches.</p><span class="mas">Entrar &rarr;</span></div></a>
-      <a class="tarjeta" href="proyectos.html"><div class="cuerpo"><h3>Proyectos</h3><p>Lo que estamos haciendo.</p><span class="mas">Entrar &rarr;</span></div></a>
-      <a class="tarjeta" href="videos.html"><div class="cuerpo"><h3>Vídeos</h3><p>Los vídeos del canal de YouTube.</p><span class="mas">Entrar &rarr;</span></div></a>
-      <a class="tarjeta" href="eventos.html"><div class="cuerpo"><h3>Eventos</h3><p>A qué eventos va cada coche, para ir a verlos.</p><span class="mas">Entrar &rarr;</span></div></a>
-      <a class="tarjeta" href="aplicaciones.html"><div class="cuerpo"><h3>Aplicaciones</h3><p>Garaje y Talleres, las aplicaciones del club.</p><span class="mas">Entrar &rarr;</span></div></a>
-      <a class="tarjeta" href="contacto.html"><div class="cuerpo"><h3>Contacto</h3><p>Correo e Instagram.</p><span class="mas">Entrar &rarr;</span></div></a>
+      <a class="tarjeta" href="aplicaciones.html#garaje"><div class="cuerpo"><span class="insignia rojo">Disponible</span><h3>Garaje</h3><p>Programa gratuito para Windows y app de móvil para llevar el mantenimiento de tus coches y motos: recordatorios, registro de trabajos y documentos.</p><span class="mas">Ver Garaje &rarr;</span></div></a>
+      <a class="tarjeta" href="aplicaciones.html#talleres"><div class="cuerpo"><span class="insignia dorado">En desarrollo</span><h3>Talleres</h3><p>La versión de Garaje pensada para talleres. Todavía en desarrollo.</p><span class="mas">Ver Talleres &rarr;</span></div></a>
+      <a class="tarjeta" href="videos.html"><div class="cuerpo"><span class="insignia rojo">En marcha desde septiembre de 2026</span><h3>El canal</h3><p>Un vídeo largo de YouTube y varios clips cortos en Instagram, TikTok y Shorts. Mantenimiento, viajes, circuito y los coches del club.</p><span class="mas">Ver los vídeos &rarr;</span></div></a>
+      <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo">En marcha</span><h3>El E39 en 3D</h3><p>Un modelo 3D del BMW E39 de Pepe con la librea del club, hecho en Blender a partir de fotos del coche real.</p></div></article>
+      <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo"><span class="hueco">[Por completar]</span></span><span class="ejemplo" style="align-self:flex-start">Ejemplo</span><h3><span class="hueco">[Por completar: trabajo hecho en un coche]</span></h3><p class="nota">En el BMW E39</p><p>Ejemplo de trabajo en un coche (mantenimiento, modificación, reparación). Pon en &quot;coche&quot; el id del coche.</p></div></article>
+      <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo"><span class="hueco">[Por completar]</span></span><span class="ejemplo" style="align-self:flex-start">Ejemplo</span><h3><span class="hueco">[Por completar: proyecto]</span></h3><p>Ejemplo de proyecto. Copia este bloque en proyectos.json para añadir otro.</p></div></article>
     </div>
   </div>
+</section>
+
+<section class="bloque roja" id="historias">
+  <div class="contenedor">
+    <p class="etiqueta">Lo que nos ha pasado</p>
+    <h2 class="gigante">LAS <em>HISTORIAS</em></h2>
+    <div class="historias">
+      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota"><span class="hueco">[Por completar]</span> <span class="ejemplo">Ejemplo</span></p><h3><span class="hueco">[Por completar: título de la historia]</span></h3><p>Ejemplo de historia del club: un viaje, una avería, cómo llegó un coche. Copia este bloque en historias.json para añadir otra.</p><a class="insignia" href="coches/bmw-e39.html">BMW E39</a></div></article>
+      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota"><span class="hueco">[Por completar]</span> <span class="ejemplo">Ejemplo</span></p><h3><span class="hueco">[Por completar: otra historia]</span></h3><p><span class="hueco">[Por completar: el texto lo escribe Pepe.]</span></p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="accesos">
+  <a href="videos.html"><b>Vídeos</b><span>Los vídeos del canal</span></a>
+  <a href="eventos.html"><b>Eventos</b><span>A qué eventos va cada coche</span></a>
+  <a href="aplicaciones.html"><b>Aplicaciones</b><span>Garaje y Talleres</span></a>
+  <a href="contacto.html"><b>Contacto</b><span>Correo e Instagram</span></a>
 </section>
 
 </main>
@@ -75,9 +149,7 @@
       <div>
         <h2>Secciones</h2>
         <ul>
-          <li><a href="index.html" aria-current="page">Inicio</a></li>
-          <li><a href="quienes-somos.html">Quiénes somos</a></li>
-          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="index.html">El club</a></li>
           <li><a href="videos.html">Vídeos</a></li>
           <li><a href="eventos.html">Eventos</a></li>
           <li><a href="aplicaciones.html">Aplicaciones</a></li>

@@ -15,6 +15,7 @@ const coches = leerJson("coches.json");
 const eventos = leerJson("eventos.json");
 const videos = leerJson("videos.json");
 const proyectos = leerJson("proyectos.json");
+const historias = leerJson("historias.json");
 const siluetas = leerJson("siluetas.json");
 
 // ---------------------------------------------------------------- utilidades
@@ -49,7 +50,15 @@ const paginasActivas = club.menu.filter((m) => m.activo !== false);
 
 function menuHtml(raiz, actual) {
   return paginasActivas
-    .map((m) => `        <li><a href="${raiz}${m.pagina}.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a></li>`)
+    .map((m) => {
+      if (!m.desplegable) return `        <li><a href="${raiz}${m.pagina}.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a></li>`;
+      const sub = [["quienes-somos", "Quiénes somos"], ...miembros.map((p) => [p.id, p.nombre.replace(/^\[.*?\]\s*/, "") || "Miembro (ejemplo)"]), ["trabajos", "Trabajos"], ["historias", "Historias"]]
+        .map(([id, txt]) => `            <li><a href="${raiz}index.html#${id}">${esc(txt)}</a></li>`).join("\n");
+      return `        <li class="con-sub"><a href="${raiz}index.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar las partes del club">&#9662;</button>
+          <ul class="submenu">
+${sub}
+          </ul></li>`;
+    })
     .join("\n");
 }
 const redesPie = (() => {
@@ -64,7 +73,7 @@ function pagina({ ruta, pagina: clave, titulo, descripcion, contenido, raiz = ""
     descripcion: esc(descripcion ?? club.descripcion),
     raiz,
     menu: menuHtml(raiz, clave),
-    menu_pie: menuHtml(raiz, clave).replace(/^ {8}/gm, "          "),
+    menu_pie: paginasActivas.map((m) => `          <li><a href="${raiz}${m.pagina}.html">${esc(m.texto)}</a></li>`).join("\n"),
     redes_pie: redesPie,
     lema: esc(club.lema),
     contenido,
@@ -118,43 +127,39 @@ writeFileSync(join(DOCS, ".nojekyll"), "");
 // ---------------------------------------------------------------- páginas
 const eventosOrdenados = [...eventos].sort((a, b) => a.fecha.localeCompare(b.fecha));
 
-// Inicio
+// Inicio: el club entero, desplegado en secciones
 const reales = coches.filter((c) => !c.ejemplo);
+const bloqueMiembro = (m, i) => {
+  const suyos = m.coches.map(cocheDe).filter(Boolean);
+  const ig = m.instagram ? `<p><a href="${esc(m.instagram)}" rel="noopener">Instagram</a></p>` : "";
+  const ini = esc([...(m.nombre.replace(/^\[.*?\]\s*/, "") || "?")][0] ?? "?").toUpperCase();
+  return `  <article class="persona${i % 2 ? " inversa" : ""}" id="${esc(m.id)}">
+    <div class="persona-foto"><span class="inicial" aria-hidden="true">${ini}</span><span class="falta">[Por completar: foto de ${esc(m.nombre.replace(/^\[.*?\]\s*/, "") || "la persona")}]</span></div>
+    <div class="persona-texto"><p class="etiqueta">${t(m.rol)}</p><h3 class="gigante">${t(m.nombre)}${insigniaEjemplo(m)}</h3>
+      <p class="texto">${t(m.texto)}</p>${ig}
+      <p class="subtitulo">Sus coches</p>
+      <div class="rejilla">${suyos.map((c) => tarjetaCoche(c)).join("\n")}</div></div></article>`;
+};
+const trabajoHtml = (p) => {
+  const c = p.coche ? cocheDe(p.coche) : null;
+  const cuerpo = `<div class="cuerpo"><span class="insignia ${/desarrollo/i.test(p.estado) ? "dorado" : "rojo"}">${t(p.estado)}</span>${p.ejemplo ? '<span class="ejemplo" style="align-self:flex-start">Ejemplo</span>' : ""}<h3>${t(p.titulo)}</h3>${c ? `<p class="nota">En el ${t(nombreCoche(c))}</p>` : ""}<p>${t(p.texto)}</p>${p.enlace ? `<span class="mas">${esc(p.enlace.texto)} &rarr;</span>` : ""}</div>`;
+  return p.enlace ? `      <a class="tarjeta" href="${esc(p.enlace.url)}">${cuerpo}</a>` : `      <article class="tarjeta">${cuerpo}</article>`;
+};
+const historiaHtml = (h) => {
+  const cs = h.coches.map(cocheDe).filter(Boolean).map((c) => `<a class="insignia" href="coches/${c.id}.html">${t(nombreCoche(c))}</a>`).join(" ");
+  return `      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota">${t(h.fecha)}${h.ejemplo ? ' <span class="ejemplo">Ejemplo</span>' : ""}</p><h3>${t(h.titulo)}</h3><p>${t(h.texto)}</p>${cs}</div></article>`;
+};
+const textosAcceso = { videos: "Los vídeos del canal", eventos: "A qué eventos va cada coche", aplicaciones: "Garaje y Talleres", contacto: "Correo e Instagram", tienda: "Los productos del club" };
 pagina({
   ruta: "index.html", pagina: "index", titulo: club.nombre,
   contenido: usar("inicio", {
     lema: esc(club.lema),
-    portada_coches: reales.slice(0, 2).map((c) => `      <a href="coches/${c.id}.html">${silueta(c.silueta)}<div class="pie"><span>${esc(nombreCoche(c))}</span><span>${esc(c.motor_tipo)}</span></div></a>`).join("\n"),
-    accesos: paginasActivas.filter((m) => m.pagina !== "index").map((m) => {
-      const texto = {
-        "quienes-somos": "El club, sus miembros y sus coches.",
-        proyectos: "Lo que estamos haciendo.",
-        videos: "Los vídeos del canal de YouTube.",
-        eventos: "A qué eventos va cada coche, para ir a verlos.",
-        aplicaciones: "Garaje y Talleres, las aplicaciones del club.",
-        contacto: "Correo e Instagram.",
-        tienda: "Los productos del club.",
-      }[m.pagina] ?? "";
-      return `      <a class="tarjeta" href="${m.pagina}.html"><div class="cuerpo"><h3>${esc(m.texto)}</h3><p>${esc(texto)}</p><span class="mas">Entrar &rarr;</span></div></a>`;
-    }).join("\n"),
-  }),
-});
-
-// Quiénes somos
-pagina({
-  ruta: "quienes-somos.html", pagina: "quienes-somos", titulo: "Quiénes somos",
-  contenido: usar("quienes-somos", {
     texto_club: parrafos(club.quienes_somos),
-    miembros: miembros.map((m) => {
-      const suyos = m.coches.map(cocheDe).filter(Boolean);
-      const ig = m.instagram ? `<p><a href="${esc(m.instagram)}" rel="noopener">Instagram</a></p>` : "";
-      return `    <article class="miembro" id="${esc(m.id)}">
-      <div class="avatar" aria-hidden="true">${esc([...m.nombre.replace(/^\[.*?\]\s*/, "") || "?"][0] ?? "?").toUpperCase()}</div>
-      <div><p class="etiqueta">${t(m.rol)}</p><h2>${t(m.nombre)}${insigniaEjemplo(m)}</h2>
-      <p class="texto">${t(m.texto)}</p>${ig}
-      <h3 style="margin-top:24px">Sus coches</h3>
-      <div class="rejilla">${suyos.map((c) => tarjetaCoche(c)).join("\n")}</div></div></article>`;
-    }).join("\n"),
+    portada_coches: reales.slice(0, 2).map((c) => `      <a href="coches/${c.id}.html">${silueta(c.silueta)}<div class="pie"><span>${esc(nombreCoche(c))}</span><span>${esc(c.motor_tipo)}</span></div></a>`).join("\n"),
+    miembros: miembros.map(bloqueMiembro).join("\n"),
+    trabajos: proyectos.map(trabajoHtml).join("\n"),
+    historias: historias.map(historiaHtml).join("\n"),
+    accesos: paginasActivas.filter((m) => !m.desplegable).map((m) => `  <a href="${m.pagina}.html"><b>${esc(m.texto)}</b><span>${esc(textosAcceso[m.pagina] ?? "")}</span></a>`).join("\n"),
   }),
 });
 
@@ -166,7 +171,7 @@ for (const c of coches) {
     ? c.galeria.map((g) => `      <figure><img src="../${esc(g.archivo)}" alt="${esc(g.alt)}" loading="lazy"><figcaption class="nota">${t(g.alt)}</figcaption></figure>`).join("\n")
     : [1, 2, 3].map(() => `      <div class="hueco-foto">[Por completar: foto del coche]</div>`).join("\n");
   pagina({
-    ruta: `coches/${c.id}.html`, pagina: "quienes-somos", raiz: "../",
+    ruta: `coches/${c.id}.html`, pagina: "index", raiz: "../",
     titulo: nombreCoche(c).replace(/\[.*?\]/g, "").trim() || "Coche",
     descripcion: c.resumen.replace(/\[.*?\]/g, "").trim() || club.descripcion,
     contenido: usar("coche", {
@@ -181,17 +186,6 @@ for (const c of coches) {
     }),
   });
 }
-
-// Proyectos
-pagina({
-  ruta: "proyectos.html", pagina: "proyectos", titulo: "Proyectos",
-  contenido: usar("proyectos", {
-    proyectos: proyectos.map((p) => {
-      const cuerpo = `<div class="cuerpo"><span class="insignia ${/desarrollo/i.test(p.estado) ? "dorado" : "rojo"}">${t(p.estado)}</span>${insigniaEjemplo(p) ? '<span class="ejemplo" style="align-self:flex-start">Ejemplo</span>' : ""}<h3>${t(p.titulo)}</h3><p>${t(p.texto)}</p>${p.enlace ? `<span class="mas">${esc(p.enlace.texto)} &rarr;</span>` : ""}</div>`;
-      return p.enlace ? `      <a class="tarjeta" href="${esc(p.enlace.url)}">${cuerpo}</a>` : `      <article class="tarjeta">${cuerpo}</article>`;
-    }).join("\n"),
-  }),
-});
 
 // Vídeos
 pagina({

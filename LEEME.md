@@ -13,6 +13,8 @@ Web estática en español. Sin cookies, sin rastreo, sin CDNs ni Google Fonts (l
 - Aspecto: tokens de `:root` en `estatico/css/estilos.css` (los mismos colores y tipografías del programa Garaje).
 - Cabecera y pie: una sola vez, en `plantillas/base.html`. Menú: `menu` de `datos/club.json`.
 - **Tienda:** ya está en el menú con `"activo": false`; poner `true` publica `tienda.html` (plantilla `plantillas/tienda.html`).
+- Inicio = el club desplegado (Quiénes somos, Personas, Trabajos, Historias); el desplegable «El club» de la barra se genera solo de `miembros.json`. Historias: `datos/historias.json`. Trabajos: `proyectos.json` (con `"coche"` si son de un coche).
+- Fuentes: licencias OFL en `estatico/fuentes/LICENCIA-OFL-*.txt` (se copian a `docs/fuentes/`).
 - Añadir un evento: una entrada en `datos/eventos.json` (`fecha` AAAA-MM-DD, `coches` con ids de coches.json).
 - Añadir un coche: entrada en `coches.json` (silueta: compacto, berlina, familiar, coupe, descapotable, suv, clasica, enduro, cafe-racer...) y su id en `coches` del miembro. Fotos: copiar a `estatico/img/` y poner `{"archivo": "img/x.webp", "alt": "..."}` en `galeria`.
 - Vídeo: `id` de YouTube en `videos.json`; la miniatura es un archivo local en `miniatura` (no se descarga de YouTube para no contactar con él).
@@ -24,6 +26,7 @@ Web estática en español. Sin cookies, sin rastreo, sin CDNs ni Google Fonts (l
 - Vídeos: títulos, fechas e identificadores de YouTube; solo hay dos de ejemplo.
 - Fotos de cada coche (galería y portada) y capturas de Talleres (no existen aún en el repositorio).
 - Fichas de los coches: motor, año, carrocería (la silueta del E39 es de berlina por defecto), km, modificaciones.
+- Historias reales (hay dos de ejemplo), fotos de portada y de cada persona, trabajos hechos en los coches (uno de ejemplo).
 - Otros miembros y coches (hay uno de ejemplo de cada). Proyectos: uno de ejemplo.
 - A confirmar: modificaciones del E39 (salen de las notas del modelo 3D) y los datos del RX-8 (notas de octubre 2026). Apellidos y matrículas no se publican.
 - Capturas de Garaje: son los diseños de la v0.5 con datos de ejemplo («Álex», sin matrículas), no capturas del programa real; cambiarlas por reales cuando se quiera.

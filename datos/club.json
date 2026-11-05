@@ -10,22 +10,49 @@
   ],
   "correo": "[Por completar: correo del club]",
   "redes": {
-    "instagram": { "texto": "@rotaryinline", "url": "https://www.instagram.com/rotaryinline/" },
-    "youtube": { "texto": "Canal de YouTube", "url": "https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ" },
-    "tiktok": { "texto": "@rotaryinline", "url": "https://www.tiktok.com/@rotaryinline" }
+    "instagram": {
+      "texto": "@rotaryinline",
+      "url": "https://www.instagram.com/rotaryinline/"
+    },
+    "youtube": {
+      "texto": "Canal de YouTube",
+      "url": "https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ"
+    },
+    "tiktok": {
+      "texto": "@rotaryinline",
+      "url": "https://www.tiktok.com/@rotaryinline"
+    }
   },
   "garaje": {
     "descarga_windows": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest",
     "descarga_android": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest/download/RL-Garaje.apk"
   },
   "menu": [
-    { "texto": "Inicio", "pagina": "index" },
-    { "texto": "Quiénes somos", "pagina": "quienes-somos" },
-    { "texto": "Proyectos", "pagina": "proyectos" },
-    { "texto": "Vídeos", "pagina": "videos" },
-    { "texto": "Eventos", "pagina": "eventos" },
-    { "texto": "Aplicaciones", "pagina": "aplicaciones" },
-    { "texto": "Tienda", "pagina": "tienda", "activo": false },
-    { "texto": "Contacto", "pagina": "contacto" }
+    {
+      "texto": "El club",
+      "pagina": "index",
+      "desplegable": true
+    },
+    {
+      "texto": "Vídeos",
+      "pagina": "videos"
+    },
+    {
+      "texto": "Eventos",
+      "pagina": "eventos"
+    },
+    {
+      "texto": "Aplicaciones",
+      "pagina": "aplicaciones"
+    },
+    {
+      "texto": "Tienda",
+      "pagina": "tienda",
+      "activo": false
+    },
+    {
+      "texto": "Contacto",
+      "pagina": "contacto"
+    }
   ]
 }
