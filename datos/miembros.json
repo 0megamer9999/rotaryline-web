@@ -1,0 +1,27 @@
+[
+  {
+    "id": "pepe",
+    "nombre": "Pepe",
+    "rol": "Fundador del club y del canal",
+    "texto": "Lleva el canal de vídeo y programa el Garaje, la aplicación del club. Su coche: un BMW E39.",
+    "instagram": "https://www.instagram.com/rotaryinline/",
+    "coches": ["bmw-e39"]
+  },
+  {
+    "id": "mario",
+    "nombre": "Mario",
+    "rol": "Miembro del club",
+    "texto": "Dueño de un Mazda RX-8 con motor rotativo, el que da nombre a la primera mitad del club.",
+    "instagram": "https://www.instagram.com/terrizamario/",
+    "coches": ["mazda-rx8"]
+  },
+  {
+    "id": "ejemplo-miembro",
+    "ejemplo": true,
+    "nombre": "[Por completar: nombre]",
+    "rol": "[Por completar: rol]",
+    "texto": "Ejemplo de ficha de miembro. Copia este bloque en miembros.json para añadir a alguien nuevo.",
+    "instagram": "",
+    "coches": ["ejemplo-coche"]
+  }
+]

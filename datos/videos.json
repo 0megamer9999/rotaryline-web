@@ -1,0 +1,18 @@
+[
+  {
+    "id": "",
+    "ejemplo": true,
+    "titulo": "[Por completar: título del vídeo]",
+    "fecha": "[Por completar]",
+    "texto": "Ejemplo de vídeo. Pon aquí el identificador de YouTube (lo que va tras v= en la dirección) y, si quieres, una miniatura local en estatico/img.",
+    "miniatura": ""
+  },
+  {
+    "id": "",
+    "ejemplo": true,
+    "titulo": "[Por completar: otro vídeo]",
+    "fecha": "[Por completar]",
+    "texto": "Sin identificador, la tarjeta enlaza al canal.",
+    "miniatura": ""
+  }
+]

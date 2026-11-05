@@ -1,0 +1,13 @@
+[
+  {
+    "id": "ejemplo-evento",
+    "ejemplo": true,
+    "nombre": "[Por completar: nombre del evento]",
+    "fecha": "2027-01-01",
+    "fecha_texto": "[Por completar: fecha]",
+    "lugar": "[Por completar: lugar]",
+    "coches": ["bmw-e39", "mazda-rx8"],
+    "texto": "Ejemplo de evento: cambia la fecha (formato AAAA-MM-DD), el lugar y los coches que van. Los coches se nombran por su id de coches.json.",
+    "enlace": ""
+  }
+]

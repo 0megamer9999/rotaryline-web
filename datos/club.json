@@ -1,0 +1,31 @@
+{
+  "nombre": "Rotary&Line",
+  "dominio": "rotaryline.es",
+  "lema": "Rotativo y motor en línea. Un club, dos formas de entender el motor.",
+  "descripcion": "Rotary&Line es un club de aficionados al motor. El nombre junta dos mecánicas: el rotativo (el Mazda RX-8 de Mario) y el motor en línea (el BMW E39 de Pepe).",
+  "quienes_somos": [
+    "Rotary&Line nace de dos coches y dos amigos: un Mazda RX-8 con motor rotativo y un BMW E39 con motor en línea. De ahí el nombre.",
+    "Contamos en vídeo lo que hacemos con ellos: mantenimiento, modificaciones, viajes y circuitos. Y vamos a los eventos para que quien quiera pueda vernos y charlar de coches.",
+    "[Por completar: historia del club, desde cuándo existe y qué buscáis. Texto de Pepe.]"
+  ],
+  "correo": "[Por completar: correo del club]",
+  "redes": {
+    "instagram": { "texto": "@rotaryinline", "url": "https://www.instagram.com/rotaryinline/" },
+    "youtube": { "texto": "Canal de YouTube", "url": "https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ" },
+    "tiktok": { "texto": "@rotaryinline", "url": "https://www.tiktok.com/@rotaryinline" }
+  },
+  "garaje": {
+    "descarga_windows": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest",
+    "descarga_android": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest/download/RL-Garaje.apk"
+  },
+  "menu": [
+    { "texto": "Inicio", "pagina": "index" },
+    { "texto": "Quiénes somos", "pagina": "quienes-somos" },
+    { "texto": "Proyectos", "pagina": "proyectos" },
+    { "texto": "Vídeos", "pagina": "videos" },
+    { "texto": "Eventos", "pagina": "eventos" },
+    { "texto": "Aplicaciones", "pagina": "aplicaciones" },
+    { "texto": "Tienda", "pagina": "tienda", "activo": false },
+    { "texto": "Contacto", "pagina": "contacto" }
+  ]
+}

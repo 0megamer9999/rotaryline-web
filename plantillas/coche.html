@@ -1,0 +1,42 @@
+<section class="cab-pagina rayado">
+  <div class="contenedor">
+    <p class="etiqueta"><a href="../quienes-somos.html" style="text-decoration:none;color:inherit">&larr; Quiénes somos</a></p>
+    <div class="hero-coche">
+      <div>
+        <h1>{{marca}} <em>{{modelo}}</em></h1>
+        <div class="filete"></div>
+        <p class="subtitulo">{{subtitulo}}</p>
+        <p class="texto">{{resumen}}</p>
+      </div>
+      <div class="marco-coche">{{silueta}}</div>
+    </div>
+  </div>
+</section>
+<section class="seccion">
+  <div class="contenedor" style="display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))">
+    <div class="texto">
+      <h2>El <em>coche</em></h2>
+{{descripcion}}
+    </div>
+    <div>
+      <h2>Ficha</h2>
+      <dl class="ficha">
+{{ficha}}
+      </dl>
+    </div>
+  </div>
+</section>
+<section class="seccion alt">
+  <div class="contenedor">
+    <h2>Galería</h2>
+    <div class="galeria">
+{{galeria}}
+    </div>
+  </div>
+</section>
+<section class="seccion">
+  <div class="contenedor">
+    <h2>Dónde <em>verlo</em></h2>
+{{eventos}}
+  </div>
+</section>

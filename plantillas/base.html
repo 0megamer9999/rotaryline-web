@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{titulo}}</title>
+<meta name="description" content="{{descripcion}}">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="{{raiz}}img/favicon.png">
+<link rel="stylesheet" href="{{raiz}}css/estilos.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="{{raiz}}index.html" aria-label="Rotary&amp;Line, ir al inicio">
+      <img src="{{raiz}}img/emblema.webp" width="44" height="44" alt="">
+      <b>ROTARY<i>&amp;</i>LINE</b>
+    </a>
+    <button class="boton-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">&#9776;</button>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+{{menu}}
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+{{contenido}}
+</main>
+<footer class="pie-sitio">
+  <div class="contenedor">
+    <div class="cols">
+      <div>
+        <h2>Rotary&amp;Line</h2>
+        <p class="nota" style="max-width:36ch">{{lema}}</p>
+      </div>
+      <div>
+        <h2>Secciones</h2>
+        <ul>
+{{menu_pie}}
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <ul>
+{{redes_pie}}
+        </ul>
+      </div>
+    </div>
+    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="{{raiz}}aviso-legal.html">Aviso legal</a></p>
+  </div>
+</footer>
+<script src="{{raiz}}js/sitio.js" defer></script>
+</body>
+</html>

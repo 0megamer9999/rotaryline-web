@@ -1,0 +1,65 @@
+[
+  {
+    "id": "bmw-e39",
+    "dueno": "pepe",
+    "marca": "BMW",
+    "modelo": "E39",
+    "apodo": "",
+    "silueta": "berlina",
+    "motor_tipo": "En línea",
+    "resumen": "El motor en línea del club. Librea roja, negra y dorada de Rotary&Line.",
+    "descripcion": [
+      "El E39 de Pepe es el coche del canal: casi todos los vídeos giran en torno a él.",
+      "Lleva la librea de Rotary&Line en rojo, negro y dorado, llantas Style 37, alerón tipo GT, faldón ALPINA, doble escape por el lado izquierdo y suspensión rebajada.",
+      "[Por completar: historia del coche, cuándo lo compró y qué le ha hecho.]"
+    ],
+    "ficha": [
+      { "campo": "Motor", "valor": "[Por completar: motor, cilindrada y potencia]" },
+      { "campo": "Año", "valor": "[Por completar]" },
+      { "campo": "Carrocería", "valor": "[Por completar: berlina o touring]" },
+      { "campo": "Kilómetros", "valor": "[Por completar]" },
+      { "campo": "Modificaciones", "valor": "Llantas Style 37, alerón tipo GT, faldón ALPINA, doble escape izquierdo, suspensión rebajada (por confirmar)" }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "mazda-rx8",
+    "dueno": "mario",
+    "marca": "Mazda",
+    "modelo": "RX-8",
+    "apodo": "",
+    "silueta": "coupe",
+    "motor_tipo": "Rotativo",
+    "resumen": "El rotativo del club. Negro, de 2006, con el motor ya abierto una vez.",
+    "descripcion": [
+      "El RX-8 de Mario es un coche de 2006, negro, con unos 150.000 km y el motor rotativo abierto una vez.",
+      "Mario lo graba y lo cuenta en el canal: cómo es vivir con un rotativo y qué se le ha hecho.",
+      "[Por completar: historia del coche y modificaciones confirmadas por Mario.]"
+    ],
+    "ficha": [
+      { "campo": "Motor", "valor": "Rotativo (modelo exacto: [Por completar])" },
+      { "campo": "Año", "valor": "2006" },
+      { "campo": "Color", "valor": "Negro" },
+      { "campo": "Kilómetros", "valor": "Unos 150.000 (a octubre de 2026)" },
+      { "campo": "Modificaciones", "valor": "[Por completar: lista confirmada por Mario]" }
+    ],
+    "galeria": []
+  },
+  {
+    "id": "ejemplo-coche",
+    "ejemplo": true,
+    "dueno": "ejemplo-miembro",
+    "marca": "[Por completar: marca]",
+    "modelo": "[Por completar: modelo]",
+    "apodo": "",
+    "silueta": "compacto",
+    "motor_tipo": "[Por completar]",
+    "resumen": "Ejemplo de ficha de coche. Copia este bloque en coches.json para añadir uno nuevo.",
+    "descripcion": ["[Por completar: descripción del coche.]"],
+    "ficha": [
+      { "campo": "Motor", "valor": "[Por completar]" },
+      { "campo": "Año", "valor": "[Por completar]" }
+    ],
+    "galeria": []
+  }
+]

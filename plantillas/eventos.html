@@ -1,0 +1,20 @@
+<section class="cab-pagina rayado">
+  <div class="contenedor">
+    <p class="etiqueta">Ven a vernos</p>
+    <h1><em>EVENTOS</em></h1>
+    <div class="filete"></div>
+    <p class="texto">A qué eventos va cada coche, para que puedas pasarte a verlos. Filtra por coche o por fecha.</p>
+  </div>
+</section>
+<section class="seccion">
+  <div class="contenedor">
+    <div class="filtros" role="group" aria-label="Filtrar por coche">
+{{chips}}
+      <label><input type="checkbox" id="solo-proximos"> Solo los próximos</label>
+    </div>
+    <div id="lista-eventos">
+{{eventos}}
+    </div>
+    <p id="sin-eventos" class="texto" hidden>No hay eventos con ese filtro.</p>
+  </div>
+</section>

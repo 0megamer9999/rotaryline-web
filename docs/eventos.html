@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eventos · Rotary&amp;Line</title>
+<meta name="description" content="Rotary&amp;Line es un club de aficionados al motor. El nombre junta dos mecánicas: el rotativo (el Mazda RX-8 de Mario) y el motor en línea (el BMW E39 de Pepe).">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="index.html" aria-label="Rotary&amp;Line, ir al inicio">
+      <img src="img/emblema.webp" width="44" height="44" alt="">
+      <b>ROTARY<i>&amp;</i>LINE</b>
+    </a>
+    <button class="boton-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">&#9776;</button>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="quienes-somos.html">Quiénes somos</a></li>
+        <li><a href="proyectos.html">Proyectos</a></li>
+        <li><a href="videos.html">Vídeos</a></li>
+        <li><a href="eventos.html" aria-current="page">Eventos</a></li>
+        <li><a href="aplicaciones.html">Aplicaciones</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<section class="cab-pagina rayado">
+  <div class="contenedor">
+    <p class="etiqueta">Ven a vernos</p>
+    <h1><em>EVENTOS</em></h1>
+    <div class="filete"></div>
+    <p class="texto">A qué eventos va cada coche, para que puedas pasarte a verlos. Filtra por coche o por fecha.</p>
+  </div>
+</section>
+<section class="seccion">
+  <div class="contenedor">
+    <div class="filtros" role="group" aria-label="Filtrar por coche">
+      <button class="chip" type="button" data-filtro-coche="" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-filtro-coche="bmw-e39" aria-pressed="false">BMW E39</button>
+      <button class="chip" type="button" data-filtro-coche="mazda-rx8" aria-pressed="false">Mazda RX-8</button>
+      <button class="chip" type="button" data-filtro-coche="ejemplo-coche" aria-pressed="false">[Por completar: marca] [Por completar: modelo]</button>
+      <label><input type="checkbox" id="solo-proximos"> Solo los próximos</label>
+    </div>
+    <div id="lista-eventos">
+      <article class="evento" data-fecha="2027-01-01" data-coches="bmw-e39 mazda-rx8">
+      <div class="fecha">1 ENE<small>2027</small></div>
+      <div><h3><span class="hueco">[Por completar: nombre del evento]</span> <span class="ejemplo">Ejemplo</span></h3>
+      <p class="nota" style="margin:0 0 6px"><span class="hueco">[Por completar: fecha]</span> &middot; <span class="hueco">[Por completar: lugar]</span></p>
+      <p>Ejemplo de evento: cambia la fecha (formato AAAA-MM-DD), el lugar y los coches que van. Los coches se nombran por su id de coches.json.</p><div class="coches"><a class="insignia rojo" href="coches/bmw-e39.html" style="text-decoration:none">BMW E39</a><a class="insignia rojo" href="coches/mazda-rx8.html" style="text-decoration:none">Mazda RX-8</a></div></div></article>
+    </div>
+    <p id="sin-eventos" class="texto" hidden>No hay eventos con ese filtro.</p>
+  </div>
+</section>
+
+</main>
+<footer class="pie-sitio">
+  <div class="contenedor">
+    <div class="cols">
+      <div>
+        <h2>Rotary&amp;Line</h2>
+        <p class="nota" style="max-width:36ch">Rotativo y motor en línea. Un club, dos formas de entender el motor.</p>
+      </div>
+      <div>
+        <h2>Secciones</h2>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="quienes-somos.html">Quiénes somos</a></li>
+          <li><a href="proyectos.html">Proyectos</a></li>
+          <li><a href="videos.html">Vídeos</a></li>
+          <li><a href="eventos.html" aria-current="page">Eventos</a></li>
+          <li><a href="aplicaciones.html">Aplicaciones</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <ul>
+          <li><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.tiktok.com/@rotaryinline" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="aviso-legal.html">Aviso legal</a></p>
+  </div>
+</footer>
+<script src="js/sitio.js" defer></script>
+</body>
+</html>
