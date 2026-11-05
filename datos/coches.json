@@ -93,7 +93,7 @@
     "marca": "Opel",
     "modelo": "Astra TT",
     "apodo": "",
-    "silueta": "compacto",
+    "silueta": "descapotable",
     "motor_tipo": "En línea",
     "resumen": "[Por completar: una frase sobre el coche]",
     "descripcion": [
@@ -113,7 +113,13 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/anna-astra.webp",
+        "alt": "El Opel Astra TT de Anna, descapotado en la montaña"
+      }
+    ],
+    "foto": "img/fotos/anna-astra.webp"
   },
   {
     "id": "hyundai-i20n-dani",
