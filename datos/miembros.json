@@ -1,9 +1,9 @@
 [
   {
     "id": "pepe",
-    "nombre": "Pepe",
-    "rol": "Fundador del club y del canal",
-    "texto": "Lleva el canal de vídeo y programa el Garaje, la aplicación del club. Su coche: un BMW E39.",
+    "nombre": "Pepe «Omega»",
+    "rol": "Cofundador del club",
+    "texto": "Pepe, Omega para el club. Persona de mucho pensar, de muchos proyectos y mucha ambición, y piloto de drones. En los coches encontró el silencio de la mente: poder apagar la cabeza un rato conduciendo a fuego un coche que conoce bien, llevando al límite tanto el coche como a sí mismo.",
     "instagram": "https://www.instagram.com/rotaryinline/",
     "coches": [
       "bmw-e39"

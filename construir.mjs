@@ -205,9 +205,9 @@ for (const c of coches) {
       marca: t(c.marca), modelo: t(c.modelo),
       subtitulo: `${esc(c.motor_tipo)}${dueno ? " · de " + esc(dueno.nombre) : ""}${c.ejemplo ? ' · <span class="ejemplo">Ejemplo</span>' : ""}`,
       resumen: t(c.resumen),
-      silueta: silueta(c.silueta),
+      silueta: c.foto ? `<img src="../${esc(c.foto)}" alt="${esc(nombreCoche(c))}">` : silueta(c.silueta),
       descripcion: parrafos(c.descripcion),
-      ficha: c.ficha.map((f) => `        <div><dt>${esc(f.campo)}</dt><dd>${t(f.valor)}</dd></div>`).join("\n"),
+      ficha: c.ficha.map((f) => `        <div><dt>${esc(f.campo)}</dt><dd>${Array.isArray(f.valor) ? `<ul>${f.valor.map((v) => `<li>${t(v)}</li>`).join("")}</ul>` : t(f.valor)}</dd></div>`).join("\n"),
       galeria,
       eventos: suyos.length ? tablaEventos(suyos, "../") : '    <p class="texto">Todavía no hay eventos para este coche.</p>',
     }),
@@ -238,6 +238,7 @@ const figura = (archivo, pie) => `      <figure><img src="${archivo}" alt="${esc
 pagina({
   ruta: "garaje.html", pagina: "garaje", titulo: "Aplicación Garaje",
   contenido: usar("garaje", {
+    videos_garaje: esc(club.redes.youtube.url.replace(/\/$/, "") + "/search?query=Garaje"),
     descarga_windows: esc(club.garaje.descarga_windows),
     descarga_android: esc(club.garaje.descarga_android),
     capturas_garaje: [
