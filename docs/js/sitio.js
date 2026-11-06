@@ -70,6 +70,7 @@
   var animables = document.querySelectorAll("[data-anim]");
   var mostrar = function (el) { el.classList.add("visto"); };
   if (reducir || !("IntersectionObserver" in window)) {
+    document.querySelectorAll(".filosofia-video video").forEach(function (v) { v.pause(); });
     animables.forEach(mostrar);
     return;
   }
@@ -80,7 +81,12 @@
       if (e.isIntersecting) { mostrar(e.target); io.unobserve(e.target); }
     });
   }, { threshold: 0.3, rootMargin: "0px 0px -16% 0px" });
-  animables.forEach(function (el) { io.observe(el); });
+  var ioPronto = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (e.isIntersecting) { mostrar(e.target); ioPronto.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+  animables.forEach(function (el) { (el.hasAttribute("data-pronto") ? ioPronto : io).observe(el); });
 
   // Alto de la barra fija (las zonas fijas y apiladas se pegan justo debajo)
   var cabecera = document.querySelector(".cabecera");
@@ -98,6 +104,16 @@
   var fotosQs = pista ? Array.prototype.slice.call(pista.querySelectorAll(".qs-fotos a")) : [];
   var tarjetas = Array.prototype.slice.call(document.querySelectorAll(".persona-pila"));
   var zonaPersonas = document.querySelector(".pila-personas");
+  var qsTexto = pista && pista.querySelector(".qs-texto");
+  var ajustarTexto = function () {
+    if (!qsTexto) return;
+    var parrafos = qsTexto.querySelector(".texto");
+    parrafos.style.fontSize = "";
+    if (!ancha.matches) return;
+    var fs = parseFloat(window.getComputedStyle(parrafos).fontSize);
+    var hueco = pista.firstElementChild.clientHeight - 24;
+    while (qsTexto.offsetHeight > hueco && fs > 10.5) { fs -= 0.5; parrafos.style.fontSize = fs + "px"; }
+  };
   var visible = { portada: !!portada, qs: false, personas: false };
   var pendiente = false;
   var ancha = window.matchMedia("(min-width: 801px)");
@@ -123,14 +139,14 @@
         var total = pista.offsetHeight - fijo.offsetHeight;
         var p = acota((barra - pista.getBoundingClientRect().top) / total);
         var n = fotosQs.length || 1;
-        // Ninguna foto al cargar; al bajar un poco entran todas, escalonadas y rápido (p = 0.06 a 0.24)
+        // Ninguna foto al cargar; al bajar un poco entran las 7, escalonadas pero sin prisa (p = 0.05 a 0.44)
         fotosQs.forEach(function (a, i) {
-          var tp = suave(acota((p - (0.06 + 0.02 * i)) / 0.06));
+          var tp = suave(acota((p - (0.05 + 0.045 * i)) / 0.12));
           a.style.opacity = tp.toFixed(3);
           a.style.transform = "translateY(" + ((1 - tp) * 40).toFixed(1) + "px) scale(" + (0.9 + 0.1 * tp).toFixed(3) + ")";
         });
-        // de p=0.68 a p=0.9 el mosaico crece hasta cubrir el bloque entero; el resto, quieto para leer
-        pista.style.setProperty("--exp", suave(acota((p - 0.68) / 0.22)).toFixed(3));
+        // de p=0.66 a p=0.9 el mosaico crece hasta cubrir el bloque entero; el resto, quieto para leer
+        pista.style.setProperty("--exp", suave(acota((p - 0.66) / 0.24)).toFixed(3));
       } else {
         pista.style.removeProperty("--exp");
         fotosQs.forEach(function (a) { a.style.opacity = ""; a.style.transform = ""; });
@@ -163,6 +179,8 @@
   vigilar(pista, "qs");
   vigilar(zonaPersonas, "personas");
   window.addEventListener("scroll", pedir, { passive: true });
-  window.addEventListener("resize", pedir);
+  window.addEventListener("resize", function () { ajustarTexto(); pedir(); });
+  ajustarTexto();
+  window.addEventListener("load", ajustarTexto);
   pedir();
 })();

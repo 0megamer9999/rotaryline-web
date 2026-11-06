@@ -1,0 +1,16 @@
+[
+  { "origen": "windows-1.png", "destino": "windows-1-descarga",
+    "flechas": [ { "caja": [58, 416, 340, 462], "texto": "1. Pulsa aquí", "texto_en": [0.66, 0.6] } ] },
+  { "origen": "windows-2.png", "destino": "windows-2-descargado", "margen": [0, 0, 150, 0],
+    "flechas": [ { "caja": [14, 34, 340, 88], "texto": "2. Doble clic en el archivo", "texto_en": [0.5, 0.83] } ] },
+  { "origen": "windows-3.png", "destino": "windows-3-mas-informacion",
+    "flechas": [ { "caja": [28, 128, 144, 150], "texto": "3. Pulsa «Más información»", "texto_en": [0.5, 0.45] } ] },
+  { "origen": "windows-4.png", "destino": "windows-4-ejecutar",
+    "flechas": [ { "caja": [190, 450, 384, 488], "texto": "4. «Ejecutar de todas formas»", "texto_en": [0.45, 0.62] } ] },
+  { "origen": "windows-5.png", "destino": "windows-5-siguiente",
+    "flechas": [ { "caja": [324, 355, 402, 382], "texto": "5. Siguiente", "texto_en": [0.5, 0.72] } ] },
+  { "origen": "windows-6.png", "destino": "windows-6-siguiente",
+    "flechas": [ { "caja": [328, 355, 403, 382], "texto": "6. Siguiente", "texto_en": [0.5, 0.7] } ] },
+  { "origen": "windows-7.png", "destino": "windows-7-terminar",
+    "flechas": [ { "caja": [324, 356, 401, 383], "texto": "7. Terminar", "texto_en": [0.62, 0.62] } ] }
+]

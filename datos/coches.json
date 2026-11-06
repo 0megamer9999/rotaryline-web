@@ -330,7 +330,17 @@
         "valor": "[Por completar]"
       }
     ],
-    "galeria": []
+    "galeria": [
+      {
+        "archivo": "img/fotos/galeria/honda-civic/01.webp",
+        "alt": "El Honda Civic de Obed en el lavado, lleno de espuma"
+      },
+      {
+        "archivo": "img/fotos/galeria/honda-civic/02.webp",
+        "alt": "La zaga del Civic con la espuma de colores"
+      }
+    ],
+    "foto": "img/fotos/galeria/honda-civic/01.webp"
   },
   {
     "id": "ford-fiesta-st-line",
@@ -396,6 +406,14 @@
       {
         "archivo": "img/fotos/javi-s2000.webp",
         "alt": "El Honda S2000 de Javi en un evento"
+      },
+      {
+        "archivo": "img/fotos/galeria/honda-s2000/01.webp",
+        "alt": "El frontal del S2000 de noche"
+      },
+      {
+        "archivo": "img/fotos/galeria/honda-s2000/02.webp",
+        "alt": "El S2000 de frente, de noche"
       }
     ],
     "foto": "img/fotos/javi-s2000.webp"

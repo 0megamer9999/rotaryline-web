@@ -259,18 +259,25 @@ const textosAcceso = { redes: "YouTube, Instagram y TikTok", eventos: "Quién va
 
 // Fondo de la portada: en local, el hueco de la foto de grupo; al publicar, un mosaico tenue con los coches
 const conFoto = reales.filter((c) => c.foto);
-const fondoHero = PUBLICAR
-  ? `<div class="foto-fondo fondo-mosaico" aria-hidden="true">${conFoto.map((c) => `<img src="${esc(c.foto)}" alt="">`).join("")}</div>`
-  : `<div class="foto-fondo" aria-hidden="true"><span>[Por completar: foto de grupo con todos los coches del club]</span></div>`;
-if (PUBLICAR) quitado.otros.push("hueco de la foto de grupo (sustituido por un mosaico de los coches)");
+const fondoHero = `<div class="foto-fondo fondo-mosaico" aria-hidden="true">${conFoto.map((c) => `<img src="${esc(c.foto)}" alt="">`).join("")}</div>` +
+  soloLocal(`<span class="hueco hero-hueco">[Por completar: foto de grupo con todos los coches del club]</span>`);
+// Vídeo o GIF de fondo de Filosofía (datos/club.json → filosofia_video); vacío: hueco pequeño en local y nada al publicar
+const filosofiaVideo = !esHueco(club.filosofia_video)
+  ? (/.gif$|.webp$|.png$|.jpe?g$/i.test(club.filosofia_video)
+    ? `<div class="filosofia-video"><img src="${esc(club.filosofia_video)}" alt="" loading="lazy"></div>`
+    : `<div class="filosofia-video"><video src="${esc(club.filosofia_video)}" autoplay muted loop playsinline aria-hidden="true"></video></div>`)
+  : soloLocal(`<div class="filosofia-video-hueco"><span class="hueco">[Por completar: vídeo o GIF para Nuestra filosofía; ruta en «filosofia_video» de datos/club.json]</span></div>`);
+const filosofiaConVideo = !esHueco(club.filosofia_video);
 
 pagina({
   ruta: "index.html", pagina: "index", titulo: club.nombre,
   contenido: usar("inicio", {
     lema: esc(club.lema),
     fondo_hero: fondoHero,
+    filosofia_video: filosofiaVideo,
+    clase_filosofia: filosofiaConVideo ? " con-video" : "",
     texto_club: parrafos(club.quienes_somos),
-    filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="izq"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
+    filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="izq" data-pronto style="--d:${i * 0.1}s"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
     filas_fotos: String(Math.max(1, Math.ceil(conFoto.length / 2))),
     portada_coches: conFoto.map((c) => `      <a href="coches/${c.id}.html"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
     miembros: miembros.map((m) => bloqueMiembro(m) + '\n  <div class="pp-pausa" aria-hidden="true"></div>').join("\n"),
@@ -353,10 +360,13 @@ pagina({
       figura("img/garaje-3-registro.webp", "Registro de cada trabajo realizado"),
       figura("img/garaje-4-documentos.webp", "Documentos del vehículo"),
     ].join("\n"),
-    cap_windows_1: capturaPaso("windows-1-descarga", "Página de descargas de Garaje: el archivo _x64-setup.exe"),
-    cap_windows_2: capturaPaso("windows-2-smartscreen", "Aviso «Windows protegió su PC»: Más información y Ejecutar de todas formas"),
-    cap_windows_3: capturaPaso("windows-3-instalador", "El instalador de Garaje"),
-    cap_windows_4: capturaPaso("windows-4-primer-vehiculo", "Añadir el primer vehículo en Garaje"),
+    cap_w1: capturaPaso("windows-1-descarga", "Botón «Descargar para Windows» en esta página"),
+    cap_w2: capturaPaso("windows-2-descargado", "Descarga terminada del instalador"),
+    cap_w3: capturaPaso("windows-3-mas-informacion", "Aviso «Windows protegió su PC»: pulsar «Más información»"),
+    cap_w4: capturaPaso("windows-4-ejecutar", "Pulsar «Ejecutar de todas formas»"),
+    cap_w5: capturaPaso("windows-5-siguiente", "Bienvenida del instalador: pulsar «Siguiente»"),
+    cap_w6: capturaPaso("windows-6-siguiente", "Instalación completada: pulsar «Siguiente»"),
+    cap_w7: capturaPaso("windows-7-terminar", "Final del instalador: pulsar «Terminar»"),
     cap_android_1: capturaPaso("android-1-descarga", "Descarga de la app Android (.apk)"),
     cap_android_2: capturaPaso("android-2-permiso", "Permiso para instalar aplicaciones de esa fuente"),
     cap_android_3: capturaPaso("android-3-conectar", "Conectar la app con el programa del ordenador"),

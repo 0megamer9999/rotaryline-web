@@ -52,3 +52,17 @@ Nota: en 04 y 07 hay personas lejanas, pequeñas y no reconocibles; sin tocar.
 | estatico/img/fotos/obed-i20n.webp | i20 N rojo visto desde arriba | 1 matrícula + etiqueta gris «0.0bed.0» del parabrisas (borrada con relleno de cristal) |
 | estatico/img/fotos/barbas-fiesta.webp | Fiesta blanco en mirador | la placa solo asoma de canto (ilegible), sin tocar |
 | estatico/img/fotos/anna-astra.webp | Astra cabrio y Fiesta de la derecha | 2 (Astra, Fiesta) |
+
+## honda-civic (2)
+| Destino | Origen | Qué se ve | Matrículas tapadas (relleno de caracteres) | Portada |
+|---|---|---|---|---|
+| 01.webp | Civic/WhatsApp Image 2026-11-06 at 21.10.24.jpeg | Civic plata 3/4 frontal en boxes de lavado, espuma azul | sí, 2 (propia amarilla, Ford al fondo) | **sí** |
+| 02.webp | Civic/WhatsApp Image 2026-11-06 at 21.10.2d4.jpeg | Zaga del Civic con espuma, alerón | sí, 1 | no |
+
+## honda-s2000 (2)
+| Destino | Origen | Qué se ve | Matrículas tapadas | Portada |
+|---|---|---|---|---|
+| 01.webp | S200/WhatsApp Image 2026-11-06 at 21.10.57.jpeg | S2000 azul de frente, faros LED, lip «Sorcery», gasolinera de noche | ninguna visible | por decidir |
+| 02.webp | S200/h.jpeg | S2000 azul de frente, algo más lejos | ninguna visible | no |
+
+Sin personas ajenas reconocibles en ninguna de las cuatro. Sin metadatos, WebP q80, máx. 1600 px (Civic 1200x1600).

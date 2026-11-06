@@ -402,21 +402,28 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 
 /* Con JavaScript, sin «reducir movimiento» y en pantalla ancha: pista larga y bloque fijo a pantalla completa */
 @media (prefers-reduced-motion: no-preference) and (min-width: 801px) {
-  .js .qs-pista { height: 300vh; }
+  .js .qs-pista { height: 420vh; }
   .js .qs-fijo { position: sticky; top: var(--barra); height: calc(100vh - var(--barra)); height: calc(100svh - var(--barra)); display: block; padding: 0; overflow: hidden; background: var(--fondo); }
-  .js .qs-fotos { position: absolute; top: 0; bottom: 0; right: 0; left: calc(53% * (1 - var(--exp, 0))); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(var(--filas, 4), 1fr); gap: calc(10px * (1 - var(--exp, 0)) + 2px); padding: calc(22px * (1 - var(--exp, 0))); padding-left: 0; z-index: 0; align-self: auto; }
+  .js .qs-fotos { position: absolute; top: 0; bottom: 0; right: 0; left: calc(57% * (1 - var(--exp, 0))); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(var(--filas, 4), 1fr); gap: calc(10px * (1 - var(--exp, 0)) + 2px); padding: calc(22px * (1 - var(--exp, 0))); padding-left: 0; z-index: 0; align-self: auto; }
   .js .qs-fotos a { aspect-ratio: auto; border-radius: calc(12px * (1 - var(--exp, 0))); opacity: 0; will-change: opacity, transform; }
   .js .qs-fotos a:last-child:nth-child(odd) { grid-column: span 2; }
   .js .qs-velo { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgb(0 0 0 / .92) 0%, rgb(0 0 0 / .72) 50%, rgb(0 0 0 / .6) 100%); opacity: var(--exp, 0); }
   .js .qs-cuerpo { display: flex; align-items: center; position: absolute; inset: 0; z-index: 2; pointer-events: none; padding-inline: max(16px, calc((100vw - var(--ancho)) / 2)); }
-  .js .qs-texto { width: min(48%, 600px); pointer-events: auto; }
+  .js .qs-texto { width: min(52%, 620px); pointer-events: auto; }
   .js .qs-texto .gigante { font-size: clamp(38px, 6vh, 72px); margin-bottom: 10px; }
-  .js .qs-texto .texto { font-size: clamp(13px, 1.9vh, 17px); line-height: 1.42; }
+  .js .qs-texto .texto { font-size: clamp(12px, min(1.9vh, 1.4vw), 17px); line-height: 1.4; }
   .js .qs-texto .texto p { margin: 0 0 .7em; text-shadow: 0 2px 14px #000; }
 }
 
 /* ---------- Filosofía: cada parte con su tramo de pantalla ---------- */
-.filosofia-parte { min-height: 34vh; padding-block: 8px 40px; }
+.filosofia-parte { padding-block: 4px 12px; }
+.filosofia-cuerpo { position: relative; }
+.filosofia-cuerpo.con-video .texto { max-width: 62%; }
+.filosofia-video { position: absolute; top: 28px; right: 0; width: 32%; aspect-ratio: 4 / 5; border-radius: var(--radio); overflow: hidden; border: 1px solid var(--linea); }
+.filosofia-video video, .filosofia-video img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.filosofia-video-hueco { position: absolute; top: 8px; right: 0; width: 220px; font-size: 12px; }
+@media (max-width: 800px) { .filosofia-cuerpo.con-video .texto { max-width: none; } .filosofia-video { position: static; width: 100%; margin-bottom: 20px; } .filosofia-video-hueco { position: static; width: auto; margin-bottom: 12px; } }
+.hero-hueco { position: absolute; right: 12px; bottom: 10px; z-index: 2; font-size: 11px; max-width: 300px; }
 
 /* ---------- Personas: pausa de scroll para ver a cada una entera ---------- */
 .pp-pausa { height: 0; }
@@ -463,3 +470,6 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 .expo.no { color: var(--gris); }
 .expo.sin { border-style: dashed; color: var(--gris); }
 @media (max-width: 640px) { .ev-card { grid-template-columns: 1fr; gap: 12px; } .ev-fecha { display: flex; align-items: baseline; justify-content: flex-start; gap: 10px; border-right: 0; padding: 0; } .ev-fecha b { font-size: 44px; } .ev-fecha span { font-size: 22px; } .expo { margin-left: 0; } }
+.pasos-grandes li { padding-bottom: 34px; }
+.pasos-grandes .paso-captura { margin: 14px 0 0; max-width: 760px; }
+.pasos-grandes .paso-captura img { width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--linea); box-shadow: 0 10px 30px rgb(0 0 0 / .5); display: block; }
