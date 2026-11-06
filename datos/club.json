@@ -26,8 +26,9 @@
     }
   },
   "garaje": {
-    "descarga_windows": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest",
-    "descarga_android": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest/download/RL-Garaje.apk"
+    "descarga_windows": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest/download/RotaryLine-Garaje_x64-setup.exe",
+    "descarga_android": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest/download/RL-Garaje.apk",
+    "pagina_descargas": "https://github.com/0megamer9999/rotaryinline-garaje/releases/latest"
   },
   "menu": [
     {
