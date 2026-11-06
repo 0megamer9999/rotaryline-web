@@ -47,7 +47,8 @@
     },
     {
       "texto": "Aplicación Garaje",
-      "pagina": "garaje"
+      "pagina": "garaje",
+      "desplegable": "garaje"
     },
     {
       "texto": "Programa Taller",

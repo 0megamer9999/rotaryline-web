@@ -111,6 +111,8 @@ function menuHtml(raiz, actual) {
            ...coches.map((c, i) => [`coches/${c.id}.html`, `${nombreCoche(c)} – ${miembros.find((p) => p.id === c.dueno)?.nombre ?? ""}`, i === 0]),
            ...(proyectos.length ? [["index.html#trabajos", "Trabajos", true]] : []),
            ...(historias.length ? [["index.html#historias", "Historias", !proyectos.length]] : [])]
+        : m.desplegable === "garaje"
+        ? [["garaje.html#que-trae", "Qué trae"], ["garaje.html#instalar", "Cómo instalarlo"], ["tutoriales.html", "Tutoriales"]]
         : redesConEnlace.map((k) => [`redes.html#${k}`, NOMBRE_RED[k]]);
       const sub = partes.map(([href, txt, sep]) => `            <li${sep ? ' class="sep"' : ""}><a href="${raiz}${href}">${esc(txt)}</a></li>`).join("\n");
       return `        <li class="con-sub"><a href="${raiz}${m.pagina}.html"${m.pagina === actual ? ' aria-current="page"' : ""}>${esc(m.texto)}</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: ${esc(m.texto)}">&#9662;</button>
@@ -370,6 +372,41 @@ pagina({
     cap_android_1: capturaPaso("android-1-descarga", "Descarga de la app Android (.apk)"),
     cap_android_2: capturaPaso("android-2-permiso", "Permiso para instalar aplicaciones de esa fuente"),
     cap_android_3: capturaPaso("android-3-conectar", "Conectar la app con el programa del ordenador"),
+  }),
+});
+// Tutoriales de Garaje: datos/tutoriales.json + capturas anotadas de estatico/img/tutoriales/ (las hace capturar-tutoriales.mjs + anotar.py)
+const tutoriales = leerJson("tutoriales.json");
+function capturaTutorial(id, alt) {
+  const rel = `img/tutoriales/${id}.webp`;
+  if (existsSync(join(AQUI, "estatico", rel))) return `
+        <figure class="paso-captura"><img src="${rel}" alt="${esc(alt)}" loading="lazy"></figure>`;
+  if (PUBLICAR) { quitado.otros.push("capturas de tutoriales sin generar (se ven solo al existir el archivo)"); return ""; }
+  return `
+        <div class="hueco-foto paso-captura">[Por completar: captura «${esc(alt)}»<br><b>estatico/${rel}</b>]</div>`;
+}
+const ultimaEnNegrita = (titulo) => { const p = titulo.split(" "); const u = p.pop(); return p.length ? `${esc(p.join(" "))} <em>${esc(u)}</em>` : `<em>${esc(u)}</em>`; };
+const pasoTutorial = (p) => {
+  const li = `        <li>${p.texto}${p.captura ? capturaTutorial(p.captura, p.alt ?? "") : ""}</li>`;
+  return p.solo_local ? soloLocal(li) : li;
+};
+pagina({
+  ruta: "tutoriales.html", pagina: "tutoriales", titulo: "Tutoriales de Garaje",
+  descripcion: "Guías paso a paso, con capturas y flechas, para usar el programa Garaje de Rotary&Line.",
+  contenido: usar("tutoriales", {
+    intro: esc(tutoriales.intro),
+    indice: tutoriales.tutoriales.map((x) => `        <li><a href="#${x.id}"><b>${esc(x.titulo)}</b><span>${esc(x.resumen)}</span></a></li>`).join("\n"),
+    tutoriales: tutoriales.tutoriales.map((x, i) => `<section class="seccion tutorial${i % 2 ? " alt" : ""}" id="${x.id}">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial ${i + 1} de ${tutoriales.tutoriales.length}</p>
+    <h2>${ultimaEnNegrita(x.titulo)}</h2>
+    <p class="texto">${esc(x.resumen)}</p>
+    <ol class="pasos pasos-grandes">
+${x.pasos.map(pasoTutorial).filter(Boolean).join("\n")}
+    </ol>${x.cierre ? `
+    <p class="texto cierre-tutorial">${x.cierre}</p>` : ""}
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>`).join("\n\n"),
   }),
 });
 pagina({

@@ -1,0 +1,916 @@
+[
+  {
+    "carpeta": "tutoriales",
+    "origen": "t1-1-condiciones.png",
+    "destino": "t1-1-condiciones",
+    "flechas": [
+      {
+        "caja": [
+          1702,
+          1115,
+          1942,
+          1195
+        ],
+        "texto": "Pulsa «Entendido»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t1-2-anadir-perfil.png",
+    "destino": "t1-2-anadir-perfil",
+    "flechas": [
+      {
+        "caja": [
+          1196,
+          864,
+          1524,
+          1345
+        ],
+        "texto": "Pulsa «Añadir perfil»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t1-3-crear-perfil.png",
+    "destino": "t1-3-crear-perfil",
+    "flechas": [
+      {
+        "caja": [
+          1154,
+          585,
+          1922,
+          669
+        ],
+        "texto": "Escribe tu nombre"
+      },
+      {
+        "caja": [
+          1640,
+          1175,
+          1922,
+          1255
+        ],
+        "texto": "Pulsa «Crear perfil»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t1-4-entrar.png",
+    "destino": "t1-4-entrar",
+    "flechas": [
+      {
+        "caja": [
+          998,
+          780,
+          1326,
+          1261
+        ],
+        "texto": "Pulsa tu perfil"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-1-anadir-vehiculo.png",
+    "destino": "t2-1-anadir-vehiculo",
+    "flechas": [
+      {
+        "caja": [
+          512,
+          251,
+          1205,
+          651
+        ],
+        "texto": "Pulsa «Añadir vehículo»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-2-clase.png",
+    "destino": "t2-2-clase",
+    "flechas": [
+      {
+        "caja": [
+          512,
+          459,
+          1196,
+          980
+        ],
+        "texto": "Coche"
+      },
+      {
+        "caja": [
+          1236,
+          459,
+          1920,
+          980
+        ],
+        "texto": "o moto"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-3-marca.png",
+    "destino": "t2-3-marca",
+    "flechas": [
+      {
+        "caja": [
+          1447,
+          1050,
+          1890,
+          1229
+        ],
+        "texto": "Elige la marca"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-4-modelo.png",
+    "destino": "t2-4-modelo",
+    "flechas": [
+      {
+        "caja": [
+          512,
+          459,
+          965,
+          638
+        ],
+        "texto": "Elige el modelo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-5-generacion.png",
+    "destino": "t2-5-generacion",
+    "flechas": [
+      {
+        "caja": [
+          989,
+          459,
+          1443,
+          677
+        ],
+        "texto": "Elige la generación"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-6-motor.png",
+    "destino": "t2-6-motor",
+    "flechas": [
+      {
+        "caja": [
+          1447,
+          636,
+          1890,
+          839
+        ],
+        "texto": "Elige tu motor",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-7-siguiente.png",
+    "destino": "t2-7-siguiente",
+    "flechas": [
+      {
+        "caja": [
+          2206,
+          1472,
+          2656,
+          1552
+        ],
+        "texto": "Pulsa «Siguiente»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-8-datos.png",
+    "destino": "t2-8-datos",
+    "flechas": [
+      {
+        "caja": [
+          260,
+          176,
+          890,
+          243
+        ],
+        "texto": "Ponle un nombre",
+        "lado": "izq"
+      },
+      {
+        "caja": [
+          591,
+          503,
+          890,
+          570
+        ],
+        "texto": "Los km que marca ahora"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-9-anadir-garaje.png",
+    "destino": "t2-9-anadir-garaje",
+    "flechas": [
+      {
+        "caja": [
+          2305,
+          1472,
+          2656,
+          1552
+        ],
+        "texto": "Pulsa «Añadir al garaje»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t2-10-ficha.png",
+    "destino": "t2-10-ficha",
+    "flechas": [
+      {
+        "caja": [
+          860,
+          215,
+          1680,
+          312
+        ],
+        "texto": "Esta es la ficha de tu coche",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t3-1-editar-datos.png",
+    "destino": "t3-1-editar-datos",
+    "flechas": [
+      {
+        "caja": [
+          2390,
+          19,
+          2656,
+          91
+        ],
+        "texto": "Pulsa «Editar datos»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t3-2-km.png",
+    "destino": "t3-2-km",
+    "flechas": [
+      {
+        "caja": [
+          363,
+          176,
+          787,
+          243
+        ],
+        "texto": "Pon los km de ahora"
+      },
+      {
+        "caja": [
+          619,
+          486,
+          787,
+          550
+        ],
+        "texto": "Pulsa «Guardar»"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t3-3-resultado.png",
+    "destino": "t3-3-resultado",
+    "flechas": [
+      {
+        "caja": [
+          1047,
+          496,
+          1557,
+          718
+        ],
+        "texto": "Ya salen los km nuevos"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t4-1-mi-garaje.png",
+    "destino": "t4-1-mi-garaje",
+    "flechas": [
+      {
+        "caja": [
+          512,
+          829,
+          2626,
+          868
+        ],
+        "texto": "Aquí ves lo que toca primero",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t4-2-pulsa-recordatorios.png",
+    "destino": "t4-2-pulsa-recordatorios",
+    "flechas": [
+      {
+        "caja": [
+          24,
+          343,
+          422,
+          426
+        ],
+        "texto": "Pulsa «Recordatorios»",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t4-3-recordatorios.png",
+    "destino": "t4-3-recordatorios",
+    "flechas": [
+      {
+        "caja": [
+          512,
+          437,
+          1201,
+          916
+        ],
+        "texto": "Rojo: ya toca, o casi",
+        "lado": "der"
+      },
+      {
+        "caja": [
+          512,
+          1035,
+          1201,
+          1478
+        ],
+        "texto": "Amarillo: se acerca",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-1-registro.png",
+    "destino": "t5-1-registro",
+    "flechas": [
+      {
+        "caja": [
+          66,
+          464,
+          422,
+          526
+        ],
+        "texto": "Pulsa «Registro»",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-2-fecha-km.png",
+    "destino": "t5-2-fecha-km",
+    "flechas": [
+      {
+        "caja": [
+          323,
+          251,
+          565,
+          318
+        ],
+        "texto": "La fecha",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          585,
+          251,
+          827,
+          318
+        ],
+        "texto": "Los km",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-3-trabajo.png",
+    "destino": "t5-3-trabajo",
+    "flechas": [
+      {
+        "caja": [
+          374,
+          326,
+          569,
+          377
+        ],
+        "texto": "Marca lo que hiciste",
+        "lado": "abajo"
+      },
+      {
+        "caja": [
+          579,
+          326,
+          776,
+          377
+        ],
+        "texto": "Puedes marcar varios",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-4-coste-factura.png",
+    "destino": "t5-4-coste-factura",
+    "flechas": [
+      {
+        "caja": [
+          449,
+          217,
+          691,
+          284
+        ],
+        "texto": "Lo que costó",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          449,
+          440,
+          654,
+          504
+        ],
+        "texto": "Aquí va la factura",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-5-guardar.png",
+    "destino": "t5-5-guardar",
+    "flechas": [
+      {
+        "caja": [
+          436,
+          440,
+          714,
+          504
+        ],
+        "texto": "Pulsa «Guardar entrada»",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t5-6-resultado.png",
+    "destino": "t5-6-resultado",
+    "flechas": [
+      {
+        "caja": [
+          207,
+          221,
+          1086,
+          375
+        ],
+        "texto": "Ya está en tu historial",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t6-1-documentos.png",
+    "destino": "t6-1-documentos",
+    "flechas": [
+      {
+        "caja": [
+          66,
+          530,
+          422,
+          593
+        ],
+        "texto": "Pulsa «Documentos»",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t6-2-anadir.png",
+    "destino": "t6-2-anadir",
+    "flechas": [
+      {
+        "caja": [
+          2266,
+          223,
+          2656,
+          303
+        ],
+        "texto": "Pulsa «Añadir documento»",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t6-3-tipo-fecha.png",
+    "destino": "t6-3-tipo-fecha",
+    "flechas": [
+      {
+        "caja": [
+          151,
+          300,
+          566,
+          364
+        ],
+        "texto": "Qué papel es",
+        "lado": "abajo"
+      },
+      {
+        "caja": [
+          584,
+          300,
+          999,
+          364
+        ],
+        "texto": "Cuándo caduca",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t6-4-guardar.png",
+    "destino": "t6-4-guardar",
+    "flechas": [
+      {
+        "caja": [
+          151,
+          302,
+          476,
+          362
+        ],
+        "texto": "Aquí va la foto o el PDF",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          841,
+          302,
+          999,
+          362
+        ],
+        "texto": "Pulsa «Guardar»",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t6-5-resultado.png",
+    "destino": "t6-5-resultado",
+    "flechas": [
+      {
+        "caja": [
+          298,
+          217,
+          852,
+          486
+        ],
+        "texto": "El seguro ya está guardado",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-1-anadir-otro.png",
+    "destino": "t7-1-anadir-otro",
+    "flechas": [
+      {
+        "caja": [
+          1227,
+          251,
+          1911,
+          765
+        ],
+        "texto": "Pulsa «Añadir vehículo»",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-2-otra-marca.png",
+    "destino": "t7-2-otra-marca",
+    "flechas": [
+      {
+        "caja": [
+          979,
+          1253,
+          1423,
+          1432
+        ],
+        "texto": "Pulsa «+ Otra marca»",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-3-marca.png",
+    "destino": "t7-3-marca",
+    "flechas": [
+      {
+        "caja": [
+          570,
+          688,
+          1862,
+          772
+        ],
+        "texto": "Escribe la marca",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          2250,
+          1472,
+          2656,
+          1552
+        ],
+        "texto": "Pulsa «Siguiente»",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-4-modelo.png",
+    "destino": "t7-4-modelo",
+    "flechas": [
+      {
+        "caja": [
+          570,
+          688,
+          1862,
+          772
+        ],
+        "texto": "Escribe el modelo",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          2184,
+          1472,
+          2656,
+          1552
+        ],
+        "texto": "Pulsa «Siguiente»",
+        "lado": "arriba"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-5-generacion.png",
+    "destino": "t7-5-generacion",
+    "flechas": [
+      {
+        "caja": [
+          570,
+          725,
+          1196,
+          809
+        ],
+        "texto": "Versión del modelo",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          1236,
+          725,
+          1862,
+          809
+        ],
+        "texto": "Años de fabricación",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-6-motor.png",
+    "destino": "t7-6-motor",
+    "flechas": [
+      {
+        "caja": [
+          570,
+          725,
+          1196,
+          809
+        ],
+        "texto": "Nombre del motor",
+        "lado": "arriba"
+      },
+      {
+        "caja": [
+          1236,
+          725,
+          1862,
+          809
+        ],
+        "texto": "Combustible",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-7-datos.png",
+    "destino": "t7-7-datos",
+    "flechas": [
+      {
+        "caja": [
+          1074,
+          765,
+          1832,
+          849
+        ],
+        "texto": "Ponle un nombre",
+        "lado": "abajo"
+      },
+      {
+        "caja": [
+          2305,
+          1472,
+          2656,
+          1552
+        ],
+        "texto": "Pulsa «Añadir al garaje»",
+        "lado": "izq"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t7-8-resultado.png",
+    "destino": "t7-8-resultado",
+    "flechas": [
+      {
+        "caja": [
+          1227,
+          251,
+          1911,
+          765
+        ],
+        "texto": "Ya está en tu garaje",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t8-1-ajustes.png",
+    "destino": "t8-1-ajustes",
+    "flechas": [
+      {
+        "caja": [
+          24,
+          506,
+          422,
+          589
+        ],
+        "texto": "Pulsa «Ajustes»",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t8-2-exportar.png",
+    "destino": "t8-2-exportar",
+    "flechas": [
+      {
+        "caja": [
+          362,
+          319,
+          788,
+          383
+        ],
+        "texto": "Para hacer la copia",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t8-3-importar.png",
+    "destino": "t8-3-importar",
+    "flechas": [
+      {
+        "caja": [
+          331,
+          319,
+          819,
+          383
+        ],
+        "texto": "Para recuperarla",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t8-4-automatica.png",
+    "destino": "t8-4-automatica",
+    "flechas": [
+      {
+        "caja": [
+          439,
+          319,
+          711,
+          383
+        ],
+        "texto": "Copia automática cada semana",
+        "lado": "abajo"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t9-1-instalar-app.png",
+    "destino": "t9-1-instalar-app",
+    "flechas": [
+      {
+        "caja": [
+          620,
+          625,
+          972,
+          977
+        ],
+        "texto": "Con el móvil, escanea este QR",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t9-2-emparejar.png",
+    "destino": "t9-2-emparejar",
+    "flechas": [
+      {
+        "caja": [
+          596,
+          759,
+          897,
+          839
+        ],
+        "texto": "Pulsa «Enseñar el QR»",
+        "lado": "der"
+      }
+    ]
+  },
+  {
+    "carpeta": "tutoriales",
+    "origen": "t9-3-qr.png",
+    "destino": "t9-3-qr",
+    "flechas": [
+      {
+        "caja": [
+          620,
+          520,
+          1180,
+          1080
+        ],
+        "texto": "Este QR lo lee la app",
+        "lado": "der"
+      }
+    ]
+  }
+]

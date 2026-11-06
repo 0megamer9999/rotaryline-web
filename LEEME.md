@@ -18,6 +18,12 @@ Pepe las deja en `estatico/img/instalar/` con estos nombres exactos (webp). Si e
 - Android: `android-1-descarga.webp`, `android-2-permiso.webp` (permiso de la fuente), `android-3-conectar.webp` (conectar con el programa).
 Para añadir un paso: una llamada `capturaPaso("nombre", "descripción")` en `construir.mjs` y `{{cap_...}}` en `plantillas/garaje.html`.
 
+## Tutoriales de Garaje (`tutoriales.html`)
+- Texto y pasos: `datos/tutoriales.json` (cada paso: `texto` en HTML, `captura` = nombre del webp, `alt`; `solo_local: true` = paso que solo sale en local, con el hueco de lo que falta). Plantilla: `plantillas/tutoriales.html`. Se enlaza desde el submenú «Aplicación Garaje» (`"desplegable": "garaje"` en `club.json`) y desde `garaje.html`.
+- Capturas: `node capturar-tutoriales.mjs` (Edge sin ventana por CDP sobre `npx vite --port 1460 --strictPort` en `C:\Users\pepes\Garaje-talleres\app`, perfil temporal y datos ficticios) deja los originales en `originales/tutoriales/` y las cajas de las flechas en `datos/anotaciones-tutoriales.json`; luego `py -3 anotar.py` escribe `estatico/img/tutoriales/*.webp`. Para cambiar una flecha o su texto se edita el script y se repite; no se toca el programa.
+- En la vista previa del navegador el QR es un recuadro y los botones de copia están apagados: el script dibuja un QR de ilustración y los enciende solo para la captura.
+- Sin capturas: en local sale un hueco amarillo y al publicar el paso se queda sin imagen.
+
 ## Animaciones del inicio
 En `estatico/js/sitio.js` y al final de `estilos.css`: entrada al bajar con `IntersectionObserver` (atributo `data-anim`), parallax del título de la portada y tarjetas de personas apiladas (`position: sticky`, `.persona-pila`). Con «reducir movimiento» o sin JavaScript todo se ve sin animar.
 

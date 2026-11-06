@@ -1,0 +1,119 @@
+{
+  "intro": "Guías paso a paso del programa Garaje. Cada paso lleva una captura del programa y una flecha roja que te dice qué pulsar. Sigue el orden y no te saltes ninguno. Los coches y los datos que salen en las capturas son inventados.",
+  "tutoriales": [
+    {
+      "id": "primer-arranque",
+      "titulo": "Primer arranque",
+      "resumen": "Aceptar las condiciones y crear tu perfil.",
+      "pasos": [
+        { "texto": "Abre el programa <b>Rotary&amp;Line Garaje</b>. La primera vez te enseña las condiciones de uso. Léelas y pulsa <b>Entendido</b>.", "captura": "t1-1-condiciones", "alt": "Condiciones de uso: pulsar «Entendido»" },
+        { "texto": "Estás en la pantalla de bienvenida. Pulsa <b>Añadir perfil</b>. El perfil es solo tu sitio dentro del programa: no hay cuentas ni contraseñas, y tus datos se quedan en tu ordenador.", "captura": "t1-2-anadir-perfil", "alt": "Pantalla de bienvenida: pulsar «Añadir perfil»" },
+        { "texto": "Escribe tu nombre en la casilla y pulsa <b>Crear perfil</b>.", "captura": "t1-3-crear-perfil", "alt": "Escribir el nombre y pulsar «Crear perfil»" },
+        { "texto": "Pulsa sobre tu perfil para entrar al garaje.", "captura": "t1-4-entrar", "alt": "Pulsar sobre el perfil para entrar" }
+      ],
+      "cierre": "Ya estás dentro. El siguiente paso es <a href=\"#anadir-vehiculo\">añadir tu coche o tu moto</a>."
+    },
+    {
+      "id": "anadir-vehiculo",
+      "titulo": "Añadir tu coche o tu moto",
+      "resumen": "Elegir marca, modelo, generación y motor.",
+      "pasos": [
+        { "texto": "En «Mi garaje», pulsa <b>Añadir vehículo</b>.", "captura": "t2-1-anadir-vehiculo", "alt": "Mi garaje vacío: pulsar «Añadir vehículo»" },
+        { "texto": "Elige <b>Coche</b> o <b>Moto</b>. Aquí vamos con un coche; con una moto es igual.", "captura": "t2-2-clase", "alt": "Elegir entre coche y moto" },
+        { "texto": "Elige la <b>marca</b>.", "captura": "t2-3-marca", "alt": "Lista de marcas" },
+        { "texto": "Elige el <b>modelo</b>.", "captura": "t2-4-modelo", "alt": "Lista de modelos" },
+        { "texto": "Elige la <b>generación</b>: la versión de tu modelo. Si dudas, fíjate en los años que pone en cada una.", "captura": "t2-5-generacion", "alt": "Lista de generaciones" },
+        { "texto": "Elige tu <b>motor</b>. Si la lista es larga, escribe arriba la potencia o el código del motor para encontrarlo antes.", "captura": "t2-6-motor", "alt": "Lista de motores" },
+        { "texto": "Pulsa <b>Siguiente: tus datos</b>.", "captura": "t2-7-siguiente", "alt": "Pulsar «Siguiente: tus datos»" },
+        { "texto": "Ponle un nombre (el <b>alias</b>) y apunta los <b>kilómetros</b> que marca ahora. Si quieres, pon también la matrícula y la fecha de la primera matriculación: con ella el programa calcula la ITV.", "captura": "t2-8-datos", "alt": "Datos del vehículo: alias y kilómetros" },
+        { "texto": "Pulsa <b>Añadir al garaje</b>.", "captura": "t2-9-anadir-garaje", "alt": "Pulsar «Añadir al garaje»" },
+        { "texto": "Listo: esta es la ficha de tu coche, con sus datos de taller (aceite, filtros, intervalos…). Lo que ponga <b>«Pendiente de verificar»</b> es orientativo: contrástalo con el manual de tu coche antes de usarlo.", "captura": "t2-10-ficha", "alt": "Ficha del vehículo recién añadido" }
+      ]
+    },
+    {
+      "id": "kilometros",
+      "titulo": "Anotar los kilómetros",
+      "resumen": "Mantener al día lo que marca el cuentakilómetros.",
+      "pasos": [
+        { "texto": "Entra en tu coche y pulsa <b>Editar datos</b>.", "captura": "t3-1-editar-datos", "alt": "Ficha del vehículo: pulsar «Editar datos»" },
+        { "texto": "Cambia los <b>kilómetros actuales</b> por los que marca ahora el cuentakilómetros y pulsa <b>Guardar</b>.", "captura": "t3-2-km", "alt": "Editar los kilómetros actuales y guardar" },
+        { "texto": "Los kilómetros nuevos ya salen en la ficha. Cuanto más al día los tengas, mejor sabe el programa lo que te toca.", "captura": "t3-3-resultado", "alt": "Ficha con los kilómetros actualizados" }
+      ]
+    },
+    {
+      "id": "que-toca",
+      "titulo": "Ver qué toca y cuándo",
+      "resumen": "Los avisos y el próximo mantenimiento.",
+      "pasos": [
+        { "texto": "En «Mi garaje» ves cada vehículo con lo próximo que le toca y, debajo, la lista de <b>Próximos trabajos</b>.", "captura": "t4-1-mi-garaje", "alt": "Mi garaje con la lista de próximos trabajos" },
+        { "texto": "Para ver todos los avisos, pulsa <b>Recordatorios</b> en el menú de la izquierda.", "captura": "t4-2-pulsa-recordatorios", "alt": "Pulsar «Recordatorios» en el menú" },
+        { "texto": "Los avisos van por colores: <b>rojo</b>, ya toca o casi; <b>amarillo</b>, se acerca; <b>verde</b>, aún hay margen.", "captura": "t4-3-recordatorios", "alt": "Recordatorios agrupados por colores" },
+        { "texto": "Si un aviso dice <b>«Sin primera anotación»</b>, el programa no sabe cuándo se hizo por última vez y no puede calcular el siguiente. Anótalo en el registro del vehículo, como se explica en el tutorial <a href=\"#anotar-trabajo\">Anotar un trabajo hecho</a>." }
+      ]
+    },
+    {
+      "id": "anotar-trabajo",
+      "titulo": "Anotar un trabajo hecho",
+      "resumen": "Con su fecha, sus kilómetros y la factura.",
+      "pasos": [
+        { "texto": "Entra en tu coche y pulsa <b>Registro</b> en el menú de la izquierda.", "captura": "t5-1-registro", "alt": "Pulsar «Registro» en el menú" },
+        { "texto": "Pon la <b>fecha</b> del trabajo y los <b>kilómetros</b> que tenía el coche ese día. Arriba eliges si fue un mantenimiento o una reparación.", "captura": "t5-2-fecha-km", "alt": "Fecha y kilómetros del trabajo" },
+        { "texto": "Marca qué trabajo hiciste. Puedes marcar varios si fueron en el mismo día.", "captura": "t5-3-trabajo", "alt": "Elegir el tipo de trabajo" },
+        { "texto": "Si quieres, escribe lo que costó y quién lo hizo. Para guardar la factura, pulsa <b>Adjuntar</b> y elige la foto o el PDF.", "captura": "t5-4-coste-factura", "alt": "Coste y botón para adjuntar la factura" },
+        { "texto": "Pulsa <b>Guardar entrada</b>.", "captura": "t5-5-guardar", "alt": "Pulsar «Guardar entrada»" },
+        { "texto": "Ya está en tu historial. Cada entrada actualiza lo que toca a partir de ahora.", "captura": "t5-6-resultado", "alt": "El trabajo aparece en el historial" }
+      ]
+    },
+    {
+      "id": "documentos",
+      "titulo": "Los documentos del vehículo",
+      "resumen": "La ITV, el seguro y los demás papeles.",
+      "pasos": [
+        { "texto": "Entra en tu coche y pulsa <b>Documentos</b> en el menú de la izquierda.", "captura": "t6-1-documentos", "alt": "Pulsar «Documentos» en el menú" },
+        { "texto": "Pulsa <b>Añadir documento</b>.", "captura": "t6-2-anadir", "alt": "Pulsar «Añadir documento»" },
+        { "texto": "Elige qué papel es (seguro, ITV, permiso de circulación, ficha técnica, factura u otro), ponle un nombre y, si caduca, la fecha de caducidad.", "captura": "t6-3-tipo-fecha", "alt": "Tipo de documento y fecha de caducidad" },
+        { "texto": "Si tienes una foto o un PDF del papel, pulsa <b>Adjuntar foto o PDF</b> y elígelo. Después pulsa <b>Guardar</b>.", "captura": "t6-4-guardar", "alt": "Adjuntar el archivo y guardar" },
+        { "texto": "Ya está guardado. Lo que caduca, como el seguro o la ITV, aparece en los recordatorios: el programa te avisa antes de que venza.", "captura": "t6-5-resultado", "alt": "Documento guardado en la lista" }
+      ]
+    },
+    {
+      "id": "otro-vehiculo",
+      "titulo": "Crear un vehículo que no está en el catálogo",
+      "resumen": "Con «+ Otra marca», «+ Otro modelo»…",
+      "pasos": [
+        { "texto": "En «Mi garaje», pulsa <b>Añadir vehículo</b>.", "captura": "t7-1-anadir-otro", "alt": "Mi garaje: pulsar «Añadir vehículo»" },
+        { "texto": "Elige <b>Coche</b> o <b>Moto</b>. Si tu marca no sale en la lista, pulsa <b>+ Otra marca</b>.", "captura": "t7-2-otra-marca", "alt": "Pulsar «+ Otra marca» al final de la lista" },
+        { "texto": "Escribe la marca y pulsa <b>Siguiente</b>.", "captura": "t7-3-marca", "alt": "Escribir la marca" },
+        { "texto": "Escribe el modelo y pulsa <b>Siguiente</b>.", "captura": "t7-4-modelo", "alt": "Escribir el modelo" },
+        { "texto": "Escribe la versión del modelo y los años en que se fabricó, y pulsa <b>Siguiente: motor</b>.", "captura": "t7-5-generacion", "alt": "Escribir la generación y los años" },
+        { "texto": "Escribe el nombre del motor y elige el combustible. La cilindrada, la potencia y el código del motor, si los sabes. Pulsa <b>Siguiente: tus datos</b>.", "captura": "t7-6-motor", "alt": "Escribir el motor y elegir el combustible" },
+        { "texto": "Ponle un nombre a tu vehículo y pulsa <b>Añadir al garaje</b>.", "captura": "t7-7-datos", "alt": "Alias y botón «Añadir al garaje»" },
+        { "texto": "Ya está en tu garaje. Como no viene del catálogo, el programa le pone intervalos de mantenimiento orientativos que puedes cambiar; mira siempre el manual de tu vehículo.", "captura": "t7-8-resultado", "alt": "El vehículo nuevo aparece en el garaje" }
+      ],
+      "cierre": "Si quieres que lo añadamos al catálogo, en cualquier paso puedes pulsar <b>Pedirlo por correo</b>: el programa prepara un informe que ves antes de enviarlo, y tú decides si se manda."
+    },
+    {
+      "id": "copia-seguridad",
+      "titulo": "Hacer y recuperar una copia de seguridad",
+      "resumen": "Para no perder nada y para cambiar de ordenador.",
+      "pasos": [
+        { "texto": "Pulsa <b>Ajustes</b> en el menú de la izquierda.", "captura": "t8-1-ajustes", "alt": "Pulsar «Ajustes» en el menú" },
+        { "texto": "En «Copias y cambio de ordenador», pulsa <b>Exportar el garaje (copia)</b>. Elige dónde guardar el archivo, por ejemplo un pendrive o una carpeta de Drive. Será un archivo con el nombre acabado en <b>.rlgaraje</b>, con todos tus perfiles, vehículos y registros.", "captura": "t8-2-exportar", "alt": "Pulsar «Exportar el garaje (copia)»" },
+        { "texto": "Para recuperarla (o para pasar tu garaje a otro ordenador), pulsa <b>Importar un garaje (restaurar)</b> y elige el archivo <b>.rlgaraje</b>. El programa te enseña un aviso: se sustituye <b>todo</b> lo que hay en este ordenador por lo de la copia. Si estás de acuerdo, pulsa <b>Restaurar y reiniciar</b>.", "captura": "t8-3-importar", "alt": "Pulsar «Importar un garaje (restaurar)»" },
+        { "texto": "Si quieres olvidarte, pulsa <b>Elegir carpeta</b> en «Copia automática semanal». Al abrir el programa, si la última copia tiene más de 7 días, se hace otra en esa carpeta. Con una carpeta de Google Drive u OneDrive, la copia queda también en la nube.", "captura": "t8-4-automatica", "alt": "Elegir la carpeta de la copia automática" }
+      ]
+    },
+    {
+      "id": "movil",
+      "titulo": "Conectar el móvil",
+      "resumen": "La parte del ordenador: el QR para instalar y para emparejar.",
+      "pasos": [
+        { "texto": "Pulsa <b>Ajustes</b> y baja hasta el apartado <b>Móvil</b>. En «Instalar la app en el móvil» hay un QR: apunta con la cámara de tu móvil para descargar la app. Es solo para Android. La primera vez, Android te pedirá permitir «instalar apps desconocidas» a tu navegador: acéptalo solo para esto.", "captura": "t9-1-instalar-app", "alt": "Código QR para instalar la app en el móvil" },
+        { "texto": "Más abajo, en «Emparejar un móvil», pulsa <b>Enseñar el QR</b>.", "captura": "t9-2-emparejar", "alt": "Pulsar «Enseñar el QR»" },
+        { "texto": "Sale un QR nuevo. En la app del móvil, elige <b>Emparejar</b> y apunta con la cámara a este QR. Tienes 10 minutos y el QR vale una sola vez.", "captura": "t9-3-qr", "alt": "QR de emparejamiento" },
+        { "texto": "<span class=\"hueco\">[Por completar: los pasos en el móvil, con sus capturas]</span>", "solo_local": true }
+      ],
+      "cierre": "Con el programa abierto, el móvil y el ordenador se sincronizan por tu wifi: nada pasa por internet."
+    }
+  ]
+}

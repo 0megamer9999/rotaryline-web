@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tutoriales de Garaje · Rotary&amp;Line</title>
+<meta name="description" content="Guías paso a paso, con capturas y flechas, para usar el programa Garaje de Rotary&amp;Line.">
+<meta name="theme-color" content="#070707">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="css/estilos.css?v=mw5hco39">
+</head>
+<body>
+<a class="salto" href="#contenido">Saltar al contenido</a>
+<header class="cabecera">
+  <div class="contenedor">
+    <a class="marca" href="index.html" aria-label="Rotary&amp;Line, ir al inicio">
+      <img src="img/logo.webp" width="300" height="300" alt="">
+    </a>
+    <button class="boton-menu" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir el menú">&#9776;</button>
+    <nav aria-label="Principal">
+      <ul class="menu" id="menu">
+        <li class="con-sub"><a href="index.html">El club</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: El club">&#9662;</button>
+          <ul class="submenu">
+            <li><a href="index.html#quienes-somos">Quiénes somos</a></li>
+            <li><a href="index.html#filosofia">Filosofía</a></li>
+            <li class="sep"><a href="coches/bmw-e39.html">BMW E39 – Pepe «Omega»</a></li>
+            <li><a href="coches/mazda-rx8.html">Mazda RX-8 – Mario</a></li>
+            <li><a href="coches/opel-astra-tt.html">Opel Astra TT – Anna</a></li>
+            <li><a href="coches/hyundai-i20n-dani.html">Hyundai i20 N azul – Dani</a></li>
+            <li><a href="coches/hyundai-i20n-obed.html">Hyundai i20 N rojo – Obed</a></li>
+            <li><a href="coches/honda-civic.html">Honda Civic – Obed</a></li>
+            <li><a href="coches/ford-fiesta-st-line.html">Ford Fiesta ST-Line – Barbas</a></li>
+            <li><a href="coches/honda-s2000.html">Honda S2000 – Javi</a></li>
+            <li class="sep"><a href="index.html#trabajos">Trabajos</a></li>
+          </ul></li>
+        <li class="con-sub"><a href="redes.html">Redes sociales</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: Redes sociales">&#9662;</button>
+          <ul class="submenu">
+            <li><a href="redes.html#youtube">YouTube</a></li>
+            <li><a href="redes.html#instagram">Instagram</a></li>
+            <li><a href="redes.html#tiktok">TikTok</a></li>
+          </ul></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li class="con-sub"><a href="garaje.html">Aplicación Garaje</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: Aplicación Garaje">&#9662;</button>
+          <ul class="submenu">
+            <li><a href="garaje.html#que-trae">Qué trae</a></li>
+            <li><a href="garaje.html#instalar">Cómo instalarlo</a></li>
+            <li><a href="tutoriales.html">Tutoriales</a></li>
+          </ul></li>
+        <li><a href="taller.html">Programa Taller</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="contenido">
+<section class="cab-pagina rayado" id="indice">
+  <div class="contenedor">
+    <p class="etiqueta">Aplicación Garaje · Paso a paso</p>
+    <h1>TUTORIALES <em>GARAJE</em></h1>
+    <div class="filete"></div>
+    <p class="texto">Guías paso a paso del programa Garaje. Cada paso lleva una captura del programa y una flecha roja que te dice qué pulsar. Sigue el orden y no te saltes ninguno. Los coches y los datos que salen en las capturas son inventados.</p>
+    <ol class="indice-tutoriales">
+        <li><a href="#primer-arranque"><b>Primer arranque</b><span>Aceptar las condiciones y crear tu perfil.</span></a></li>
+        <li><a href="#anadir-vehiculo"><b>Añadir tu coche o tu moto</b><span>Elegir marca, modelo, generación y motor.</span></a></li>
+        <li><a href="#kilometros"><b>Anotar los kilómetros</b><span>Mantener al día lo que marca el cuentakilómetros.</span></a></li>
+        <li><a href="#que-toca"><b>Ver qué toca y cuándo</b><span>Los avisos y el próximo mantenimiento.</span></a></li>
+        <li><a href="#anotar-trabajo"><b>Anotar un trabajo hecho</b><span>Con su fecha, sus kilómetros y la factura.</span></a></li>
+        <li><a href="#documentos"><b>Los documentos del vehículo</b><span>La ITV, el seguro y los demás papeles.</span></a></li>
+        <li><a href="#otro-vehiculo"><b>Crear un vehículo que no está en el catálogo</b><span>Con «+ Otra marca», «+ Otro modelo»…</span></a></li>
+        <li><a href="#copia-seguridad"><b>Hacer y recuperar una copia de seguridad</b><span>Para no perder nada y para cambiar de ordenador.</span></a></li>
+        <li><a href="#movil"><b>Conectar el móvil</b><span>La parte del ordenador: el QR para instalar y para emparejar.</span></a></li>
+    </ol>
+    <div class="fila-botones">
+      <a class="boton" href="garaje.html">&larr; Volver a Aplicación Garaje</a>
+    </div>
+  </div>
+</section>
+
+<section class="seccion tutorial" id="primer-arranque">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 1 de 9</p>
+    <h2>Primer <em>arranque</em></h2>
+    <p class="texto">Aceptar las condiciones y crear tu perfil.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Abre el programa <b>Rotary&amp;Line Garaje</b>. La primera vez te enseña las condiciones de uso. Léelas y pulsa <b>Entendido</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t1-1-condiciones.webp" alt="Condiciones de uso: pulsar «Entendido»" loading="lazy"></figure></li>
+        <li>Estás en la pantalla de bienvenida. Pulsa <b>Añadir perfil</b>. El perfil es solo tu sitio dentro del programa: no hay cuentas ni contraseñas, y tus datos se quedan en tu ordenador.
+        <figure class="paso-captura"><img src="img/tutoriales/t1-2-anadir-perfil.webp" alt="Pantalla de bienvenida: pulsar «Añadir perfil»" loading="lazy"></figure></li>
+        <li>Escribe tu nombre en la casilla y pulsa <b>Crear perfil</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t1-3-crear-perfil.webp" alt="Escribir el nombre y pulsar «Crear perfil»" loading="lazy"></figure></li>
+        <li>Pulsa sobre tu perfil para entrar al garaje.
+        <figure class="paso-captura"><img src="img/tutoriales/t1-4-entrar.webp" alt="Pulsar sobre el perfil para entrar" loading="lazy"></figure></li>
+    </ol>
+    <p class="texto cierre-tutorial">Ya estás dentro. El siguiente paso es <a href="#anadir-vehiculo">añadir tu coche o tu moto</a>.</p>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial alt" id="anadir-vehiculo">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 2 de 9</p>
+    <h2>Añadir tu coche o tu <em>moto</em></h2>
+    <p class="texto">Elegir marca, modelo, generación y motor.</p>
+    <ol class="pasos pasos-grandes">
+        <li>En «Mi garaje», pulsa <b>Añadir vehículo</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-1-anadir-vehiculo.webp" alt="Mi garaje vacío: pulsar «Añadir vehículo»" loading="lazy"></figure></li>
+        <li>Elige <b>Coche</b> o <b>Moto</b>. Aquí vamos con un coche; con una moto es igual.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-2-clase.webp" alt="Elegir entre coche y moto" loading="lazy"></figure></li>
+        <li>Elige la <b>marca</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-3-marca.webp" alt="Lista de marcas" loading="lazy"></figure></li>
+        <li>Elige el <b>modelo</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-4-modelo.webp" alt="Lista de modelos" loading="lazy"></figure></li>
+        <li>Elige la <b>generación</b>: la versión de tu modelo. Si dudas, fíjate en los años que pone en cada una.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-5-generacion.webp" alt="Lista de generaciones" loading="lazy"></figure></li>
+        <li>Elige tu <b>motor</b>. Si la lista es larga, escribe arriba la potencia o el código del motor para encontrarlo antes.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-6-motor.webp" alt="Lista de motores" loading="lazy"></figure></li>
+        <li>Pulsa <b>Siguiente: tus datos</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-7-siguiente.webp" alt="Pulsar «Siguiente: tus datos»" loading="lazy"></figure></li>
+        <li>Ponle un nombre (el <b>alias</b>) y apunta los <b>kilómetros</b> que marca ahora. Si quieres, pon también la matrícula y la fecha de la primera matriculación: con ella el programa calcula la ITV.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-8-datos.webp" alt="Datos del vehículo: alias y kilómetros" loading="lazy"></figure></li>
+        <li>Pulsa <b>Añadir al garaje</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-9-anadir-garaje.webp" alt="Pulsar «Añadir al garaje»" loading="lazy"></figure></li>
+        <li>Listo: esta es la ficha de tu coche, con sus datos de taller (aceite, filtros, intervalos…). Lo que ponga <b>«Pendiente de verificar»</b> es orientativo: contrástalo con el manual de tu coche antes de usarlo.
+        <figure class="paso-captura"><img src="img/tutoriales/t2-10-ficha.webp" alt="Ficha del vehículo recién añadido" loading="lazy"></figure></li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial" id="kilometros">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 3 de 9</p>
+    <h2>Anotar los <em>kilómetros</em></h2>
+    <p class="texto">Mantener al día lo que marca el cuentakilómetros.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Entra en tu coche y pulsa <b>Editar datos</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t3-1-editar-datos.webp" alt="Ficha del vehículo: pulsar «Editar datos»" loading="lazy"></figure></li>
+        <li>Cambia los <b>kilómetros actuales</b> por los que marca ahora el cuentakilómetros y pulsa <b>Guardar</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t3-2-km.webp" alt="Editar los kilómetros actuales y guardar" loading="lazy"></figure></li>
+        <li>Los kilómetros nuevos ya salen en la ficha. Cuanto más al día los tengas, mejor sabe el programa lo que te toca.
+        <figure class="paso-captura"><img src="img/tutoriales/t3-3-resultado.webp" alt="Ficha con los kilómetros actualizados" loading="lazy"></figure></li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial alt" id="que-toca">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 4 de 9</p>
+    <h2>Ver qué toca y <em>cuándo</em></h2>
+    <p class="texto">Los avisos y el próximo mantenimiento.</p>
+    <ol class="pasos pasos-grandes">
+        <li>En «Mi garaje» ves cada vehículo con lo próximo que le toca y, debajo, la lista de <b>Próximos trabajos</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t4-1-mi-garaje.webp" alt="Mi garaje con la lista de próximos trabajos" loading="lazy"></figure></li>
+        <li>Para ver todos los avisos, pulsa <b>Recordatorios</b> en el menú de la izquierda.
+        <figure class="paso-captura"><img src="img/tutoriales/t4-2-pulsa-recordatorios.webp" alt="Pulsar «Recordatorios» en el menú" loading="lazy"></figure></li>
+        <li>Los avisos van por colores: <b>rojo</b>, ya toca o casi; <b>amarillo</b>, se acerca; <b>verde</b>, aún hay margen.
+        <figure class="paso-captura"><img src="img/tutoriales/t4-3-recordatorios.webp" alt="Recordatorios agrupados por colores" loading="lazy"></figure></li>
+        <li>Si un aviso dice <b>«Sin primera anotación»</b>, el programa no sabe cuándo se hizo por última vez y no puede calcular el siguiente. Anótalo en el registro del vehículo, como se explica en el tutorial <a href="#anotar-trabajo">Anotar un trabajo hecho</a>.</li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial" id="anotar-trabajo">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 5 de 9</p>
+    <h2>Anotar un trabajo <em>hecho</em></h2>
+    <p class="texto">Con su fecha, sus kilómetros y la factura.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Entra en tu coche y pulsa <b>Registro</b> en el menú de la izquierda.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-1-registro.webp" alt="Pulsar «Registro» en el menú" loading="lazy"></figure></li>
+        <li>Pon la <b>fecha</b> del trabajo y los <b>kilómetros</b> que tenía el coche ese día. Arriba eliges si fue un mantenimiento o una reparación.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-2-fecha-km.webp" alt="Fecha y kilómetros del trabajo" loading="lazy"></figure></li>
+        <li>Marca qué trabajo hiciste. Puedes marcar varios si fueron en el mismo día.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-3-trabajo.webp" alt="Elegir el tipo de trabajo" loading="lazy"></figure></li>
+        <li>Si quieres, escribe lo que costó y quién lo hizo. Para guardar la factura, pulsa <b>Adjuntar</b> y elige la foto o el PDF.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-4-coste-factura.webp" alt="Coste y botón para adjuntar la factura" loading="lazy"></figure></li>
+        <li>Pulsa <b>Guardar entrada</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-5-guardar.webp" alt="Pulsar «Guardar entrada»" loading="lazy"></figure></li>
+        <li>Ya está en tu historial. Cada entrada actualiza lo que toca a partir de ahora.
+        <figure class="paso-captura"><img src="img/tutoriales/t5-6-resultado.webp" alt="El trabajo aparece en el historial" loading="lazy"></figure></li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial alt" id="documentos">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 6 de 9</p>
+    <h2>Los documentos del <em>vehículo</em></h2>
+    <p class="texto">La ITV, el seguro y los demás papeles.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Entra en tu coche y pulsa <b>Documentos</b> en el menú de la izquierda.
+        <figure class="paso-captura"><img src="img/tutoriales/t6-1-documentos.webp" alt="Pulsar «Documentos» en el menú" loading="lazy"></figure></li>
+        <li>Pulsa <b>Añadir documento</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t6-2-anadir.webp" alt="Pulsar «Añadir documento»" loading="lazy"></figure></li>
+        <li>Elige qué papel es (seguro, ITV, permiso de circulación, ficha técnica, factura u otro), ponle un nombre y, si caduca, la fecha de caducidad.
+        <figure class="paso-captura"><img src="img/tutoriales/t6-3-tipo-fecha.webp" alt="Tipo de documento y fecha de caducidad" loading="lazy"></figure></li>
+        <li>Si tienes una foto o un PDF del papel, pulsa <b>Adjuntar foto o PDF</b> y elígelo. Después pulsa <b>Guardar</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t6-4-guardar.webp" alt="Adjuntar el archivo y guardar" loading="lazy"></figure></li>
+        <li>Ya está guardado. Lo que caduca, como el seguro o la ITV, aparece en los recordatorios: el programa te avisa antes de que venza.
+        <figure class="paso-captura"><img src="img/tutoriales/t6-5-resultado.webp" alt="Documento guardado en la lista" loading="lazy"></figure></li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial" id="otro-vehiculo">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 7 de 9</p>
+    <h2>Crear un vehículo que no está en el <em>catálogo</em></h2>
+    <p class="texto">Con «+ Otra marca», «+ Otro modelo»…</p>
+    <ol class="pasos pasos-grandes">
+        <li>En «Mi garaje», pulsa <b>Añadir vehículo</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-1-anadir-otro.webp" alt="Mi garaje: pulsar «Añadir vehículo»" loading="lazy"></figure></li>
+        <li>Elige <b>Coche</b> o <b>Moto</b>. Si tu marca no sale en la lista, pulsa <b>+ Otra marca</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-2-otra-marca.webp" alt="Pulsar «+ Otra marca» al final de la lista" loading="lazy"></figure></li>
+        <li>Escribe la marca y pulsa <b>Siguiente</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-3-marca.webp" alt="Escribir la marca" loading="lazy"></figure></li>
+        <li>Escribe el modelo y pulsa <b>Siguiente</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-4-modelo.webp" alt="Escribir el modelo" loading="lazy"></figure></li>
+        <li>Escribe la versión del modelo y los años en que se fabricó, y pulsa <b>Siguiente: motor</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-5-generacion.webp" alt="Escribir la generación y los años" loading="lazy"></figure></li>
+        <li>Escribe el nombre del motor y elige el combustible. La cilindrada, la potencia y el código del motor, si los sabes. Pulsa <b>Siguiente: tus datos</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-6-motor.webp" alt="Escribir el motor y elegir el combustible" loading="lazy"></figure></li>
+        <li>Ponle un nombre a tu vehículo y pulsa <b>Añadir al garaje</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-7-datos.webp" alt="Alias y botón «Añadir al garaje»" loading="lazy"></figure></li>
+        <li>Ya está en tu garaje. Como no viene del catálogo, el programa le pone intervalos de mantenimiento orientativos que puedes cambiar; mira siempre el manual de tu vehículo.
+        <figure class="paso-captura"><img src="img/tutoriales/t7-8-resultado.webp" alt="El vehículo nuevo aparece en el garaje" loading="lazy"></figure></li>
+    </ol>
+    <p class="texto cierre-tutorial">Si quieres que lo añadamos al catálogo, en cualquier paso puedes pulsar <b>Pedirlo por correo</b>: el programa prepara un informe que ves antes de enviarlo, y tú decides si se manda.</p>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial alt" id="copia-seguridad">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 8 de 9</p>
+    <h2>Hacer y recuperar una copia de <em>seguridad</em></h2>
+    <p class="texto">Para no perder nada y para cambiar de ordenador.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Pulsa <b>Ajustes</b> en el menú de la izquierda.
+        <figure class="paso-captura"><img src="img/tutoriales/t8-1-ajustes.webp" alt="Pulsar «Ajustes» en el menú" loading="lazy"></figure></li>
+        <li>En «Copias y cambio de ordenador», pulsa <b>Exportar el garaje (copia)</b>. Elige dónde guardar el archivo, por ejemplo un pendrive o una carpeta de Drive. Será un archivo con el nombre acabado en <b>.rlgaraje</b>, con todos tus perfiles, vehículos y registros.
+        <figure class="paso-captura"><img src="img/tutoriales/t8-2-exportar.webp" alt="Pulsar «Exportar el garaje (copia)»" loading="lazy"></figure></li>
+        <li>Para recuperarla (o para pasar tu garaje a otro ordenador), pulsa <b>Importar un garaje (restaurar)</b> y elige el archivo <b>.rlgaraje</b>. El programa te enseña un aviso: se sustituye <b>todo</b> lo que hay en este ordenador por lo de la copia. Si estás de acuerdo, pulsa <b>Restaurar y reiniciar</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t8-3-importar.webp" alt="Pulsar «Importar un garaje (restaurar)»" loading="lazy"></figure></li>
+        <li>Si quieres olvidarte, pulsa <b>Elegir carpeta</b> en «Copia automática semanal». Al abrir el programa, si la última copia tiene más de 7 días, se hace otra en esa carpeta. Con una carpeta de Google Drive u OneDrive, la copia queda también en la nube.
+        <figure class="paso-captura"><img src="img/tutoriales/t8-4-automatica.webp" alt="Elegir la carpeta de la copia automática" loading="lazy"></figure></li>
+    </ol>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+<section class="seccion tutorial" id="movil">
+  <div class="contenedor">
+    <p class="etiqueta">Tutorial 9 de 9</p>
+    <h2>Conectar el <em>móvil</em></h2>
+    <p class="texto">La parte del ordenador: el QR para instalar y para emparejar.</p>
+    <ol class="pasos pasos-grandes">
+        <li>Pulsa <b>Ajustes</b> y baja hasta el apartado <b>Móvil</b>. En «Instalar la app en el móvil» hay un QR: apunta con la cámara de tu móvil para descargar la app. Es solo para Android. La primera vez, Android te pedirá permitir «instalar apps desconocidas» a tu navegador: acéptalo solo para esto.
+        <figure class="paso-captura"><img src="img/tutoriales/t9-1-instalar-app.webp" alt="Código QR para instalar la app en el móvil" loading="lazy"></figure></li>
+        <li>Más abajo, en «Emparejar un móvil», pulsa <b>Enseñar el QR</b>.
+        <figure class="paso-captura"><img src="img/tutoriales/t9-2-emparejar.webp" alt="Pulsar «Enseñar el QR»" loading="lazy"></figure></li>
+        <li>Sale un QR nuevo. En la app del móvil, elige <b>Emparejar</b> y apunta con la cámara a este QR. Tienes 10 minutos y el QR vale una sola vez.
+        <figure class="paso-captura"><img src="img/tutoriales/t9-3-qr.webp" alt="QR de emparejamiento" loading="lazy"></figure></li>
+    </ol>
+    <p class="texto cierre-tutorial">Con el programa abierto, el móvil y el ordenador se sincronizan por tu wifi: nada pasa por internet.</p>
+    <p class="volver-indice"><a href="#indice">&uarr; Volver al índice</a></p>
+  </div>
+</section>
+
+</main>
+<footer class="pie-sitio">
+  <div class="contenedor">
+    <div class="cols">
+      <div>
+        <h2>Rotary&amp;Line</h2>
+        <p class="nota" style="max-width:36ch">Rotativo y motor en línea. Un club, dos formas de entender el motor.</p>
+      </div>
+      <div>
+        <h2>Secciones</h2>
+        <ul>
+          <li><a href="index.html">El club</a></li>
+          <li><a href="redes.html">Redes sociales</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="garaje.html">Aplicación Garaje</a></li>
+          <li><a href="taller.html">Programa Taller</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Síguenos</h2>
+        <ul>
+          <li><a href="https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.tiktok.com/@rotaryinline" rel="noopener">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="aviso-legal.html">Aviso legal</a> &middot; <a href="privacidad.html">Privacidad</a> &middot; <a href="cookies.html">Cookies</a></p>
+  </div>
+</footer>
+<script src="js/sitio.js?v=mw5hco39" defer></script>
+</body>
+</html>
