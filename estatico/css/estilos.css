@@ -408,7 +408,7 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
   .js .qs-fotos a { aspect-ratio: auto; border-radius: calc(12px * (1 - var(--exp, 0))); opacity: 0; will-change: opacity, transform; }
   .js .qs-fotos a:last-child:nth-child(odd) { grid-column: span 2; }
   .js .qs-velo { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgb(0 0 0 / .92) 0%, rgb(0 0 0 / .72) 50%, rgb(0 0 0 / .6) 100%); opacity: var(--exp, 0); }
-  .js .qs-cuerpo { display: flex; align-items: center; position: absolute; inset: 0; z-index: 2; pointer-events: none; padding-inline: max(16px, calc((100vw - var(--ancho)) / 2)); }
+  .js .qs-cuerpo { display: flex; align-items: center; position: absolute; inset: 0; z-index: 2; pointer-events: none; max-width: none; margin: 0; padding-inline: max(16px, calc((100vw - var(--ancho)) / 2)); }
   .js .qs-texto { width: min(52%, 620px); pointer-events: auto; }
   .js .qs-texto .gigante { font-size: clamp(38px, 6vh, 72px); margin-bottom: 10px; }
   .js .qs-texto .texto { font-size: clamp(12px, min(1.9vh, 1.4vw), 17px); line-height: 1.4; }
