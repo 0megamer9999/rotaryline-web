@@ -1,11 +1,11 @@
 # Fotos de galería de coches
 
 Destino: `estatico/img/fotos/galeria/<coche>/NN.webp` (WebP q80, lado largo máx. 1600 px, sin metadatos, orientación EXIF aplicada).
-Origen: `W:\WEB R&L\Fotos\<carpeta>\` (sin tocar). Matrículas tapadas con desenfoque gaussiano fuerte y comprobadas ampliando cada recorte.
+Origen: `W:\WEB R&L\Fotos\<carpeta>\` (sin tocar). Matrículas tapadas (revisión del 6 nov): solo la zona de los caracteres, rellena con el color real del fondo de la placa (blanco, gris o negro según la foto), sin tocar banda azul, marco, paragolpes ni otros coches; borde suavizado 1 px. Rehecho siempre desde el original y comprobado con un recorte ampliado y otro amplio de cada placa.
 Nota: la matrícula real del BMW (1764 CCP) sale en las fotos y está tapada; «ROTARY&LINE» aparece solo como vinilo lateral y no se toca.
 
 ## opel-astra-tt (4)
-| Destino | Origen | Qué se ve | Matrículas tapadas | Portada |
+| Destino | Origen | Qué se ve | Matrículas tapadas (relleno de caracteres) | Portada |
 |---|---|---|---|---|
 | 01.webp | 20251209_175343.jpg | Astra frontal 3/4 junto al mar, atardecer | sí, 1 (propia) | **sí** |
 | 02.webp | 20251209_175523.jpg | Zaga y llanta, acantilado detrás | ninguna visible | no |
@@ -15,7 +15,7 @@ Nota: la matrícula real del BMW (1764 CCP) sale en las fotos y está tapada; «
 Descartada: IMG-20260406-WA0000.jpg (coche muy pequeño en el encuadre vertical, baja resolución).
 
 ## bmw-e39 (9)
-| Destino | Origen | Qué se ve | Matrículas tapadas | Portada |
+| Destino | Origen | Qué se ve | Matrículas tapadas (relleno de caracteres) | Portada |
 |---|---|---|---|---|
 | 01.webp | 20251209_175330+1.jpg | Detalle frontal y llanta, cielo de atardecer | ninguna visible | no |
 | 02.webp | 20260125_232120.jpg | Perfil en garaje con alerón y vinilo | ninguna visible | no |
@@ -31,7 +31,7 @@ Descartadas: 20260214_174709.jpg (casi igual a 174705/174727); DSC_3891.jpg (cas
 Nota: en 06 y 07 se ven pilotos con casco dentro del coche (ocupantes, no se ha tocado; revisar si son del club).
 
 ## mazda-rx8 (9)
-| Destino | Origen | Qué se ve | Matrículas tapadas | Portada |
+| Destino | Origen | Qué se ve | Matrículas tapadas (relleno de caracteres) | Portada |
 |---|---|---|---|---|
 | 01.webp | IMG-20260910-WA0029.jpg | Llanta y lateral con reflejos de nubes | ninguna visible | no |
 | 02.webp | IMG-20260910-WA0031.jpg | Frontal del RX-8 entre coches aparcados | sí, 2 (propia, trasera de otro) | no |
@@ -45,3 +45,10 @@ Nota: en 06 y 07 se ven pilotos con casco dentro del coche (ocupantes, no se ha 
 
 Descartadas: WA0030.jpg (collage de tres fotos con marca de agua de fotógrafo ajeno); WA0036.jpg (casi igual a WA0029 y salen dos personas ajenas con la cara visible).
 Nota: en 04 y 07 hay personas lejanas, pequeñas y no reconocibles; sin tocar.
+
+## Fotos sueltas (originales en la carpeta images de la sesión)
+| Destino | Qué se ve | Tapado |
+|---|---|---|
+| estatico/img/fotos/obed-i20n.webp | i20 N rojo visto desde arriba | 1 matrícula + etiqueta gris «0.0bed.0» del parabrisas (borrada con relleno de cristal) |
+| estatico/img/fotos/barbas-fiesta.webp | Fiesta blanco en mirador | la placa solo asoma de canto (ilegible), sin tocar |
+| estatico/img/fotos/anna-astra.webp | Astra cabrio y Fiesta de la derecha | 2 (Astra, Fiesta) |

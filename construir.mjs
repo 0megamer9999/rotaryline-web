@@ -155,29 +155,26 @@ const parrafo = (s, cls = "", sangria = "      ") => {
 const parrafos = (arr) => arr.map((p) => parrafo(p)).filter(Boolean).join("\n");
 const sinCorchetes = (s) => String(s ?? "").replace(/\[.*?\]/g, "").trim();
 
-/** Un evento = un <tbody> con una fila por persona y coche que va. Los datos del evento ocupan la primera fila (rowspan). */
-function filasEvento(e, raiz = "") {
+/** Un evento = una tarjeta: fecha grande, nombre, lugar y quién va con qué coche (con su insignia de expo).
+ *  Con \`soloCoche\` (página de un coche) solo salen quienes llevan ese coche. */
+function tarjetaEvento(e, raiz = "", soloCoche = null) {
   const [a, m, d] = e.fecha.split("-");
-  const van = e.asistentes.length ? e.asistentes : [{ miembro: "", coche: "", expo: false }];
-  const n = van.length;
-  const enlace = e.enlace ? `<br><a href="${esc(e.enlace)}" rel="noopener">Más información</a>` : "";
-  const filas = van.map((x, i) => {
+  let van = soloCoche ? e.asistentes.filter((x) => x.coche === soloCoche.id) : e.asistentes;
+  if (soloCoche && !van.length && e.ejemplo) van = [{ miembro: soloCoche.dueno, coche: soloCoche.id, expo: true }]; // solo para el ejemplo local
+  const insigniaExpo = (x) => !e.hay_expo ? '<span class="expo sin">Sin expo</span>' : x.expo ? '<span class="expo si">En la expo</span>' : '<span class="expo no">No va a la expo</span>';
+  const quien = van.map((x) => {
     const c = cocheDe(x.coche); const p = miembros.find((q) => q.id === x.miembro);
-    const expo = !e.hay_expo ? '<span class="nota">Sin expo</span>' : x.expo ? '<span class="insignia rojo">Sí</span>' : '<span class="nota">No</span>';
-    const cab = i === 0 ? `<td rowspan="${n}" class="fecha">${Number(d)} ${MESES[Number(m) - 1].toUpperCase()}<small>${a}</small></td>
-        <td rowspan="${n}"><b>${t(e.nombre)}</b>${insigniaEjemplo(e)}<br><span class="nota">${t(e.fecha_texto)}</span>${enlace}</td>
-        <td rowspan="${n}">${t(e.lugar)}</td>` : "";
-    return `      <tr>${cab}
-        <td>${p ? t(p.nombre) : "—"}</td><td>${c ? `<a href="${raiz}coches/${c.id}.html">${t(nombreCoche(c))}</a>` : "—"}</td><td>${expo}</td></tr>`;
-  }).join("\n");
-  return `    <tbody class="evento" data-fecha="${esc(e.fecha)}" data-coches="${esc(e.asistentes.map((x) => x.coche).join(" "))}">
-${filas}
-    </tbody>`;
+    return '<li><span class="ev-persona">' + (p ? t(p.nombre) : "Por confirmar") + '</span>' + (!soloCoche && c ? ' <a class="ev-coche" href="' + raiz + 'coches/' + c.id + '.html">' + t(nombreCoche(c)) + '</a>' : "") + insigniaExpo(x) + '</li>';
+  }).join("");
+  const enlace = e.enlace ? '<p><a href="' + esc(e.enlace) + '" rel="noopener">Más información &rarr;</a></p>' : "";
+  const lugar = t(e.lugar), fechaTxt = t(e.fecha_texto);
+  return '    <article class="ev-card" data-fecha="' + esc(e.fecha) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
+    '      <div class="ev-fecha"><b>' + Number(d) + '</b><span>' + MESES[Number(m) - 1].toUpperCase() + '</span><small>' + a + '</small></div>\n' +
+    '      <div class="ev-info"><h3>' + t(e.nombre) + insigniaEjemplo(e) + '</h3>' +
+    (fechaTxt ? '<p class="nota">' + fechaTxt + '</p>' : "") + (lugar ? '<p class="ev-lugar">' + lugar + '</p>' : "") + enlace +
+    (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + '</div>\n    </article>';
 }
-const tablaEventos = (lista, raiz = "") => `<div class="tabla-envoltura"><table class="tabla-eventos">
-    <thead><tr><th>Fecha</th><th>Evento</th><th>Lugar</th><th>Quién</th><th>Coche</th><th>En la expo</th></tr></thead>
-${lista.map((e) => filasEvento(e, raiz)).join("\n")}
-  </table></div>`;
+const listaEventos = (lista, raiz = "", soloCoche = null) => '<div class="ev-lista">\n' + lista.map((e) => tarjetaEvento(e, raiz, soloCoche)).join("\n") + '\n  </div>';
 
 /** Fachada de una red: no carga nada de fuera hasta que se pulsa. */
 function fachadaRed(tipo, dato) {
@@ -244,11 +241,12 @@ ${parrafo(m.texto, "texto", "      ")}
       ${chips}
     </div></div></article>`;
 };
-const trabajoHtml = (p) => {
+const trabajoHtml = (p, i = 0) => {
   const c = p.coche ? cocheDe(p.coche) : null;
   const estado = t(p.estado);
   const cuerpo = `<div class="cuerpo">${estado ? `<span class="insignia ${/desarrollo/i.test(p.estado) ? "dorado" : "rojo"}">${estado}</span>` : ""}${p.ejemplo && !PUBLICAR ? '<span class="ejemplo" style="align-self:flex-start">Ejemplo</span>' : ""}<h3>${t(p.titulo)}</h3>${c ? `<p class="nota">En el ${t(nombreCoche(c))}</p>` : ""}${parrafo(p.texto, "", "")}${p.enlace ? `<span class="mas">${esc(p.enlace.texto)} &rarr;</span>` : ""}</div>`;
-  return p.enlace ? `      <a class="tarjeta" href="${esc(p.enlace.url)}">${cuerpo}</a>` : `      <article class="tarjeta">${cuerpo}</article>`;
+  const anim = ` data-anim="difumina" style="--d:${(i % 3) * 0.18}s"`;
+  return p.enlace ? `      <a class="tarjeta"${anim} href="${esc(p.enlace.url)}">${cuerpo}</a>` : `      <article class="tarjeta"${anim}>${cuerpo}</article>`;
 };
 const historiaHtml = (h) => {
   const cs = h.coches.map(cocheDe).filter(Boolean).map((c) => `<a class="insignia" href="coches/${c.id}.html">${t(nombreCoche(c))}</a>`).join(" ");
@@ -272,10 +270,11 @@ pagina({
     lema: esc(club.lema),
     fondo_hero: fondoHero,
     texto_club: parrafos(club.quienes_somos),
-    filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="${i % 2 ? "der" : "izq"}"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
-    portada_coches: conFoto.map((c, i) => `      <a href="coches/${c.id}.html" data-anim="zoom" style="--d:${(i * 0.09).toFixed(2)}s"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
-    miembros: miembros.map(bloqueMiembro).join("\n"),
-    trabajos: proyectos.map(trabajoHtml).join("\n"),
+    filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="izq"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
+    filas_fotos: String(Math.max(1, Math.ceil(conFoto.length / 2))),
+    portada_coches: conFoto.map((c) => `      <a href="coches/${c.id}.html"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
+    miembros: miembros.map((m) => bloqueMiembro(m) + '\n  <div class="pp-pausa" aria-hidden="true"></div>').join("\n"),
+    trabajos: proyectos.map((p, i) => trabajoHtml(p, i)).join("\n"),
     historias: historias.map(historiaHtml).join("\n"),
     accesos: paginasActivas.filter((m) => m.desplegable !== "club").map((m) => `  <a href="${m.pagina}.html"><b>${esc(m.texto)}</b><span>${esc(textosAcceso[m.pagina] ?? "")}</span></a>`).join("\n"),
   }, [!miembros.length && "personas", !proyectos.length && "trabajos", !historias.length && "historias"].filter(Boolean)),
@@ -284,9 +283,11 @@ pagina({
 // Una página por coche
 for (const c of coches) {
   const dueno = miembros.find((m) => m.id === c.dueno);
-  const suyos = eventosOrdenados.filter((e) => e.asistentes.some((x) => x.coche === c.id));
+  const suyosReales = eventosOrdenados.filter((e) => e.asistentes.some((x) => x.coche === c.id));
+  // En local, sin eventos reales del coche, se enseña el ejemplo; al publicar la sección no sale
+  const suyos = suyosReales.length || PUBLICAR ? suyosReales : eventosOrdenados.filter((e) => e.ejemplo);
   const galeria = c.galeria.length
-    ? c.galeria.map((g) => `      <figure><img src="../${esc(g.archivo)}" alt="${esc(g.alt)}" loading="lazy"><figcaption class="nota">${t(g.alt)}</figcaption></figure>`).join("\n")
+    ? c.galeria.map((g, i) => `      <figure data-anim="izq" style="--d:${(i % 4) * 0.22}s"><img src="../${esc(g.archivo)}" alt="${esc(g.alt)}" loading="lazy"><figcaption class="nota">${t(g.alt)}</figcaption></figure>`).join("\n")
     : PUBLICAR ? "" : [1, 2, 3].map(() => `      <div class="hueco-foto">[Por completar: foto del coche]</div>`).join("\n");
   const descripcion = parrafos(c.descripcion);
   // Ficha: en la versión publicable, las filas que eran solo un hueco no se pintan
@@ -308,11 +309,12 @@ for (const c of coches) {
       marca: t(c.marca), modelo: t(c.modelo),
       subtitulo: `${esc(c.motor_tipo)}${dueno ? " · de " + esc(dueno.nombre) : ""}${c.ejemplo && !PUBLICAR ? ' · <span class="ejemplo">Ejemplo</span>' : ""}`,
       resumen,
+      clase_hero: c.foto ? "" : " sin-foto",
       silueta: c.foto ? `<img src="../${esc(c.foto)}" alt="${esc(nombreCoche(c))}">` : silueta(c.silueta),
       descripcion,
       ficha: filas.join("\n"),
       galeria,
-      eventos: suyos.length ? tablaEventos(suyos, "../") : '    <p class="texto">Todavía no hay eventos para este coche.</p>',
+      eventos: suyos.length ? listaEventos(suyos, "../", c) : '    <p class="texto">Todavía no hay eventos para este coche.</p>',
     }, vacias),
   });
 }
@@ -333,7 +335,7 @@ pagina({
   contenido: usar("eventos", {
     chips: `      <button class="chip" type="button" data-filtro-coche="" aria-pressed="true">Todos</button>\n` +
       coches.map((c) => `      <button class="chip" type="button" data-filtro-coche="${c.id}" aria-pressed="false">${esc(nombreCoche(c))}</button>`).join("\n"),
-    eventos: tablaEventos(eventosOrdenados),
+    eventos: listaEventos(eventosOrdenados),
   }, eventosOrdenados.length ? ["proximamente"] : ["lista"]),
 });
 

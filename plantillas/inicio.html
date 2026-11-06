@@ -11,17 +11,20 @@
   </div>
 </section>
 
-<section class="bloque" id="quienes-somos">
-  <div class="contenedor dos-col">
-    <div>
-      <p class="etiqueta">El club</p>
-      <h2 class="gigante">QUIÉNES <em>SOMOS</em></h2>
-      <div class="texto">
-{{texto_club}}
-      </div>
-    </div>
-    <div class="mosaico">
+<section class="qs-pista" id="quienes-somos">
+  <div class="qs-fijo">
+    <div class="qs-fotos" style="--filas:{{filas_fotos}}">
 {{portada_coches}}
+    </div>
+    <div class="qs-velo" aria-hidden="true"></div>
+    <div class="contenedor qs-cuerpo">
+      <div class="qs-texto">
+        <p class="etiqueta">El club</p>
+        <h2 class="gigante">QUIÉNES <em>SOMOS</em></h2>
+        <div class="texto">
+{{texto_club}}
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -64,8 +67,8 @@
 <!--sec:historias-->
 <section class="bloque roja" id="historias">
   <div class="contenedor">
-    <p class="etiqueta" data-anim="titulo">Lo que nos ha pasado</p>
-    <h2 class="gigante" data-anim="titulo" style="--d:.08s">LAS <em>HISTORIAS</em></h2>
+    <p class="etiqueta">Lo que nos ha pasado</p>
+    <h2 class="gigante">LAS <em>HISTORIAS</em></h2>
     <div class="historias">
 {{historias}}
     </div>

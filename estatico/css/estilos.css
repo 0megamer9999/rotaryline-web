@@ -382,3 +382,84 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
   .js [data-anim].visto { opacity: 1; transform: none; will-change: auto; }
   .hero h1[data-parallax] { will-change: transform; }
 }
+
+/* =====================================================================
+   Ajustes del 6 nov: más margen, Quiénes somos con scroll largo,
+   Filosofía, Personas con pausa, Trabajos difuminados, página de coche
+   ===================================================================== */
+
+/* ---------- Quiénes somos: texto fijo y fotos que van apareciendo ---------- */
+.qs-pista { position: relative; }
+.qs-fijo { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; padding: 88px max(16px, calc((100vw - var(--ancho)) / 2)); }
+.qs-fotos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; align-self: start; order: 2; }
+.qs-fotos a { position: relative; display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 10px; }
+.qs-fotos img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s; }
+.qs-fotos a:hover img { transform: scale(1.05); }
+.qs-fotos span { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 12px 8px; font-family: var(--f-cond); font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #fff; background: linear-gradient(transparent, rgb(0 0 0 / .85)); }
+.qs-velo { display: none; }
+.qs-cuerpo { display: contents; }
+@media (max-width: 800px) { .qs-fijo { grid-template-columns: minmax(0, 1fr); gap: 32px; } .qs-fotos { order: 0; } }
+
+/* Con JavaScript, sin «reducir movimiento» y en pantalla ancha: pista larga y bloque fijo a pantalla completa */
+@media (prefers-reduced-motion: no-preference) and (min-width: 801px) {
+  .js .qs-pista { height: 300vh; }
+  .js .qs-fijo { position: sticky; top: var(--barra); height: calc(100vh - var(--barra)); height: calc(100svh - var(--barra)); display: block; padding: 0; overflow: hidden; background: var(--fondo); }
+  .js .qs-fotos { position: absolute; top: 0; bottom: 0; right: 0; left: calc(53% * (1 - var(--exp, 0))); display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: repeat(var(--filas, 4), 1fr); gap: calc(10px * (1 - var(--exp, 0)) + 2px); padding: calc(22px * (1 - var(--exp, 0))); padding-left: 0; z-index: 0; align-self: auto; }
+  .js .qs-fotos a { aspect-ratio: auto; border-radius: calc(12px * (1 - var(--exp, 0))); opacity: 0; will-change: opacity, transform; }
+  .js .qs-fotos a:last-child:nth-child(odd) { grid-column: span 2; }
+  .js .qs-velo { display: block; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgb(0 0 0 / .92) 0%, rgb(0 0 0 / .72) 50%, rgb(0 0 0 / .6) 100%); opacity: var(--exp, 0); }
+  .js .qs-cuerpo { display: flex; align-items: center; position: absolute; inset: 0; z-index: 2; pointer-events: none; padding-inline: max(16px, calc((100vw - var(--ancho)) / 2)); }
+  .js .qs-texto { width: min(48%, 600px); pointer-events: auto; }
+  .js .qs-texto .gigante { font-size: clamp(38px, 6vh, 72px); margin-bottom: 10px; }
+  .js .qs-texto .texto { font-size: clamp(13px, 1.9vh, 17px); line-height: 1.42; }
+  .js .qs-texto .texto p { margin: 0 0 .7em; text-shadow: 0 2px 14px #000; }
+}
+
+/* ---------- Filosofía: cada parte con su tramo de pantalla ---------- */
+.filosofia-parte { min-height: 34vh; padding-block: 8px 40px; }
+
+/* ---------- Personas: pausa de scroll para ver a cada una entera ---------- */
+.pp-pausa { height: 0; }
+@media (prefers-reduced-motion: no-preference) and (min-width: 801px) {
+  .pp-pausa { height: 440px; } /* la tarjeta entera y quieta durante unos 350-400 px de scroll antes de que entre la siguiente */
+}
+
+/* ---------- Entradas más pausadas y variantes nuevas ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-anim] { transition-duration: 1.2s, 1.2s, 1.2s; transition-property: opacity, transform, filter; }
+  .js [data-anim="difumina"] { transform: scale(.97) translateY(18px); filter: blur(14px); }
+  .js [data-anim="izq-difumina"] { transform: translateX(-80px); filter: blur(12px); }
+  .js [data-anim].visto { filter: none; }
+}
+
+/* ---------- Página de cada coche: foto protagonista ---------- */
+.coche-hero { position: relative; height: calc(100vh - var(--barra)); height: calc(100svh - var(--barra)); min-height: 460px; display: flex; align-items: flex-end; overflow: hidden; background: #000; border-bottom: 6px solid var(--rojo); }
+.coche-hero-foto { position: absolute; inset: 0; }
+.coche-hero-foto img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; display: block; }
+.coche-hero.sin-foto .coche-hero-foto { display: grid; place-items: center; background: linear-gradient(100deg, #000 40%, #4a0000 100%); }
+.coche-hero.sin-foto .coche-hero-foto svg { width: min(720px, 80%); height: auto; color: #fff; opacity: .9; margin-top: -8vh; }
+.coche-hero-velo { position: absolute; inset: 0; background: linear-gradient(0deg, rgb(0 0 0 / .88) 0%, rgb(0 0 0 / .45) 32%, transparent 60%); }
+.coche-hero-texto { position: relative; padding-bottom: clamp(28px, 6vh, 56px); max-width: var(--ancho); width: 100%; }
+.coche-hero-texto h1 { font-size: clamp(56px, 9vw, 120px); text-shadow: 0 4px 28px #000; }
+.coche-hero-texto .texto { max-width: 62ch; text-shadow: 0 2px 12px #000; }
+
+/* ---------- Eventos: tarjetas ---------- */
+.ev-lista { display: grid; gap: 16px; }
+.ev-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 24px; padding: 22px 24px; background: rgb(255 255 255 / .035); border: 1px solid var(--linea); border-left: 4px solid var(--rojo); border-radius: var(--radio); }
+.ev-card[hidden] { display: none; }
+.ev-fecha { text-align: center; font-family: var(--f-display); color: var(--rojo-vivo); line-height: 1; padding-right: 20px; border-right: 1px solid var(--linea); }
+.ev-fecha b { display: block; font-weight: 400; font-size: 64px; letter-spacing: 2px; }
+.ev-fecha span { display: block; font-size: 26px; letter-spacing: 4px; color: #fff; margin-top: 2px; }
+.ev-fecha small { display: block; font-family: var(--f-cond); font-size: 13px; letter-spacing: .2em; color: var(--gris); margin-top: 6px; }
+.ev-info h3 { margin: 0 0 6px; font-size: 30px; }
+.ev-info p { margin: 2px 0; }
+.ev-lugar::before { content: "\2316  "; color: var(--rojo-vivo); }
+.ev-quien { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.ev-quien li { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; padding: 8px 12px; background: rgb(0 0 0 / .35); border-radius: 10px; }
+.ev-persona { font-weight: 600; }
+.ev-coche { font-family: var(--f-cond); letter-spacing: .08em; text-transform: uppercase; font-size: 14px; }
+.expo { margin-left: auto; font-family: var(--f-cond); font-weight: 700; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; border: 1px solid var(--linea-fuerte); color: var(--gris-claro); }
+.expo.si { background: var(--rojo); border-color: var(--rojo); color: #fff; }
+.expo.no { color: var(--gris); }
+.expo.sin { border-style: dashed; color: var(--gris); }
+@media (max-width: 640px) { .ev-card { grid-template-columns: 1fr; gap: 12px; } .ev-fecha { display: flex; align-items: baseline; justify-content: flex-start; gap: 10px; border-right: 0; padding: 0; } .ev-fecha b { font-size: 44px; } .ev-fecha span { font-size: 22px; } .expo { margin-left: 0; } }
