@@ -6,26 +6,33 @@
         <h1>{{marca}} <em>{{modelo}}</em></h1>
         <div class="filete"></div>
         <p class="subtitulo">{{subtitulo}}</p>
-        <p class="texto">{{resumen}}</p>
+{{resumen}}
       </div>
       <div class="marco-coche">{{silueta}}</div>
     </div>
   </div>
 </section>
+<!--sec:detalle-->
 <section class="seccion">
   <div class="contenedor" style="display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr))">
+<!--sec:descripcion-->
     <div class="texto">
       <h2>El <em>coche</em></h2>
 {{descripcion}}
     </div>
+<!--/sec:descripcion-->
+<!--sec:ficha-->
     <div>
       <h2>Ficha</h2>
       <dl class="ficha">
 {{ficha}}
       </dl>
     </div>
+<!--/sec:ficha-->
   </div>
 </section>
+<!--/sec:detalle-->
+<!--sec:galeria-->
 <section class="seccion alt">
   <div class="contenedor">
     <h2>Galería</h2>
@@ -34,9 +41,12 @@
     </div>
   </div>
 </section>
+<!--/sec:galeria-->
+<!--sec:eventos-->
 <section class="seccion">
   <div class="contenedor">
     <h2>Dónde <em>verlo</em></h2>
 {{eventos}}
   </div>
 </section>
+<!--/sec:eventos-->

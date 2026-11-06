@@ -330,3 +330,55 @@ h3.gigante { font-size: clamp(44px, 7vw, 84px); }
 .hero-coche .marco-coche img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radio); display: block; }
 .columnas-texto { columns: 2 340px; column-gap: 48px; }
 .columnas-texto p { break-inside: avoid; margin-top: 0; }
+
+/* ---------- capturas de cada paso de la instalación ---------- */
+.paso-captura { display: block; margin: 12px 0 4px; }
+figure.paso-captura { margin: 12px 0 4px; }
+figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio); border: 1px solid var(--linea); display: block; }
+.hueco-foto.paso-captura { aspect-ratio: 16 / 9; font-size: 13px; }
+.red-perfil { align-self: start; }
+
+/* ---------- portada sin foto de grupo: mosaico tenue de los coches ---------- */
+.foto-fondo.fondo-mosaico { padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; gap: 0; place-items: stretch; opacity: 0.5; filter: saturate(.8); }
+.fondo-mosaico img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 0; }
+.fondo-mosaico img:last-child:nth-child(4n+3) { grid-column: span 2; }
+@media (max-width: 700px) { .foto-fondo.fondo-mosaico { grid-template-columns: repeat(2, 1fr); } .fondo-mosaico img:last-child:nth-child(4n+3) { grid-column: auto; } }
+
+/* ---------- las personas: tarjetas apiladas (sticky) ---------- */
+:root { --barra: 92px; }
+.bloque-personas { padding-bottom: 0; }
+.bloque-personas > .contenedor { padding-bottom: 40px; }
+.pila-personas { position: relative; }
+.persona-pila { position: sticky; top: var(--barra); height: calc(100vh - var(--barra)); height: calc(100svh - var(--barra)); min-height: 520px; overflow: hidden; background: #0a0a0a; border-top: 6px solid var(--rojo); isolation: isolate; scroll-margin-top: var(--barra); }
+.pp-foto { position: absolute; inset: 0; background-size: cover; background-position: center 30%; background-color: #0a0a0a; transform-origin: 50% 50%; will-change: transform; z-index: -3; }
+.pp-foto.sin-foto { display: grid; place-items: center; background: repeating-linear-gradient(-45deg, #0c0c0c, #0c0c0c 18px, #141414 18px, #141414 36px); }
+.pp-foto .inicial { font-family: var(--f-display); font-size: 320px; line-height: 1; color: rgb(204 0 0 / 0.35); }
+.pp-foto .falta { position: absolute; bottom: 16px; right: 16px; font-size: 14px; color: var(--pendiente); }
+.pp-velo { position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgb(0 0 0 / .9) 0%, rgb(0 0 0 / .7) 38%, rgb(0 0 0 / .15) 75%), linear-gradient(0deg, rgb(0 0 0 / .85) 0%, transparent 45%); }
+.pp-sombra { position: absolute; inset: 0; z-index: -1; background: #000; opacity: var(--cubre, 0); pointer-events: none; }
+.pp-cuerpo { height: 100%; display: flex; align-items: flex-end; padding-bottom: clamp(28px, 7vh, 72px); }
+.pp-contenido { max-width: 640px; }
+.pp-contenido .gigante { margin-bottom: 14px; text-shadow: 0 4px 24px #000; }
+.pp-contenido .texto { max-width: 52ch; }
+.pp-ig { margin: 8px 0 0; }
+.chips-coche { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.chip-coche { display: inline-block; font-family: var(--f-cond); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: 15px; padding: 10px 18px; border-radius: 999px; background: rgb(0 0 0 / .55); border: 1px solid var(--rojo); color: #fff; text-decoration: none; backdrop-filter: blur(4px); transition: background .2s, transform .2s; }
+.chip-coche:hover, .chip-coche:focus-visible { background: var(--rojo); transform: translateY(-2px); }
+@media (max-width: 800px) {
+  .persona-pila { position: relative; top: auto; height: auto; min-height: calc(100svh - var(--barra)); }
+  .pp-cuerpo { align-items: flex-end; padding-top: 140px; }
+  .pp-velo { background: linear-gradient(0deg, rgb(0 0 0 / .92) 0%, rgb(0 0 0 / .55) 60%, rgb(0 0 0 / .2) 100%); }
+  .pp-foto .inicial { font-size: 160px; }
+}
+
+/* ---------- animaciones de entrada (solo con JavaScript y sin «reducir movimiento») ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .js [data-anim] { opacity: 0; transition: opacity .9s ease, transform .9s cubic-bezier(.2, .7, .2, 1); transition-delay: var(--d, 0s); will-change: opacity, transform; }
+  .js [data-anim="arriba"] { transform: translateY(36px); }
+  .js [data-anim="titulo"] { transform: translateY(22px); }
+  .js [data-anim="izq"] { transform: translateX(-70px); }
+  .js [data-anim="der"] { transform: translateX(70px); }
+  .js [data-anim="zoom"] { transform: scale(.88) translateY(14px); }
+  .js [data-anim].visto { opacity: 1; transform: none; will-change: auto; }
+  .hero h1[data-parallax] { will-change: transform; }
+}

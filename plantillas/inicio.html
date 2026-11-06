@@ -1,8 +1,8 @@
-<section class="hero">
-  <div class="foto-fondo" aria-hidden="true"><span>[Por completar: foto de grupo con todos los coches del club]</span></div>
+<section class="hero" id="portada">
+  {{fondo_hero}}
   <div class="contenedor hero-cuerpo">
     <p class="etiqueta">Club de coches</p>
-    <h1>ROTARY<em>&amp;</em>LINE</h1>
+    <h1 data-parallax>ROTARY<em>&amp;</em>LINE</h1>
     <p class="lema">{{lema}}</p>
     <div class="fila-botones">
       <a class="boton primario" href="#quienes-somos">Conoce el club</a>
@@ -28,42 +28,50 @@
 
 <section class="bloque negro" id="filosofia">
   <div class="contenedor">
-    <p class="etiqueta">Lo que nos mueve</p>
-    <h2 class="gigante">NUESTRA <em>FILOSOFÍA</em></h2>
+    <p class="etiqueta" data-anim="titulo">Lo que nos mueve</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">NUESTRA <em>FILOSOFÍA</em></h2>
     <div class="texto">
 {{filosofia}}
     </div>
   </div>
 </section>
 
-<section class="bloque" id="personas">
+<!--sec:personas-->
+<section class="bloque bloque-personas" id="personas">
   <div class="contenedor">
-    <p class="etiqueta">La gente y sus coches</p>
-    <h2 class="gigante">LAS <em>PERSONAS</em></h2>
+    <p class="etiqueta" data-anim="titulo">La gente y sus coches</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">LAS <em>PERSONAS</em></h2>
   </div>
+  <div class="pila-personas">
 {{miembros}}
+  </div>
 </section>
+<!--/sec:personas-->
 
+<!--sec:trabajos-->
 <section class="bloque" id="trabajos">
   <div class="contenedor">
-    <p class="etiqueta">Lo que hacemos</p>
-    <h2 class="gigante">TODOS LOS <em>TRABAJOS</em></h2>
+    <p class="etiqueta" data-anim="titulo">Lo que hacemos</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">TODOS LOS <em>TRABAJOS</em></h2>
     <p class="texto">Proyectos del club y trabajos hechos en los coches.</p>
     <div class="rejilla">
 {{trabajos}}
     </div>
   </div>
 </section>
+<!--/sec:trabajos-->
 
+<!--sec:historias-->
 <section class="bloque roja" id="historias">
   <div class="contenedor">
-    <p class="etiqueta">Lo que nos ha pasado</p>
-    <h2 class="gigante">LAS <em>HISTORIAS</em></h2>
+    <p class="etiqueta" data-anim="titulo">Lo que nos ha pasado</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">LAS <em>HISTORIAS</em></h2>
     <div class="historias">
 {{historias}}
     </div>
   </div>
 </section>
+<!--/sec:historias-->
 
 <section class="accesos">
 {{accesos}}

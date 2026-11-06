@@ -45,7 +45,7 @@
           "GLP",
           "Suspensión KW regulable",
           "Barra de torretas regulable",
-          "Llantas réplica, con las medidas del M5",
+          "Llantas réplica, con las medidas del M5: 235/40 R18 delante y 275/35 R18 detrás",
           "Frenos del 530 en lugar de los del 520",
           "Alerón y lip Alpina",
           "Colectores Schmiedmann, final con X-pipe y unión hecha por Alejo (@alemet.es)",
@@ -70,9 +70,45 @@
       {
         "archivo": "img/fotos/pepe-e39.webp",
         "alt": "Pepe con su BMW E39"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/01.webp",
+        "alt": "El E39 al atardecer, junto al mar"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/02.webp",
+        "alt": "El E39 de perfil, con el alerón y el vinilo del club"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/03.webp",
+        "alt": "El E39 en una carretera de costa"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/04.webp",
+        "alt": "El E39 junto al mar"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/05.webp",
+        "alt": "El E39 en el paddock de un circuito"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/06.webp",
+        "alt": "El E39 en una curva del circuito"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/07.webp",
+        "alt": "El E39 en pista"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/08.webp",
+        "alt": "El E39 tomando una curva en el circuito"
+      },
+      {
+        "archivo": "img/fotos/galeria/bmw-e39/09.webp",
+        "alt": "El E39 al atardecer"
       }
     ],
-    "foto": "img/fotos/pepe-e39.webp"
+    "foto": "img/fotos/galeria/bmw-e39/04.webp"
   },
   {
     "id": "mazda-rx8",
@@ -114,9 +150,45 @@
       {
         "archivo": "img/fotos/mario-rx8.webp",
         "alt": "Mario con su Mazda RX-8"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/01.webp",
+        "alt": "Detalle de la llanta del RX-8"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/02.webp",
+        "alt": "El RX-8 de frente, entre coches aparcados"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/03.webp",
+        "alt": "La zaga del RX-8"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/04.webp",
+        "alt": "El lateral delantero del RX-8"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/05.webp",
+        "alt": "La rueda delantera del RX-8, con la pinza roja"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/06.webp",
+        "alt": "El RX-8 entero en una quedada"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/07.webp",
+        "alt": "El RX-8 de frente en una quedada"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/08.webp",
+        "alt": "El piloto trasero del RX-8"
+      },
+      {
+        "archivo": "img/fotos/galeria/mazda-rx8/09.webp",
+        "alt": "El morro del RX-8"
       }
     ],
-    "foto": "img/fotos/mario-rx8.webp"
+    "foto": "img/fotos/galeria/mazda-rx8/06.webp"
   },
   {
     "id": "opel-astra-tt",
@@ -146,11 +218,23 @@
     ],
     "galeria": [
       {
-        "archivo": "img/fotos/anna-astra.webp",
-        "alt": "El Opel Astra TT de Anna, descapotado en la montaña"
+        "archivo": "img/fotos/galeria/opel-astra-tt/01.webp",
+        "alt": "El Astra TT junto al mar, al atardecer"
+      },
+      {
+        "archivo": "img/fotos/galeria/opel-astra-tt/02.webp",
+        "alt": "La zaga del Astra TT, con un acantilado detrás"
+      },
+      {
+        "archivo": "img/fotos/galeria/opel-astra-tt/03.webp",
+        "alt": "El Astra TT descapotado en la montaña"
+      },
+      {
+        "archivo": "img/fotos/galeria/opel-astra-tt/04.webp",
+        "alt": "El Astra TT con el E39 detrás, al anochecer"
       }
     ],
-    "foto": "img/fotos/anna-astra.webp"
+    "foto": "img/fotos/galeria/opel-astra-tt/01.webp"
   },
   {
     "id": "hyundai-i20n-dani",

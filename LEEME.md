@@ -2,12 +2,24 @@
 
 Web estática en español. Sin cookies, sin rastreo, sin CDNs ni Google Fonts (las fuentes van en `estatico/fuentes`). YouTube solo se carga al pulsar un vídeo (`youtube-nocookie.com`).
 
-## Cómo se construye
-- Hace falta Node (>= 18) y nada más: `node construir.mjs` genera `docs/` desde `datos/*.json` y `plantillas/*.html`.
-- Ver en local: abrir `docs/index.html` (los enlaces son relativos y funcionan con archivo), o `npx serve docs`.
-- No edites `docs/` a mano: se borra y se regenera. Lo estático (CSS, JS, fuentes, imágenes) está en `estatico/`.
-- Publicación futura: GitHub Pages desde `docs/`; `CNAME` ya contiene `rotaryline.es` (se copia a `docs/`).
-- Capturas de revisión: `capturas/` (las de móvil, con `node capturas/_movil.mjs`).
+## Cómo se construye: dos versiones
+- Hace falta Node (>= 18) y nada más.
+- **`node construir.mjs`** → versión **local**, en `local/` (va al `.gitignore`). Enseña lo que falta: los «[Por completar…]» en amarillo y los elementos de ejemplo. Verla: `py -3 servir.py` → http://localhost:4180.
+- **`node construir.mjs --publicar`** → versión **publicable**, en `docs/` (lo que sirve GitHub Pages). Sin rastro de que falta algo. Verla: `py -3 servir.py publicar` → http://localhost:4181. Al acabar imprime un resumen de lo quitado y avisa si queda algún rastro.
+- Qué quita la publicable: los elementos con `"ejemplo": true` (miembros, coches, eventos, proyectos, historias); los «[Por completar…]» de los textos (un campo que solo era un hueco no se pinta, ni su párrafo ni su fila de la ficha); los bloques `<!--solo-local-->…<!--/solo-local-->` de las plantillas; las secciones que se quedan vacías (y su entrada del menú: Historias, Trabajos…); las páginas legales mientras tengan huecos (aviso legal y privacidad, ahora); las redes sin vídeo puesto se quedan con el enlace al perfil; sin eventos reales, «Próximamente anunciaremos los eventos a los que vamos»; la portada sin foto de grupo usa un mosaico tenue de los coches.
+- En las plantillas: `<!--solo-local-->…<!--/solo-local-->` = solo en local; `<!--sec:nombre-->…<!--/sec:nombre-->` = sección que se quita entera si `construir.mjs` la declara vacía.
+- No edites `local/` ni `docs/` a mano: se borran y se regeneran. Lo estático (CSS, JS, fuentes, imágenes) está en `estatico/`.
+- Publicación futura: GitHub Pages desde `docs/`; `CNAME` ya contiene `rotaryline.es` (solo se copia en la publicable).
+- Capturas de revisión: `capturas/`.
+
+## Capturas de «Cómo instalarlo» (Garaje)
+Pepe las deja en `estatico/img/instalar/` con estos nombres exactos (webp). Si el archivo existe, se ve; si no, en local sale un hueco amarillo con su nombre y al publicar no sale nada.
+- Windows: `windows-1-descarga.webp` (página de descargas), `windows-2-smartscreen.webp` («Windows protegió su PC»), `windows-3-instalador.webp`, `windows-4-primer-vehiculo.webp`.
+- Android: `android-1-descarga.webp`, `android-2-permiso.webp` (permiso de la fuente), `android-3-conectar.webp` (conectar con el programa).
+Para añadir un paso: una llamada `capturaPaso("nombre", "descripción")` en `construir.mjs` y `{{cap_...}}` en `plantillas/garaje.html`.
+
+## Animaciones del inicio
+En `estatico/js/sitio.js` y al final de `estilos.css`: entrada al bajar con `IntersectionObserver` (atributo `data-anim`), parallax del título de la portada y tarjetas de personas apiladas (`position: sticky`, `.persona-pila`). Con «reducir movimiento» o sin JavaScript todo se ve sin animar.
 
 ## Dónde se cambia cada cosa
 - Aspecto: tokens de `:root` en `estatico/css/estilos.css` (los mismos colores y tipografías del programa Garaje).

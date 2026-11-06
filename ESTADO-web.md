@@ -8,8 +8,10 @@
 - **Dominio:** `rotaryline.es`. Ya está verificado en GitHub y las DNS de IONOS apuntan a GitHub. El correo `contacto@rotaryline.es` es un reenvío de IONOS a la Gmail del club.
 
 ## Cómo se trabaja
-- **Montar la web:** `node construir.mjs`. Lee `datos/*.json` y `plantillas/*.html`, y escribe `docs/`.
-- **Verla en local:** `py -3 servir.py` → http://localhost:4180. Sirve sin caché. En el programa de Claude es la configuración «web-club» de `W:\Claude\.claude\launch.json`.
+- **Dos versiones:**
+  - `node construir.mjs` → `local/` (huecos en amarillo y ejemplos a la vista; para saber qué falta). Se ve con `py -3 servir.py` → http://localhost:4180 (configuración «web-club»).
+  - `node construir.mjs --publicar` → `docs/` (versión bonita, sin ningún rastro de lo que falta; lo que se publicará). Se ve con `py -3 servir.py publicar` → http://localhost:4181 (configuración «web-club-publicable»).
+  - Detalle de lo que quita la publicable en `LEEME.md`. Hay páginas que no salen aún al publicar: aviso legal y privacidad (textos sin redactar).
 - Pepe mira la web en el navegador integrado y va diciendo cambios. Se trabaja primero la versión de PC; el móvil (menú con las tres rayitas) va al final.
 
 ## Hecho
@@ -32,6 +34,9 @@
   - Contacto.
   - Aviso legal, Privacidad y Cookies, con el esqueleto y los huecos.
 - **Sin cookies ni rastreo.** Las fuentes van en local, con su licencia OFL.
+
+- **Animaciones del inicio (6 nov):** Filosofía entra por los lados, las Personas son tarjetas apiladas con sticky a pantalla completa (la siguiente se desliza sobre la anterior), parallax en el título, mosaico escalonado. Respetan «reducir movimiento».
+- **Garaje, Cómo instalarlo:** cada paso tiene su hueco de captura (`estatico/img/instalar/`, nombres en `LEEME.md`). Pepe tiene que hacer las 7 capturas.
 
 ## Pendiente
 1. **Respuestas de los miembros:** `cuestionario-miembros.md`. La excusa es el contenido del canal, porque **la web es una sorpresa**. Con ellas se rellenan los textos de cada persona y las fichas de los coches.

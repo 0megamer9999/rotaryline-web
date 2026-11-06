@@ -7,7 +7,8 @@
 <meta name="description" content="Rotary&amp;Line es un club de aficionados al motor. El nombre junta dos mecánicas: el rotativo (el Mazda RX-8 de Mario) y el motor en línea (el BMW E39 de Pepe).">
 <meta name="theme-color" content="#070707">
 <link rel="icon" type="image/png" href="img/favicon.png">
-<link rel="stylesheet" href="css/estilos.css?v=mw5dmypx">
+<script>document.documentElement.classList.add("js")</script>
+<link rel="stylesheet" href="css/estilos.css?v=mw5e1tof">
 </head>
 <body>
 <a class="salto" href="#contenido">Saltar al contenido</a>
@@ -32,7 +33,6 @@
             <li><a href="coches/ford-fiesta-st-line.html">Ford Fiesta ST-Line – Barbas</a></li>
             <li><a href="coches/honda-s2000.html">Honda S2000 – Javi</a></li>
             <li class="sep"><a href="index.html#trabajos">Trabajos</a></li>
-            <li><a href="index.html#historias">Historias</a></li>
           </ul></li>
         <li class="con-sub"><a href="redes.html">Redes sociales</a><button class="abre-sub" type="button" aria-expanded="false" aria-label="Mostrar: Redes sociales">&#9662;</button>
           <ul class="submenu">
@@ -49,11 +49,11 @@
   </div>
 </header>
 <main id="contenido">
-<section class="hero">
-  <div class="foto-fondo" aria-hidden="true"><span>[Por completar: foto de grupo con todos los coches del club]</span></div>
+<section class="hero" id="portada">
+  <div class="foto-fondo fondo-mosaico" aria-hidden="true"><img src="img/fotos/galeria/bmw-e39/04.webp" alt=""><img src="img/fotos/galeria/mazda-rx8/06.webp" alt=""><img src="img/fotos/galeria/opel-astra-tt/01.webp" alt=""><img src="img/fotos/dani-i20n.webp" alt=""><img src="img/fotos/obed-i20n.webp" alt=""><img src="img/fotos/barbas-fiesta.webp" alt=""><img src="img/fotos/javi-s2000.webp" alt=""></div>
   <div class="contenedor hero-cuerpo">
     <p class="etiqueta">Club de coches</p>
-    <h1>ROTARY<em>&amp;</em>LINE</h1>
+    <h1 data-parallax>ROTARY<em>&amp;</em>LINE</h1>
     <p class="lema">Rotativo y motor en línea. Un club, dos formas de entender el motor.</p>
     <div class="fila-botones">
       <a class="boton primario" href="#quienes-somos">Conoce el club</a>
@@ -76,27 +76,27 @@
       </div>
     </div>
     <div class="mosaico">
-      <a href="coches/bmw-e39.html"><img src="img/fotos/pepe-e39.webp" alt="BMW E39" loading="lazy"><span>BMW E39</span></a>
-      <a href="coches/mazda-rx8.html"><img src="img/fotos/mario-rx8.webp" alt="Mazda RX-8" loading="lazy"><span>Mazda RX-8</span></a>
-      <a href="coches/opel-astra-tt.html"><img src="img/fotos/anna-astra.webp" alt="Opel Astra TT" loading="lazy"><span>Opel Astra TT</span></a>
-      <a href="coches/hyundai-i20n-dani.html"><img src="img/fotos/dani-i20n.webp" alt="Hyundai i20 N azul" loading="lazy"><span>Hyundai i20 N azul</span></a>
-      <a href="coches/hyundai-i20n-obed.html"><img src="img/fotos/obed-i20n.webp" alt="Hyundai i20 N rojo" loading="lazy"><span>Hyundai i20 N rojo</span></a>
-      <a href="coches/ford-fiesta-st-line.html"><img src="img/fotos/barbas-fiesta.webp" alt="Ford Fiesta ST-Line" loading="lazy"><span>Ford Fiesta ST-Line</span></a>
-      <a href="coches/honda-s2000.html"><img src="img/fotos/javi-s2000.webp" alt="Honda S2000" loading="lazy"><span>Honda S2000</span></a>
+      <a href="coches/bmw-e39.html" data-anim="zoom" style="--d:0.00s"><img src="img/fotos/galeria/bmw-e39/04.webp" alt="BMW E39" loading="lazy"><span>BMW E39</span></a>
+      <a href="coches/mazda-rx8.html" data-anim="zoom" style="--d:0.09s"><img src="img/fotos/galeria/mazda-rx8/06.webp" alt="Mazda RX-8" loading="lazy"><span>Mazda RX-8</span></a>
+      <a href="coches/opel-astra-tt.html" data-anim="zoom" style="--d:0.18s"><img src="img/fotos/galeria/opel-astra-tt/01.webp" alt="Opel Astra TT" loading="lazy"><span>Opel Astra TT</span></a>
+      <a href="coches/hyundai-i20n-dani.html" data-anim="zoom" style="--d:0.27s"><img src="img/fotos/dani-i20n.webp" alt="Hyundai i20 N azul" loading="lazy"><span>Hyundai i20 N azul</span></a>
+      <a href="coches/hyundai-i20n-obed.html" data-anim="zoom" style="--d:0.36s"><img src="img/fotos/obed-i20n.webp" alt="Hyundai i20 N rojo" loading="lazy"><span>Hyundai i20 N rojo</span></a>
+      <a href="coches/ford-fiesta-st-line.html" data-anim="zoom" style="--d:0.45s"><img src="img/fotos/barbas-fiesta.webp" alt="Ford Fiesta ST-Line" loading="lazy"><span>Ford Fiesta ST-Line</span></a>
+      <a href="coches/honda-s2000.html" data-anim="zoom" style="--d:0.54s"><img src="img/fotos/javi-s2000.webp" alt="Honda S2000" loading="lazy"><span>Honda S2000</span></a>
     </div>
   </div>
 </section>
 
 <section class="bloque negro" id="filosofia">
   <div class="contenedor">
-    <p class="etiqueta">Lo que nos mueve</p>
-    <h2 class="gigante">NUESTRA <em>FILOSOFÍA</em></h2>
+    <p class="etiqueta" data-anim="titulo">Lo que nos mueve</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">NUESTRA <em>FILOSOFÍA</em></h2>
     <div class="texto">
-      <div class="filosofia-parte"><h3>En la carretera</h3>
+      <div class="filosofia-parte" data-anim="izq"><h3>En la carretera</h3>
       <p>Nos gusta correr y disfrutar de la carretera: la montaña, los tramos y, cuando toca, coger cierta velocidad. Pero no verás a nadie del club poniendo en peligro a otros usuarios de la vía.</p>
       <p>No vamos a ir a 200 por una autopista con tráfico, ni a 150 cruzando un pueblo por el que hay que ir a 50. Quien quiera formar parte del club, además de cumplir muchos otros requisitos, tiene que respetar esto.</p>
       </div>
-      <div class="filosofia-parte"><h3>En el club</h3>
+      <div class="filosofia-parte" data-anim="der"><h3>En el club</h3>
       <p>Un respeto profundo por el proyecto personal de cada uno. Si un miembro nos dice que su proyecto es un 50 cc, adelante. Lo que nos une es la pasión por el coche: tener el tuyo, personalizarlo y dejarlo como a ti te gusta.</p>
       <p>No buscamos el coche más potente del planeta ni el de mejor gama. No aspiramos a tener un BMW M8 o un Nissan Skyline R32 por sí mismos: si tuviéramos un M8, le pondríamos unas roscadas, y si tuviéramos un Skyline, le haríamos una repro. Aceptamos cualquier coche, siempre que haya pasión por el motor y ganas de hacer tuyo un vehículo que podría tener cualquiera.</p>
       <p>Por eso cada coche del club tiene su propia filosofía. El i20 N de Dani es casi todo estética, con algo práctico como los muelles de la suspensión. El RX-8 de Mario, en cambio, a simple vista cuesta distinguirlo de uno de serie. Y el Fiesta del Barbas va al otro extremo: modificaciones económicas, un coche seguro y unas llantas especiales, algo más anchas, para tener un coche de diario sensato que también se disfruta en curvas.</p>
@@ -106,106 +106,108 @@
   </div>
 </section>
 
-<section class="bloque" id="personas">
+
+<section class="bloque bloque-personas" id="personas">
   <div class="contenedor">
-    <p class="etiqueta">La gente y sus coches</p>
-    <h2 class="gigante">LAS <em>PERSONAS</em></h2>
+    <p class="etiqueta" data-anim="titulo">La gente y sus coches</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">LAS <em>PERSONAS</em></h2>
   </div>
-  <article class="persona" id="pepe">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/pepe-e39.webp')" role="img" aria-label="Pepe «Omega»"></div>
-    <div class="persona-texto"><p class="etiqueta">Cofundador del club</p><h3 class="gigante">Pepe «Omega»</h3>
-      <p class="texto">Pepe, Omega para el club. Persona de mucho pensar, de muchos proyectos y mucha ambición, y piloto de drones. En los coches encontró el silencio de la mente: poder apagar la cabeza un rato conduciendo a fuego un coche que conoce bien, llevando al límite tanto el coche como a sí mismo.</p><p><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></p>
+  <div class="pila-personas">
+  <article class="persona-pila" id="pepe">
+    <div class="pp-foto" style="background-image:url('img/fotos/pepe-e39.webp')" role="img" aria-label="Pepe «Omega»"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Cofundador del club</p><h3 class="gigante">Pepe «Omega»</h3>
+      <p class="texto">Pepe, Omega para el club. Persona de mucho pensar, de muchos proyectos y mucha ambición, y piloto de drones. En los coches encontró el silencio de la mente: poder apagar la cabeza un rato conduciendo a fuego un coche que conoce bien, llevando al límite tanto el coche como a sí mismo.</p>
+      <p class="pp-ig"><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></p>
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/bmw-e39.html">BMW E39<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="mario">
+    <div class="pp-foto" style="background-image:url('img/fotos/mario-rx8.webp')" role="img" aria-label="Mario"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Mario</h3>
+      <p class="texto">Cofundador del club. Antes del RX-8 tenía un Toledo; el RX-8 es el que da nombre a la primera mitad de Rotary&amp;Line.</p>
+      <p class="pp-ig"><a href="https://www.instagram.com/terrizamario/" rel="noopener">Instagram</a></p>
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/mazda-rx8.html">Mazda RX-8<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="anna">
+    <div class="pp-foto" style="background-image:url('img/fotos/anna-astra.webp')" role="img" aria-label="Anna"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Anna</h3>
+
+      
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/opel-astra-tt.html">Opel Astra TT<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="dani">
+    <div class="pp-foto" style="background-image:url('img/fotos/dani-i20n.webp')" role="img" aria-label="Dani"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Dani</h3>
+
+      
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/hyundai-i20n-dani.html">Hyundai i20 N azul<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="obed">
+    <div class="pp-foto" style="background-image:url('img/fotos/obed-i20n.webp')" role="img" aria-label="Obed"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Obed</h3>
+
+      
       <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/bmw-e39.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/pepe-e39.webp" alt="BMW E39" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>BMW E39</h3><p>De Pepe «Omega». Un coche para el día a día, para cruzar Europa y para gozarlo en circuito. Con 330.000 km y todo homologado.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona inversa" id="mario">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/mario-rx8.webp')" role="img" aria-label="Mario"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Mario</h3>
-      <p class="texto">Cofundador del club. Antes del RX-8 tenía un Toledo; el RX-8 es el que da nombre a la primera mitad de Rotary&amp;Line.</p><p><a href="https://www.instagram.com/terrizamario/" rel="noopener">Instagram</a></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/mazda-rx8.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/mario-rx8.webp" alt="Mazda RX-8" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">Rotativo</span>
-        <h3>Mazda RX-8</h3><p>De Mario. El rotativo del club. Negro, de 2006, con el motor ya abierto una vez.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona" id="anna">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/anna-astra.webp')" role="img" aria-label="Anna"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Anna</h3>
-      <p class="texto"><span class="hueco">[Por completar: quién es y qué le gusta de los coches]</span></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/opel-astra-tt.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/anna-astra.webp" alt="Opel Astra TT" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Opel Astra TT</h3><p>De Anna. <span class="hueco">[Por completar: una frase sobre el coche]</span></p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona inversa" id="dani">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/dani-i20n.webp')" role="img" aria-label="Dani"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Dani</h3>
-      <p class="texto"><span class="hueco">[Por completar: quién es y qué le gusta de los coches]</span></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/hyundai-i20n-dani.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/dani-i20n.webp" alt="Hyundai i20 N azul" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Hyundai i20 N azul</h3><p>De Dani. Casi todo estética, con algo práctico como los muelles de la suspensión.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona" id="obed">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/obed-i20n.webp')" role="img" aria-label="Obed"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Obed</h3>
-      <p class="texto"><span class="hueco">[Por completar: quién es y qué le gusta de los coches]</span></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/hyundai-i20n-obed.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/obed-i20n.webp" alt="Hyundai i20 N rojo" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Hyundai i20 N rojo</h3><p>De Obed. <span class="hueco">[Por completar: una frase sobre el coche]</span></p><span class="mas">Ver el coche &rarr;</span></div></a>
-<a class="tarjeta" href="coches/honda-civic.html">
-        <div class="marco-coche"><svg class="silueta" viewBox="0 0 140 70" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Silueta del coche"><path d="M16 54 L15 46 Q15 42 19 41 L42 27 L78 27 L96 41 L116 43 Q124 44 125 49 L125 54"/><path d="M16 54 L25.6 54 A11.5 11.5 0 0 1 48.4 54 L89.6 54 A11.5 11.5 0 0 1 112.4 54 L125 54"/><path d="M31 40 L46 31 L77 31 L88 40 Z" stroke-width="1.6"/><path d="M62 31 L62 40" stroke-width="1.6"/><g><circle class="rueda-fondo" cx="37" cy="55.5" r="8.5"/><circle cx="37" cy="55.5" r="2.7" stroke-width="1.6"/></g><g><circle class="rueda-fondo" cx="101" cy="55.5" r="8.5"/><circle cx="101" cy="55.5" r="2.7" stroke-width="1.6"/></g></svg></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Honda Civic</h3><p>De Obed. <span class="hueco">[Por completar: una frase sobre el coche]</span></p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona inversa" id="barbas">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/barbas-fiesta.webp')" role="img" aria-label="Barbas"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Barbas</h3>
-      <p class="texto">Alejandro, el Barbas del club. <span class="hueco">[Por completar: quién es y qué le gusta de los coches]</span></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/ford-fiesta-st-line.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/barbas-fiesta.webp" alt="Ford Fiesta ST-Line" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Ford Fiesta ST-Line</h3><p>De Barbas. Modificaciones económicas y llantas especiales, algo más anchas: un coche de diario sensato que se disfruta en curvas.</p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
-  <article class="persona" id="javi">
-    <div class="persona-foto con-foto" style="background-image:url('img/fotos/javi-s2000.webp')" role="img" aria-label="Javi"></div>
-    <div class="persona-texto"><p class="etiqueta">Miembro del club</p><h3 class="gigante">Javi</h3>
-      <p class="texto"><span class="hueco">[Por completar: quién es y qué le gusta de los coches]</span></p>
-      <p class="subtitulo">Sus coches</p>
-      <div class="rejilla"><a class="tarjeta" href="coches/honda-s2000.html">
-        <div class="marco-coche con-foto"><img src="img/fotos/javi-s2000.webp" alt="Honda S2000" loading="lazy"></div>
-        <div class="cuerpo"><span class="insignia rojo">En línea</span>
-        <h3>Honda S2000</h3><p>De Javi. <span class="hueco">[Por completar: una frase sobre el coche]</span></p><span class="mas">Ver el coche &rarr;</span></div></a></div></div></article>
+      <div class="chips-coche"><a class="chip-coche" href="coches/hyundai-i20n-obed.html">Hyundai i20 N rojo<span aria-hidden="true"> &rarr;</span></a><a class="chip-coche" href="coches/honda-civic.html">Honda Civic<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="barbas">
+    <div class="pp-foto" style="background-image:url('img/fotos/barbas-fiesta.webp')" role="img" aria-label="Barbas"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Barbas</h3>
+      <p class="texto">Alejandro, el Barbas del club.</p>
+      
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/ford-fiesta-st-line.html">Ford Fiesta ST-Line<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  <article class="persona-pila" id="javi">
+    <div class="pp-foto" style="background-image:url('img/fotos/javi-s2000.webp')" role="img" aria-label="Javi"></div>
+    <div class="pp-velo" aria-hidden="true"></div>
+    <div class="pp-sombra" aria-hidden="true"></div>
+    <div class="contenedor pp-cuerpo"><div class="pp-contenido" data-anim="arriba">
+      <p class="etiqueta">Miembro del club</p><h3 class="gigante">Javi</h3>
+
+      
+      <p class="subtitulo">Su coche</p>
+      <div class="chips-coche"><a class="chip-coche" href="coches/honda-s2000.html">Honda S2000<span aria-hidden="true"> &rarr;</span></a></div>
+    </div></div></article>
+  </div>
 </section>
+
 
 <section class="bloque" id="trabajos">
   <div class="contenedor">
-    <p class="etiqueta">Lo que hacemos</p>
-    <h2 class="gigante">TODOS LOS <em>TRABAJOS</em></h2>
+    <p class="etiqueta" data-anim="titulo">Lo que hacemos</p>
+    <h2 class="gigante" data-anim="titulo" style="--d:.08s">TODOS LOS <em>TRABAJOS</em></h2>
     <p class="texto">Proyectos del club y trabajos hechos en los coches.</p>
     <div class="rejilla">
       <a class="tarjeta" href="aplicaciones.html#garaje"><div class="cuerpo"><span class="insignia rojo">Disponible</span><h3>Garaje</h3><p>Programa gratuito para Windows y app de móvil para llevar el mantenimiento de tus coches y motos: recordatorios, registro de trabajos y documentos.</p><span class="mas">Ver Garaje &rarr;</span></div></a>
       <a class="tarjeta" href="aplicaciones.html#talleres"><div class="cuerpo"><span class="insignia dorado">En desarrollo</span><h3>Talleres</h3><p>La versión de Garaje pensada para talleres. Todavía en desarrollo.</p><span class="mas">Ver Talleres &rarr;</span></div></a>
       <a class="tarjeta" href="videos.html"><div class="cuerpo"><span class="insignia rojo">En marcha desde septiembre de 2026</span><h3>El canal</h3><p>Un vídeo largo de YouTube y varios clips cortos en Instagram, TikTok y Shorts. Mantenimiento, viajes, circuito y los coches del club.</p><span class="mas">Ver los vídeos &rarr;</span></div></a>
       <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo">En marcha</span><h3>El E39 en 3D</h3><p>Un modelo 3D del BMW E39 de Pepe con la librea del club, hecho en Blender a partir de fotos del coche real.</p></div></article>
-      <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo"><span class="hueco">[Por completar]</span></span><span class="ejemplo" style="align-self:flex-start">Ejemplo</span><h3><span class="hueco">[Por completar: trabajo hecho en un coche]</span></h3><p class="nota">En el BMW E39</p><p>Ejemplo de trabajo en un coche (mantenimiento, modificación, reparación). Pon en &quot;coche&quot; el id del coche.</p></div></article>
-      <article class="tarjeta"><div class="cuerpo"><span class="insignia rojo"><span class="hueco">[Por completar]</span></span><span class="ejemplo" style="align-self:flex-start">Ejemplo</span><h3><span class="hueco">[Por completar: proyecto]</span></h3><p>Ejemplo de proyecto. Copia este bloque en proyectos.json para añadir otro.</p></div></article>
     </div>
   </div>
 </section>
 
-<section class="bloque roja" id="historias">
-  <div class="contenedor">
-    <p class="etiqueta">Lo que nos ha pasado</p>
-    <h2 class="gigante">LAS <em>HISTORIAS</em></h2>
-    <div class="historias">
-      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota"><span class="hueco">[Por completar]</span> <span class="ejemplo">Ejemplo</span></p><h3><span class="hueco">[Por completar: título de la historia]</span></h3><p>Ejemplo de historia del club: un viaje, una avería, cómo llegó un coche. Copia este bloque en historias.json para añadir otra.</p><a class="insignia" href="coches/bmw-e39.html">BMW E39</a></div></article>
-      <article class="historia"><div class="historia-foto" aria-hidden="true"><span>[Por completar: foto]</span></div><div class="historia-cuerpo"><p class="nota"><span class="hueco">[Por completar]</span> <span class="ejemplo">Ejemplo</span></p><h3><span class="hueco">[Por completar: otra historia]</span></h3><p><span class="hueco">[Por completar: el texto lo escribe Pepe.]</span></p></div></article>
-    </div>
-  </div>
-</section>
 
 <section class="accesos">
   <a href="redes.html"><b>Redes sociales</b><span>YouTube, Instagram y TikTok</span></a>
@@ -237,15 +239,15 @@
       <div>
         <h2>Síguenos</h2>
         <ul>
-          <li><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></li>
           <li><a href="https://www.youtube.com/channel/UCXkvhz3C6DBaeDC0zwlHRAQ" rel="noopener">YouTube</a></li>
+          <li><a href="https://www.instagram.com/rotaryinline/" rel="noopener">Instagram</a></li>
           <li><a href="https://www.tiktok.com/@rotaryinline" rel="noopener">TikTok</a></li>
         </ul>
       </div>
     </div>
-    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="aviso-legal.html">Aviso legal</a> &middot; <a href="privacidad.html">Privacidad</a> &middot; <a href="cookies.html">Cookies</a></p>
+    <p class="fin">Esta web no usa cookies ni rastreo. &middot; <a href="cookies.html">Cookies</a></p>
   </div>
 </footer>
-<script src="js/sitio.js?v=mw5dmypx" defer></script>
+<script src="js/sitio.js?v=mw5e1tof" defer></script>
 </body>
 </html>
