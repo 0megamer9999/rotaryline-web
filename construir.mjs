@@ -381,7 +381,7 @@ pagina({
 });
 
 // Páginas legales y 404
-const correoLegal = t(club.correo);
+const correoLegal = /^\[/.test(club.correo) ? t(club.correo) : `<a href="mailto:${esc(club.correo)}">${esc(club.correo)}</a>`;
 if (legalesPublicadas.includes("aviso-legal")) pagina({ ruta: "aviso-legal.html", pagina: "aviso-legal", titulo: "Aviso legal", contenido: usar("aviso-legal", { correo: correoLegal, dominio: esc(club.dominio) }) });
 if (legalesPublicadas.includes("privacidad")) pagina({ ruta: "privacidad.html", pagina: "privacidad", titulo: "Privacidad", contenido: usar("privacidad", { correo: correoLegal, dominio: esc(club.dominio) }) });
 if (legalesPublicadas.includes("cookies")) pagina({ ruta: "cookies.html", pagina: "cookies", titulo: "Cookies", contenido: usar("cookies", { dominio: esc(club.dominio) }) });
