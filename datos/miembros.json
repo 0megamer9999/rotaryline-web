@@ -8,7 +8,8 @@
     "coches": [
       "bmw-e39"
     ],
-    "foto": "img/fotos/pepe-e39.webp"
+    "foto": "img/fotos/pepe-e39.webp",
+    "foto_enfoque": "40% 60%"
   },
   {
     "id": "mario",
@@ -19,7 +20,8 @@
     "coches": [
       "mazda-rx8"
     ],
-    "foto": "img/fotos/mario-rx8.webp"
+    "foto": "img/fotos/mario-rx8.webp",
+    "foto_enfoque": "64% 60%"
   },
   {
     "id": "anna",
@@ -30,7 +32,8 @@
     "coches": [
       "opel-astra-tt"
     ],
-    "foto": "img/fotos/anna-astra.webp"
+    "foto": "img/fotos/anna-astra.webp",
+    "foto_enfoque": "28% 60%"
   },
   {
     "id": "dani",
@@ -41,7 +44,8 @@
     "coches": [
       "hyundai-i20n-dani"
     ],
-    "foto": "img/fotos/dani-i20n.webp"
+    "foto": "img/fotos/dani-i20n.webp",
+    "foto_enfoque": "50% 50%"
   },
   {
     "id": "obed",
@@ -53,7 +57,8 @@
       "hyundai-i20n-obed",
       "honda-civic"
     ],
-    "foto": "img/fotos/obed-i20n.webp"
+    "foto": "img/fotos/obed-i20n.webp",
+    "foto_enfoque": "30% 60%"
   },
   {
     "id": "barbas",
@@ -64,7 +69,8 @@
     "coches": [
       "ford-fiesta-st-line"
     ],
-    "foto": "img/fotos/barbas-fiesta.webp"
+    "foto": "img/fotos/barbas-fiesta.webp",
+    "foto_enfoque": "28% 65%"
   },
   {
     "id": "javi",
@@ -75,6 +81,7 @@
     "coches": [
       "honda-s2000"
     ],
-    "foto": "img/fotos/javi-s2000.webp"
+    "foto": "img/fotos/javi-s2000.webp",
+    "foto_enfoque": "78% 60%"
   }
 ]

@@ -489,3 +489,10 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 .volver-indice { margin: 22px 0 0; font-family: var(--f-cond); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 13px; }
 .volver-indice a { color: var(--gris); text-decoration: none; }
 .volver-indice a:hover { color: #fff; }
+
+/* móvil: el logo cabe en la barra y el menú abierto queda por encima */
+@media (max-width: 800px) {
+  .marca { width: 84px; }
+  .marca img { width: 76px; height: 76px; top: 8px; }
+  .menu { z-index: 70; }
+}

@@ -226,7 +226,7 @@ const bloqueMiembro = (m) => {
   const ig = m.instagram ? `<p class="pp-ig"><a href="${esc(m.instagram)}" rel="noopener">Instagram</a></p>` : "";
   const ini = esc([...(m.nombre.replace(/^\[.*?\]\s*/, "") || "?")][0] ?? "?").toUpperCase();
   const foto = m.foto
-    ? `<div class="pp-foto" style="background-image:url('${esc(m.foto)}')" role="img" aria-label="${esc(m.nombre)}"></div>`
+    ? `<div class="pp-foto" style="background-image:url('${esc(m.foto)}')${m.foto_enfoque ? `;background-position:${esc(m.foto_enfoque)}` : ""}" role="img" aria-label="${esc(m.nombre)}"></div>`
     : `<div class="pp-foto sin-foto"><span class="inicial" aria-hidden="true">${ini}</span>${soloLocal(`<span class="falta">[Por completar: foto de ${esc(m.nombre)}]</span>`)}</div>`;
   const chips = suyos.length
     ? `<p class="subtitulo">${suyos.length > 1 ? "Sus coches" : "Su coche"}</p>
@@ -260,8 +260,9 @@ const historiaHtml = (h) => {
 const textosAcceso = { redes: "YouTube, Instagram y TikTok", eventos: "Quién va a cada evento y con qué coche", garaje: "El mantenimiento de tus vehículos", taller: "Para talleres, en desarrollo", contacto: "Correo e Instagram", tienda: "Los productos del club" };
 
 // Fondo de la portada: en local, el hueco de la foto de grupo; al publicar, un mosaico tenue con los coches
+const enfoque = (c) => (c.foto_enfoque ? ` style="object-position:${esc(c.foto_enfoque)}"` : "");
 const conFoto = reales.filter((c) => c.foto);
-const fondoHero = `<div class="foto-fondo fondo-mosaico" aria-hidden="true">${conFoto.map((c) => `<img src="${esc(c.foto)}" alt="">`).join("")}</div>` +
+const fondoHero = `<div class="foto-fondo fondo-mosaico" aria-hidden="true">${conFoto.map((c) => `<img src="${esc(c.foto)}" alt=""${enfoque(c)}>`).join("")}</div>` +
   soloLocal(`<span class="hueco hero-hueco">[Por completar: foto de grupo con todos los coches del club]</span>`);
 // Vídeo o GIF de fondo de Filosofía (datos/club.json → filosofia_video); vacío: hueco pequeño en local y nada al publicar
 const filosofiaVideo = !esHueco(club.filosofia_video)
@@ -281,7 +282,7 @@ pagina({
     texto_club: parrafos(club.quienes_somos),
     filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="izq" data-pronto style="--d:${i * 0.1}s"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
     filas_fotos: String(Math.max(1, Math.ceil(conFoto.length / 2))),
-    portada_coches: conFoto.map((c) => `      <a href="coches/${c.id}.html"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
+    portada_coches: conFoto.map((c) => `      <a href="coches/${c.id}.html"><img src="${esc(c.foto)}" alt="${esc(nombreCoche(c))}" loading="lazy"${enfoque(c)}><span>${esc(nombreCoche(c))}</span></a>`).join("\n"),
     miembros: miembros.map((m) => bloqueMiembro(m) + '\n  <div class="pp-pausa" aria-hidden="true"></div>').join("\n"),
     trabajos: proyectos.map((p, i) => trabajoHtml(p, i)).join("\n"),
     historias: historias.map(historiaHtml).join("\n"),
@@ -319,7 +320,7 @@ for (const c of coches) {
       subtitulo: `${esc(c.motor_tipo)}${dueno ? " · de " + esc(dueno.nombre) : ""}${c.ejemplo && !PUBLICAR ? ' · <span class="ejemplo">Ejemplo</span>' : ""}`,
       resumen,
       clase_hero: c.foto ? "" : " sin-foto",
-      silueta: c.foto ? `<img src="../${esc(c.foto)}" alt="${esc(nombreCoche(c))}">` : silueta(c.silueta),
+      silueta: c.foto ? `<img src="../${esc(c.foto)}" alt="${esc(nombreCoche(c))}"${enfoque(c)}>` : silueta(c.silueta),
       descripcion,
       ficha: filas.join("\n"),
       galeria,

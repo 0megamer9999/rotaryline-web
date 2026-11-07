@@ -108,7 +108,8 @@
         "alt": "El E39 al atardecer"
       }
     ],
-    "foto": "img/fotos/galeria/bmw-e39/04.webp"
+    "foto": "img/fotos/galeria/bmw-e39/04.webp",
+    "foto_enfoque": "62% 60%"
   },
   {
     "id": "mazda-rx8",
@@ -228,7 +229,8 @@
         "alt": "El morro del RX-8"
       }
     ],
-    "foto": "img/fotos/galeria/mazda-rx8/06.webp"
+    "foto": "img/fotos/galeria/mazda-rx8/06.webp",
+    "foto_enfoque": "60% 55%"
   },
   {
     "id": "opel-astra-tt",
@@ -274,7 +276,8 @@
         "alt": "El Astra TT con el E39 detrás, al anochecer"
       }
     ],
-    "foto": "img/fotos/galeria/opel-astra-tt/01.webp"
+    "foto": "img/fotos/galeria/opel-astra-tt/01.webp",
+    "foto_enfoque": "30% 60%"
   },
   {
     "id": "hyundai-i20n-dani",
@@ -308,7 +311,8 @@
         "alt": "Dani con su Hyundai i20 N azul"
       }
     ],
-    "foto": "img/fotos/dani-i20n.webp"
+    "foto": "img/fotos/dani-i20n.webp",
+    "foto_enfoque": "35% 60%"
   },
   {
     "id": "hyundai-i20n-obed",
@@ -342,7 +346,8 @@
         "alt": "El Hyundai i20 N rojo de Obed"
       }
     ],
-    "foto": "img/fotos/obed-i20n.webp"
+    "foto": "img/fotos/obed-i20n.webp",
+    "foto_enfoque": "30% 55%"
   },
   {
     "id": "honda-civic",
@@ -380,7 +385,8 @@
         "alt": "La zaga del Civic con la espuma de colores"
       }
     ],
-    "foto": "img/fotos/galeria/honda-civic/01.webp"
+    "foto": "img/fotos/galeria/honda-civic/01.webp",
+    "foto_enfoque": "25% 60%"
   },
   {
     "id": "ford-fiesta-st-line",
@@ -414,7 +420,8 @@
         "alt": "El Ford Fiesta ST-Line del Barbas en la montaña"
       }
     ],
-    "foto": "img/fotos/barbas-fiesta.webp"
+    "foto": "img/fotos/barbas-fiesta.webp",
+    "foto_enfoque": "28% 65%"
   },
   {
     "id": "honda-s2000",
@@ -456,6 +463,7 @@
         "alt": "El S2000 de frente, de noche"
       }
     ],
-    "foto": "img/fotos/javi-s2000.webp"
+    "foto": "img/fotos/javi-s2000.webp",
+    "foto_enfoque": "78% 60%"
   }
 ]
