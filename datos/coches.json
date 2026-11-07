@@ -118,16 +118,20 @@
     "apodo": "",
     "silueta": "coupe",
     "motor_tipo": "Rotativo",
-    "resumen": "El rotativo del club. Negro, de 2006, con el motor ya abierto una vez.",
+    "resumen": "El rotativo del club: un RX-8 de 2006, negro brillo, con 149.200 km y una lista de mejoras que no es corta.",
     "descripcion": [
-      "El RX-8 de Mario es un coche de 2006, negro, con unos 150.000 km y el motor rotativo abierto una vez.",
-      "Mario lo graba y lo cuenta en el canal: cómo es vivir con un rotativo y qué se le ha hecho.",
-      "[Por completar: historia del coche y modificaciones confirmadas por Mario.]"
+      "Llegó porque tenía una espinita clavada: tener un rotativo. Y el RX-8 me encantaba desde pequeño.",
+      "La anécdota llegó el mismo día de la compra: casi me quedo tirado sin gasolina de camino a la playa, donde íbamos a comer.",
+      "Su historia se cuenta también en el canal: cómo es vivir con un motor rotativo, sus puntos débiles y cómo cuidarlo."
     ],
     "ficha": [
       {
         "campo": "Motor",
-        "valor": "Rotativo (modelo exacto: [Por completar])"
+        "valor": "Renesis 13B-MSP: rotativo de dos rotores, 1.308 cm³ (2 × 654 cm³)"
+      },
+      {
+        "campo": "Potencia",
+        "valor": "192 o 231 CV según la versión [Por completar: cuál es la de Mario]"
       },
       {
         "campo": "Año",
@@ -135,15 +139,51 @@
       },
       {
         "campo": "Color",
-        "valor": "Negro"
+        "valor": "Negro brillo"
       },
       {
         "campo": "Kilómetros",
-        "valor": "Unos 150.000 (a octubre de 2026)"
+        "valor": "149.200"
       },
       {
-        "campo": "Modificaciones",
-        "valor": "[Por completar: lista confirmada por Mario]"
+        "campo": "Motor (mejoras)",
+        "valor": [
+          "Bujías y bobinas NGK",
+          "Cables de bujía Magnecor",
+          "Inyectores sobredimensionados",
+          "Volante motor aligerado",
+          "Embrague de kevlar"
+        ]
+      },
+      {
+        "campo": "Chasis y frenos",
+        "valor": [
+          "Suspensión KW V3",
+          "Frenos delanteros de Mazda 6 MPS (pinza de doble pistón)",
+          "Estabilizadoras sobredimensionadas, delante y detrás",
+          "Latiguillos metálicos"
+        ]
+      },
+      {
+        "campo": "Escape y gasolina",
+        "valor": [
+          "Tramo final Japspeed",
+          "Supresor de catalizador",
+          "Bomba de gasolina DeatschWerks de 255 l/h",
+          "Premix Motul 710 2T"
+        ]
+      },
+      {
+        "campo": "Estética e interior",
+        "valor": [
+          "Llantas Japan Racing SL01 superligeras",
+          "Lip delantero y taloneras",
+          "Capó con salidas de aire",
+          "Añadidos del paragolpes trasero",
+          "Short shifter con synchro saver",
+          "Apple CarPlay",
+          "Reloj de temperatura y rpm"
+        ]
       }
     ],
     "galeria": [

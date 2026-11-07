@@ -1,20 +1,18 @@
 {
   "texto": [
-    "[Por completar: unas líneas sobre lo que contamos en redes. Vídeos largos en YouTube y clips cortos en Instagram y TikTok.]"
+    "El club tiene muchos proyectos y muchas historias, y se va formando poco a poco. Por eso hemos empezado a recopilarlo todo en nuestras redes sociales: lo que hacemos con los coches, lo que nos pasa por el camino y las curiosidades de cada uno.",
+    "Aquí tienes lo último. Si te gusta, síguenos: hay mucho más en camino."
   ],
   "youtube": {
-    "id": "",
-    "titulo": "[Por completar: último vídeo de YouTube]",
-    "nota": "Poner el id del último vídeo (lo que va tras watch?v=)."
+    "id": "Vy7tc1LF1pc",
+    "titulo": "Mazda RX-8 con 150.000 km: así se vive con un motor rotativo"
   },
   "instagram": {
-    "codigo": "",
-    "titulo": "[Por completar: último reel de Instagram]",
-    "nota": "Poner el código del último reel (lo que va tras /reel/)."
+    "codigo": "DfZkMp9F5rs",
+    "titulo": "Cómo calentar y enfriar un motor rotativo para que te dure"
   },
   "tiktok": {
-    "id": "",
-    "titulo": "[Por completar: penúltimo vídeo de TikTok]",
-    "nota": "El penúltimo, para que no coincida con el reel de Instagram. Poner el número largo del enlace (tras /video/)."
+    "id": "7704656743204179222",
+    "titulo": "Premix en el depósito de un RX-8"
   }
 }
