@@ -242,13 +242,13 @@
     "motor_tipo": "En línea",
     "resumen": "Un descapotable para el día a día, que sorprendió por lo bien que va. Lo mejor: los días de sol, descapotado.",
     "descripcion": [
-      "Necesitábamos otro coche y encontramos este Astra. Pepe fue a revisarlo para comprobar que estuviese bien de motor y mecánica, y vimos que era una buena opción. Buscábamos algo asequible, que encajase con nuestra economía en aquel momento. Para mí era importante que me gustase estéticamente y que estuviese en buenas condiciones. No buscábamos nada extraordinario, simplemente un coche que funcionase bien. Después nos sorprendió lo bien que iba, sobre todo por el turbo.",
+      "Necesitábamos otro coche y encontramos este Astra. Vimos que era una buena opción. Buscábamos algo asequible, que encajase con nuestra economía en aquel momento. Para mí era importante que me gustase estéticamente y que estuviese en buenas condiciones. No buscábamos nada extraordinario, simplemente un coche que funcionase bien. Después nos sorprendió lo bien que iba, sobre todo por el turbo.",
       "Llevo aproximadamente un año con él y lo uso sobre todo para ir a trabajar y para el día a día. Lo que más disfruto es cuando hace buen tiempo y voy con Pepe descapotada, disfrutando del ambiente, del aire libre y de poder mirar al cielo."
     ],
     "ficha": [
       {
         "campo": "Motor",
-        "valor": "1.9 CDTI, 150 CV"
+        "valor": "1.9 CDTI: 150 CV de serie, unos 170 CV con la reprogramación"
       },
       {
         "campo": "Año",
