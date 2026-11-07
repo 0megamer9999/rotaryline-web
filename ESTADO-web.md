@@ -1,10 +1,10 @@
 # Estado de la web del club (5 nov 2026)
 
-**Sin publicar.** Pepe quiere desarrollarla bastante más antes de subirla.
+**Publicada el 7 nov 2026, con orden de Pepe**, pero aún no se ve en rotaryline.es: falta que Pepe ponga en IONOS los registros A y el CNAME (ver `PASOS-dominio-y-correo.md`, punto 3). Después, activar «Enforce HTTPS» en GitHub (Settings → Pages del repositorio, o por la API: `https_enforced: true`).
 
 ## Dónde está
 - **Proyecto:** `W:\Claude\rotaryline-web`, también accesible desde `W:\WEB R&L\Proyecto web`. Es un enlace: es la misma carpeta, no una copia.
-- **Repositorio:** `0megamer9999/rotaryline-web`, **privado** y con GitHub Pages **apagado**. Los commits llevan el correo privado de GitHub, no la Gmail.
+- **Repositorio:** `0megamer9999/rotaryline-web`, **público** y con GitHub Pages **activado** (rama `main`, carpeta `/docs`, dominio `rotaryline.es`, dominio verificado). Los commits llevan el correo privado de GitHub, no la Gmail.
 - **Dominio:** `rotaryline.es`. Ya está verificado en GitHub y las DNS de IONOS apuntan a GitHub. El correo `contacto@rotaryline.es` es un reenvío de IONOS a la Gmail del club.
 
 ## Cómo se trabaja
