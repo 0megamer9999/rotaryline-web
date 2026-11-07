@@ -236,44 +236,69 @@
     "id": "opel-astra-tt",
     "dueno": "anna",
     "marca": "Opel",
-    "modelo": "Astra TT",
+    "modelo": "Astra H TwinTop",
     "apodo": "",
     "silueta": "descapotable",
     "motor_tipo": "En línea",
-    "resumen": "[Por completar: una frase sobre el coche]",
+    "resumen": "Un descapotable para el día a día, que sorprendió por lo bien que va. Lo mejor: los días de sol, descapotado.",
     "descripcion": [
-      "[Por completar: historia del coche y lo que se le ha hecho.]"
+      "Necesitábamos otro coche y encontramos este Astra. Pepe fue a revisarlo para comprobar que estuviese bien de motor y mecánica, y vimos que era una buena opción. Buscábamos algo asequible, que encajase con nuestra economía en aquel momento. Para mí era importante que me gustase estéticamente y que estuviese en buenas condiciones. No buscábamos nada extraordinario, simplemente un coche que funcionase bien. Después nos sorprendió lo bien que iba, sobre todo por el turbo.",
+      "Llevo aproximadamente un año con él y lo uso sobre todo para ir a trabajar y para el día a día. Lo que más disfruto es cuando hace buen tiempo y voy con Pepe descapotada, disfrutando del ambiente, del aire libre y de poder mirar al cielo."
     ],
     "ficha": [
       {
         "campo": "Motor",
-        "valor": "[Por completar]"
+        "valor": "1.9 CDTI, 150 CV"
       },
       {
         "campo": "Año",
-        "valor": "[Por completar]"
+        "valor": "2006"
       },
       {
-        "campo": "Modificaciones",
-        "valor": "[Por completar]"
+        "campo": "Color",
+        "valor": "Azul clarito"
+      },
+      {
+        "campo": "Kilómetros",
+        "valor": "282.500, aproximadamente"
+      },
+      {
+        "campo": "Ya venía con",
+        "valor": [
+          "Suspensión trasera Eibach",
+          "Reprogramación",
+          "Llantas del Opel Astra GTC"
+        ]
+      },
+      {
+        "campo": "Desde que lo tenemos",
+        "valor": [
+          "Solo el mantenimiento habitual, como los cambios de aceite"
+        ]
+      },
+      {
+        "campo": "Próximos planes",
+        "valor": [
+          "Cambiar los faros, que están bastante deteriorados"
+        ]
       }
     ],
     "galeria": [
       {
         "archivo": "img/fotos/galeria/opel-astra-tt/01.webp",
-        "alt": "El Astra TT junto al mar, al atardecer"
+        "alt": "El Astra TwinTop junto al mar, al atardecer"
       },
       {
         "archivo": "img/fotos/galeria/opel-astra-tt/02.webp",
-        "alt": "La zaga del Astra TT, con un acantilado detrás"
+        "alt": "La zaga del Astra TwinTop, con un acantilado detrás"
       },
       {
         "archivo": "img/fotos/galeria/opel-astra-tt/03.webp",
-        "alt": "El Astra TT descapotado en la montaña"
+        "alt": "El Astra TwinTop descapotado en la montaña"
       },
       {
         "archivo": "img/fotos/galeria/opel-astra-tt/04.webp",
-        "alt": "El Astra TT con el E39 detrás, al anochecer"
+        "alt": "El Astra TwinTop con el E39 detrás, al anochecer"
       }
     ],
     "foto": "img/fotos/galeria/opel-astra-tt/01.webp",
@@ -283,7 +308,7 @@
     "id": "hyundai-i20n-dani",
     "dueno": "dani",
     "marca": "Hyundai",
-    "modelo": "i20 N azul",
+    "modelo": "i20 azul",
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
@@ -308,7 +333,7 @@
     "galeria": [
       {
         "archivo": "img/fotos/dani-i20n.webp",
-        "alt": "Dani con su Hyundai i20 N azul"
+        "alt": "Dani con su Hyundai i20 azul"
       }
     ],
     "foto": "img/fotos/dani-i20n.webp",
@@ -318,7 +343,7 @@
     "id": "hyundai-i20n-obed",
     "dueno": "obed",
     "marca": "Hyundai",
-    "modelo": "i20 N rojo",
+    "modelo": "i20 rojo",
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
@@ -343,7 +368,7 @@
     "galeria": [
       {
         "archivo": "img/fotos/obed-i20n.webp",
-        "alt": "El Hyundai i20 N rojo de Obed"
+        "alt": "El Hyundai i20 rojo de Obed"
       }
     ],
     "foto": "img/fotos/obed-i20n.webp",
