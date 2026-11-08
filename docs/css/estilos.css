@@ -496,3 +496,10 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
   .marca img { width: 76px; height: 76px; top: 8px; }
   .menu { z-index: 70; }
 }
+
+/* ---------- Móvil: la foto de cada persona se acerca despacio al entrar ---------- */
+@media (prefers-reduced-motion: no-preference) and (max-width: 800px) {
+  .js .persona-pila { overflow: hidden; }
+  .js .persona-pila .pp-foto { transform: scale(1.12); transition: transform 2.4s cubic-bezier(.2, .7, .2, 1); }
+  .js .persona-pila.visto .pp-foto { transform: none; }
+}

@@ -67,6 +67,34 @@
   // Sin JavaScript (o con «reducir movimiento») todo se ve ya, sin animar: el CSS solo oculta con la clase .js
   // y solo si el usuario no pidió menos movimiento.
   var reducir = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // En móvil no hay zonas fijas (Quiénes somos y Personas van seguidas), así que el texto entra por partes:
+  // cada párrafo, título y foto con su propia animación, escalonados.
+  var estrecha = window.matchMedia("(max-width: 800px)").matches;
+  if (estrecha && !reducir) {
+    var marcar = function (lista, tipo, paso) {
+      Array.prototype.forEach.call(lista, function (el, i) {
+        if (el.closest("[data-anim]")) return;
+        el.setAttribute("data-anim", tipo);
+        el.setAttribute("data-pronto", "");
+        el.style.setProperty("--d", (i * paso).toFixed(2) + "s");
+      });
+    };
+    document.querySelectorAll(".pp-contenido[data-anim]").forEach(function (c) {
+      c.removeAttribute("data-anim");
+      marcar(c.children, "arriba", 0.12);
+    });
+    var qsT = document.querySelector(".qs-texto");
+    if (qsT) { marcar(qsT.querySelectorAll(".etiqueta, .gigante"), "titulo", 0.1); marcar(qsT.querySelectorAll(".texto p"), "arriba", 0); }
+    document.querySelectorAll(".qs-fotos a").forEach(function (a, i) {
+      a.setAttribute("data-anim", "zoom");
+      a.style.setProperty("--d", ((i % 2) * 0.15).toFixed(2) + "s");
+    });
+    // La foto de cada persona se acerca despacio al entrar
+    var ioFoto = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("visto"); ioFoto.unobserve(e.target); } });
+    }, { threshold: 0.25 });
+    document.querySelectorAll(".persona-pila").forEach(function (t) { ioFoto.observe(t); });
+  }
   var animables = document.querySelectorAll("[data-anim]");
   var mostrar = function (el) { el.classList.add("visto"); };
   if (reducir || !("IntersectionObserver" in window)) {
