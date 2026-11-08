@@ -1,6 +1,6 @@
 # Estado de la web del club (5 nov 2026)
 
-**Publicada el 7 nov 2026, con orden de Pepe**, pero aún no se ve en rotaryline.es: falta que Pepe ponga en IONOS los registros A y el CNAME (ver `PASOS-dominio-y-correo.md`, punto 3). Después, activar «Enforce HTTPS» en GitHub (Settings → Pages del repositorio, o por la API: `https_enforced: true`).
+**Publicada el 7 nov 2026, con orden de Pepe, y en marcha en https://rotaryline.es desde el 8 nov.** DNS de IONOS apuntadas a GitHub, certificado de Let's Encrypt aprobado (caduca el 6 feb 2027; GitHub lo renueva solo) y HTTPS obligatorio activado. Si algún día el certificado se atasca: quitar el dominio en Pages y volver a ponerlo (GitHub hace los commits «Delete CNAME» y «Create CNAME»; luego `git pull`).
 
 ## Dónde está
 - **Proyecto:** `W:\Claude\rotaryline-web`, también accesible desde `W:\WEB R&L\Proyecto web`. Es un enlace: es la misma carpeta, no una copia.
