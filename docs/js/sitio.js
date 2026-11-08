@@ -108,12 +108,12 @@
     entradas.forEach(function (e) {
       if (e.isIntersecting) { mostrar(e.target); io.unobserve(e.target); }
     });
-  }, { threshold: 0.3, rootMargin: "0px 0px -16% 0px" });
+  }, estrecha ? { threshold: 0, rootMargin: "0px 0px -22% 0px" } : { threshold: 0.3, rootMargin: "0px 0px -16% 0px" });
   var ioPronto = new IntersectionObserver(function (entradas) {
     entradas.forEach(function (e) {
       if (e.isIntersecting) { mostrar(e.target); ioPronto.unobserve(e.target); }
     });
-  }, { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
+  }, estrecha ? { threshold: 0, rootMargin: "0px 0px -22% 0px" } : { threshold: 0.1, rootMargin: "0px 0px -10% 0px" });
   animables.forEach(function (el) { (el.hasAttribute("data-pronto") ? ioPronto : io).observe(el); });
 
   // Alto de la barra fija (las zonas fijas y apiladas se pegan justo debajo)

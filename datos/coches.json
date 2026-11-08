@@ -421,22 +421,46 @@
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
-    "resumen": "Modificaciones económicas y llantas especiales, algo más anchas: un coche de diario sensato que se disfruta en curvas.",
+    "resumen": "Su primer coche: empezó siendo el de ir a clase y hoy es el de las rutas con el club, los viajes y los eventos. De serie, y así quiere mantenerlo.",
     "descripcion": [
-      "[Por completar: historia del coche y lo que se le ha hecho.]"
+      "Me lo compraron mis padres cuando empecé la universidad, principalmente para poder ir y volver de clase. Lo que empezó siendo simplemente un medio de transporte, con el tiempo se ha convertido en algo mucho más especial para mí.",
+      "Con él he viajado por diferentes lugares de España, he hecho rutas con mis amigos del club y he asistido a algunos eventos de coches. Me quedo con esas rutas, los viajes con mi pareja y las escapadas con mis amigos.",
+      "De momento no le he hecho ninguna modificación y tampoco tengo intención de transformarlo demasiado. Me gusta mantenerlo bastante de serie, aunque no descarto algún cambio estético para darle un toque más personal y, quizá, que el motor suene un poco más, porque ahora apenas se escucha.",
+      "Pero, sobre todo, tiene un valor especial porque es mi primer coche. Nunca olvidaré la sensación de conducirlo por primera vez."
     ],
     "ficha": [
       {
+        "campo": "Versión",
+        "valor": "Ford Fiesta ST-Line"
+      },
+      {
         "campo": "Motor",
-        "valor": "[Por completar]"
+        "valor": "1.0 EcoBoost, tres cilindros, 125 CV"
       },
       {
         "campo": "Año",
-        "valor": "[Por completar]"
+        "valor": "2020"
+      },
+      {
+        "campo": "Color",
+        "valor": "Blanco"
+      },
+      {
+        "campo": "Kilómetros",
+        "valor": "94.000, aproximadamente"
       },
       {
         "campo": "Modificaciones",
-        "valor": "[Por completar]"
+        "valor": [
+          "Ninguna: completamente de serie"
+        ]
+      },
+      {
+        "campo": "Próximos planes",
+        "valor": [
+          "Algún cambio estético para darle un toque personal",
+          "Quizá mejorar un poco el sonido del motor, sin perder la esencia original"
+        ]
       }
     ],
     "galeria": [

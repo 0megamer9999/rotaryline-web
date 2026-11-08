@@ -62,10 +62,10 @@
   },
   {
     "id": "barbas",
-    "nombre": "Barbas",
+    "nombre": "Alejandro «El Barbas»",
     "rol": "Miembro del club",
-    "texto": "Alejandro, el Barbas del club. [Por completar: quién es y qué le gusta de los coches]",
-    "instagram": "",
+    "texto": "Su afición por el motor empezó a crecer hacia los 15 años, cuando pidió a sus padres sacarse el carnet de moto y no le dejaron. Desde entonces le interesan cada vez más las motos y también los coches. Las motos siempre le han llamado especialmente la atención, pero los coches le apasionan igual: es de los que no pueden evitar quedarse mirando cuando pasa un coche llamativo o se oye un buen motor.",
+    "instagram": "https://www.instagram.com/alerf2002/",
     "coches": [
       "ford-fiesta-st-line"
     ],
