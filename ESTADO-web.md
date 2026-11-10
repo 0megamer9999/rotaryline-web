@@ -40,6 +40,8 @@
 
 - **Tutoriales de Garaje (6 nov):** `tutoriales.html` con 9 tutoriales y 46 capturas reales (vista previa del programa, datos ficticios) con flecha roja; enlazada desde el menú «Aplicación Garaje» y desde la página de Garaje. Falta lo del móvil (hueco solo en local en el tutorial 9) y las ventanas de Windows de guardar/elegir archivo de la copia de seguridad (no se pueden capturar desde el navegador; van descritas solo con texto). Cómo regenerar: `LEEME.md`.
 
+- **Instalar en Android (10 nov):** 8 pasos con las capturas de Pepe y sus flechas (`originales/instalar/android-*.jpg` → `estatico/img/instalar/android-*.webp`). Las de móvil se recortan y llevan el texto más grande (`recorte`, `escala_coords` y `escala_texto` en `datos/anotaciones.json`) y se ven más estrechas (clase `movil`).
+
 ## Pendiente
 1. **Respuestas de los miembros:** `cuestionario-miembros.md`. La excusa es el contenido del canal, porque **la web es una sorpresa**. Con ellas se rellenan los textos de cada persona y las fichas de los coches.
 2. **Aplicación Garaje:** capturas reales del programa con datos de ejemplo y textos. Es lo siguiente que propuso Claude.

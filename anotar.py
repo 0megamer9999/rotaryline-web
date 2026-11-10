@@ -18,16 +18,24 @@ def flecha(d, x0, y0, x1, y1, g):
 def anotar(p):
     carpeta = p.get("carpeta", "instalar")
     im = Image.open(os.path.join(AQUI, "originales", carpeta, p["origen"])).convert("RGB")
+    # Opcional (capturas de móvil): "escala_coords" multiplica cajas y recorte (p. ej. si se midieron en una vista reducida),
+    # "recorte": [x0, y0, x1, y1] en px de la captura, y "escala_texto" agranda etiquetas y trazos para que se lean en pequeño.
+    sc = p.get("escala_coords", 1); et = p.get("escala_texto", 1); ox = oy = 0
+    if "recorte" in p:
+        rc = [round(v * sc) for v in p["recorte"]]; im = im.crop(rc); ox, oy = rc[0], rc[1]
     k = min(2.2, 1100 / im.width); im = im.resize((round(im.width * k), round(im.height * k)), Image.LANCZOS)
+    def px(n):
+        x0, y0, x1, y1 = [v * sc for v in n["caja"]]
+        return [(x0 - ox) * k, (y0 - oy) * k, (x1 - ox) * k, (y1 - oy) * k]
     m = list(p.get("margen", [0, 0, 0, 0]))  # arriba, derecha, abajo, izquierda (en px finales)
-    g = max(4, round((im.width + m[1] + m[3]) / 220)); pad = g * 1.5
-    f = ImageFont.truetype(FUENTE, max(22, round((im.width + m[1] + m[3]) / 34)))
+    g = max(4, round((im.width + m[1] + m[3]) / 220 * et)); pad = g * 1.5
+    f = ImageFont.truetype(FUENTE, max(22, round((im.width + m[1] + m[3]) / 34 * et)))
     medida = ImageDraw.Draw(im)
     # 1.ª pasada: dónde va cada etiqueta (en px de la imagen sin margen). Las que no traen "texto_en" se colocan solas:
     # "en": [fx, fy] (fracciones de la imagen, pueden salirse de 0..1) o "lado": abajo (por defecto) / arriba / izq / der.
     auto = []
     for n in p["flechas"]:
-        x0, y0, x1, y1 = [v * k for v in n["caja"]]
+        x0, y0, x1, y1 = px(n)
         caja = medida.textbbox((0, 0), n["texto"], font=f); tw, th = caja[2] - caja[0], caja[3] - caja[1]
         cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
         if "texto_en" in n:
@@ -48,7 +56,7 @@ def anotar(p):
     lienzo = Image.new("RGB", (im.width + m[1] + m[3], im.height + m[0] + m[2]), (18, 18, 18))
     lienzo.paste(im, (m[3], m[0])); d = ImageDraw.Draw(lienzo)
     for n, a in zip(p["flechas"], auto):
-        x0, y0, x1, y1 = [v * k for v in n["caja"]]; x0 += m[3]; x1 += m[3]; y0 += m[0]; y1 += m[0]
+        x0, y0, x1, y1 = px(n); x0 += m[3]; x1 += m[3]; y0 += m[0]; y1 += m[0]
         d.rounded_rectangle((x0 - pad, y0 - pad, x1 + pad, y1 + pad), radius=g * 3, outline=ROJO, width=g)
         if a is None:
             caja = d.textbbox((0, 0), n["texto"], font=f); tw, th = caja[2] - caja[0], caja[3] - caja[1]

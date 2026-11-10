@@ -201,9 +201,9 @@ function fachadaRed(tipo, dato) {
 }
 
 /** Captura de un paso de instalación: estatico/img/instalar/<nombre>.webp. Si no existe: hueco en local, nada al publicar. */
-function capturaPaso(nombre, alt) {
+function capturaPaso(nombre, alt, clase = "") {
   if (existsSync(join(AQUI, "estatico", "img", "instalar", `${nombre}.webp`))) {
-    return `<figure class="paso-captura"><img src="img/instalar/${nombre}.webp" alt="${esc(alt)}" loading="lazy"></figure>`;
+    return `<figure class="paso-captura${clase ? " " + clase : ""}"><img src="img/instalar/${nombre}.webp" alt="${esc(alt)}" loading="lazy"></figure>`;
   }
   if (PUBLICAR) { quitado.otros.push("capturas de instalación sin subir (se ven solo al existir el archivo)"); return ""; }
   return `<div class="hueco-foto paso-captura">[Por completar: captura «${esc(alt)}»<br><b>estatico/img/instalar/${nombre}.webp</b>]</div>`;
@@ -370,9 +370,15 @@ pagina({
     cap_w5: capturaPaso("windows-5-siguiente", "Bienvenida del instalador: pulsar «Siguiente»"),
     cap_w6: capturaPaso("windows-6-siguiente", "Instalación completada: pulsar «Siguiente»"),
     cap_w7: capturaPaso("windows-7-terminar", "Final del instalador: pulsar «Terminar»"),
-    cap_android_1: capturaPaso("android-1-descarga", "Descarga de la app Android (.apk)"),
-    cap_android_2: capturaPaso("android-2-permiso", "Permiso para instalar aplicaciones de esa fuente"),
-    cap_android_3: capturaPaso("android-3-conectar", "Conectar la app con el programa del ordenador"),
+    // Android (capturas de móvil: se ven más estrechas, clase «movil»)
+    cap_android_1: capturaPaso("android-1-descarga", "Botón «Descargar app Android (.apk)» en esta página", "movil"),
+    cap_android_2: capturaPaso("android-2-descargar", "El navegador pregunta si quieres descargar el archivo: pulsar «Descargar»", "movil"),
+    cap_android_3: capturaPaso("android-3-notificacion", "Aviso de «Archivo descargado»: tocarlo", "movil"),
+    cap_android_4: capturaPaso("android-4-abrir-con", "«Abrir con»: elegir «Instalador de paquetes» y «Solo una vez»", "movil"),
+    cap_android_5: capturaPaso("android-5-instalar", "«¿Instalar esta aplicación?»: pulsar «Instalar»", "movil"),
+    cap_android_6: capturaPaso("android-6-mas-detalles", "Aviso de Google Play Protect: pulsar «Más detalles»", "movil"),
+    cap_android_7: capturaPaso("android-7-instalar-sin-analizar", "Pulsar «Instalar sin analizar»", "movil"),
+    cap_android_8: capturaPaso("android-8-permitir-y-qr", "La app abierta: permitir dispositivos cercanos y pulsar «Leer el QR con la cámara»", "movil"),
   }),
 });
 // Tutoriales de Garaje: datos/tutoriales.json + capturas anotadas de estatico/img/tutoriales/ (las hace capturar-tutoriales.mjs + anotar.py)

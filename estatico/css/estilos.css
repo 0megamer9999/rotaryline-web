@@ -511,3 +511,6 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
   .js [data-anim="titulo"] { transform: translateX(-40px); filter: blur(6px); }
   .js [data-anim].visto { filter: none; }
 }
+
+/* ---------- Pasos de Android: capturas de móvil, más estrechas ---------- */
+.pasos-grandes .paso-captura.movil { max-width: 380px; }
