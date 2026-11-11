@@ -312,22 +312,48 @@
     "apodo": "",
     "silueta": "compacto",
     "motor_tipo": "En línea",
-    "resumen": "Casi todo estética, con algo práctico como los muelles de la suspensión.",
+    "resumen": "Llegó nuevo a casa como coche de diario de la familia. Hoy busca una estética impecable, limpia y deportiva, con buen gusto y sin recargar.",
     "descripcion": [
-      "[Por completar: historia del coche y lo que se le ha hecho.]"
+      "Llegó a mis manos salido directamente del concesionario, cuando mis padres lo compraron nuevo para el uso diario de la familia por Madrid. Elegimos este modelo porque era, sin duda, la opción que mejor equilibraba todo lo que buscábamos: un precio razonable, consumos ajustados y la versatilidad perfecta para movernos por la ciudad sin complicaciones.",
+      "La filosofía del proyecto es mantener una estética impecable, limpia y bien cuidada, buscando un toque llamativo y deportivo pero siempre con buen gusto, elegante y huyendo de lo recargado. Cada detalle que le voy haciendo suma para resaltar sus líneas sin perder la coherencia.",
+      "Guardo con mucho cariño la escapada que hicimos todos juntos este año para ir a la expo de coches: fue una experiencia de diez rodar en grupo y disfrutar del ambiente del motor en comunidad."
     ],
     "ficha": [
       {
+        "campo": "Versión",
+        "valor": "Hyundai i20 (BC3)"
+      },
+      {
         "campo": "Motor",
-        "valor": "[Por completar]"
+        "valor": "1.0, tres cilindros, 100 CV"
       },
       {
         "campo": "Año",
-        "valor": "[Por completar]"
+        "valor": "2022"
+      },
+      {
+        "campo": "Color",
+        "valor": "Azul"
+      },
+      {
+        "campo": "Kilómetros",
+        "valor": "110.000, aproximadamente"
       },
       {
         "campo": "Modificaciones",
-        "valor": "[Por completar]"
+        "valor": [
+          "Suspensión",
+          "Llantas",
+          "Pintura exterior",
+          "Alerón",
+          "Vinilado de los pilotos"
+        ]
+      },
+      {
+        "campo": "Próximos planes",
+        "valor": [
+          "Dejarlo como está"
+        ]
       }
     ],
     "galeria": [

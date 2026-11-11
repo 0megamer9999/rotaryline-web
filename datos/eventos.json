@@ -20,5 +20,32 @@
         "expo": false
       }
     ]
+  },
+  {
+    "id": "volrace-ice",
+    "nombre": "Volrace Ice",
+    "fecha": "",
+    "fecha_texto": "",
+    "lugar": "",
+    "hay_expo": true,
+    "enlace": "",
+    "nota": "Vamos de público: no corremos ni hacemos drift. Si estaremos en la expo, se verá.",
+    "asistentes": [
+      {
+        "miembro": "pepe",
+        "coche": "bmw-e39",
+        "expo": "por-confirmar"
+      },
+      {
+        "miembro": "mario",
+        "coche": "mazda-rx8",
+        "expo": "por-confirmar"
+      },
+      {
+        "miembro": "dani",
+        "coche": "hyundai-i20n-dani",
+        "expo": "por-confirmar"
+      }
+    ]
   }
 ]

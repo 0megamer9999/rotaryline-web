@@ -514,3 +514,8 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 
 /* ---------- Pasos de Android: capturas de móvil, más estrechas ---------- */
 .pasos-grandes .paso-captura.movil { max-width: 380px; }
+
+/* Eventos: fecha sin cerrar y nota del evento (12 nov) */
+.ev-fecha.sin-fecha span { font-size: 22px; margin-top: 0; }
+.ev-fecha.sin-fecha small { font-size: 11px; margin-top: 4px; }
+.ev-nota { color: var(--gris-claro); font-size: 15px; margin: 6px 0 0; }

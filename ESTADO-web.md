@@ -42,6 +42,8 @@
 
 - **Instalar en Android (10 nov):** 8 pasos con las capturas de Pepe y sus flechas (`originales/instalar/android-*.jpg` → `estatico/img/instalar/android-*.webp`). Las de móvil se recortan y llevan el texto más grande (`recorte`, `escala_coords` y `escala_texto` en `datos/anotaciones.json`) y se ven más estrechas (clase `movil`).
 
+- **12 nov:** ficha de Dani completa (texto, Instagram @d_de_anyy y su Hyundai i20 BC3 1.0 100 CV de 2022). Primer evento real: Volrace Ice, con el BMW, el RX-8 y el i20 azul, de público (no corremos ni hacemos drift) y la expo por confirmar. La página de Eventos admite ahora un evento sin fecha cerrada (`fecha: ""` → «Fecha por confirmar»), `expo: "por-confirmar"` y una `nota`. **Falta la fecha y el lugar de la Volrace Ice.**
+
 ## Pendiente
 1. **Respuestas de los miembros:** `cuestionario-miembros.md`. La excusa es el contenido del canal, porque **la web es una sorpresa**. Con ellas se rellenan los textos de cada persona y las fichas de los coches.
 2. **Aplicación Garaje:** capturas reales del programa con datos de ejemplo y textos. Es lo siguiente que propuso Claude.

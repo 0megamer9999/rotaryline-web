@@ -155,25 +155,30 @@ const parrafo = (s, cls = "", sangria = "      ") => {
   return x ? `${sangria}<p${cls ? ` class="${cls}"` : ""}>${x}</p>` : "";
 };
 const parrafos = (arr) => arr.map((p) => parrafo(p)).filter(Boolean).join("\n");
+const FECHA_SIN_CERRAR = "9999-12-31";
 const sinCorchetes = (s) => String(s ?? "").replace(/\[.*?\]/g, "").trim();
 
 /** Un evento = una tarjeta: fecha grande, nombre, lugar y quién va con qué coche (con su insignia de expo).
  *  Con \`soloCoche\` (página de un coche) solo salen quienes llevan ese coche. */
 function tarjetaEvento(e, raiz = "", soloCoche = null) {
-  const [a, m, d] = e.fecha.split("-");
+  const [a, m, d] = (e.fecha || "").split("-");
+  // Sin fecha cerrada (fecha vacía): «Fecha por confirmar», y cuenta como futuro.
+  const bloqueFecha = e.fecha
+    ? '<div class="ev-fecha"><b>' + Number(d) + '</b><span>' + MESES[Number(m) - 1].toUpperCase() + '</span><small>' + a + '</small></div>'
+    : '<div class="ev-fecha sin-fecha"><span>Fecha</span><small>por confirmar</small></div>';
   let van = soloCoche ? e.asistentes.filter((x) => x.coche === soloCoche.id) : e.asistentes;
   if (soloCoche && !van.length && e.ejemplo) van = [{ miembro: soloCoche.dueno, coche: soloCoche.id, expo: true }]; // solo para el ejemplo local
-  const insigniaExpo = (x) => !e.hay_expo ? '<span class="expo sin">Sin expo</span>' : x.expo ? '<span class="expo si">En la expo</span>' : '<span class="expo no">No va a la expo</span>';
+  const insigniaExpo = (x) => !e.hay_expo ? '<span class="expo sin">Sin expo</span>' : x.expo === "por-confirmar" ? '<span class="expo sin">Expo por confirmar</span>' : x.expo ? '<span class="expo si">En la expo</span>' : '<span class="expo no">No va a la expo</span>';
   const quien = van.map((x) => {
     const c = cocheDe(x.coche); const p = miembros.find((q) => q.id === x.miembro);
     return '<li><span class="ev-persona">' + (p ? t(p.nombre) : "Por confirmar") + '</span>' + (!soloCoche && c ? ' <a class="ev-coche" href="' + raiz + 'coches/' + c.id + '.html">' + t(nombreCoche(c)) + '</a>' : "") + insigniaExpo(x) + '</li>';
   }).join("");
   const enlace = e.enlace ? '<p><a href="' + esc(e.enlace) + '" rel="noopener">Más información &rarr;</a></p>' : "";
   const lugar = t(e.lugar), fechaTxt = t(e.fecha_texto);
-  return '    <article class="ev-card" data-fecha="' + esc(e.fecha) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
-    '      <div class="ev-fecha"><b>' + Number(d) + '</b><span>' + MESES[Number(m) - 1].toUpperCase() + '</span><small>' + a + '</small></div>\n' +
+  return '    <article class="ev-card" data-fecha="' + esc(e.fecha || FECHA_SIN_CERRAR) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
+    '      ' + bloqueFecha + '\n' +
     '      <div class="ev-info"><h3>' + t(e.nombre) + insigniaEjemplo(e) + '</h3>' +
-    (fechaTxt ? '<p class="nota">' + fechaTxt + '</p>' : "") + (lugar ? '<p class="ev-lugar">' + lugar + '</p>' : "") + enlace +
+    (fechaTxt ? '<p class="nota">' + fechaTxt + '</p>' : "") + (lugar ? '<p class="ev-lugar">' + lugar + '</p>' : "") + (e.nota ? '<p class="ev-nota">' + t(e.nota) + '</p>' : "") + enlace +
     (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + '</div>\n    </article>';
 }
 const listaEventos = (lista, raiz = "", soloCoche = null) => '<div class="ev-lista">\n' + lista.map((e) => tarjetaEvento(e, raiz, soloCoche)).join("\n") + '\n  </div>';
@@ -217,7 +222,7 @@ if (PUBLICAR && existsSync(join(AQUI, "CNAME"))) cpSync(join(AQUI, "CNAME"), joi
 writeFileSync(join(DOCS, ".nojekyll"), "");
 
 // ---------------------------------------------------------------- páginas
-const eventosOrdenados = [...eventos].sort((a, b) => a.fecha.localeCompare(b.fecha));
+const eventosOrdenados = [...eventos].sort((a, b) => (a.fecha || FECHA_SIN_CERRAR).localeCompare(b.fecha || FECHA_SIN_CERRAR));
 
 // Inicio: el club entero, desplegado en secciones
 const reales = coches.filter((c) => !c.ejemplo);
