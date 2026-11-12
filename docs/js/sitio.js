@@ -33,6 +33,16 @@
     });
   });
 
+  // Vídeo de fondo (Filosofía): solo se carga y se reproduce cuando la sección está a la vista; con «reducir movimiento» queda la foto fija.
+  var fondo = document.querySelector("video[data-fondo]");
+  if (fondo && "IntersectionObserver" in window && !(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { var p = fondo.play(); if (p && p.catch) p.catch(function () {}); } else fondo.pause();
+      });
+    }, { threshold: 0.05 }).observe(fondo);
+  }
+
   // Filtro de eventos por coche y por fecha
   var lista = document.getElementById("lista-eventos");
   if (lista) {

@@ -541,3 +541,20 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 @media (max-width: 900px) { .ev-card.con-prep { grid-template-columns: 112px minmax(0, 1fr); } .ev-prep { display: none; } }
 @media (max-width: 640px) { .ev-card.con-prep { grid-template-columns: 1fr; } }
 @media (prefers-reduced-motion: reduce) { .ev-prep-coche, .ev-prep-llave, .ev-prep-esponja, .ev-prep-esponja circle { animation: none; } }
+
+/* Filosofía: vídeo de fondo oscurecido (12 nov) */
+.bloque.negro.con-fondo { position: relative; overflow: hidden; }
+.filosofia-fondo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; filter: saturate(.8); }
+.filosofia-velo { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(0 0 0 / .88) 0%, rgb(0 0 0 / .72) 55%, rgb(0 0 0 / .5) 100%), linear-gradient(180deg, #000 0%, transparent 14%, transparent 86%, #000 100%); }
+.bloque.negro.con-fondo > .contenedor { position: relative; z-index: 1; }
+
+/* Eventos: trazado esquemático del circuito, de adorno (12 nov) */
+.ev-info.con-trazado { position: relative; }
+.ev-trazado { position: absolute; top: -4px; right: 0; width: 150px; height: auto; opacity: .5; pointer-events: none; }
+.ev-trazado .borde { stroke: var(--linea-fuerte); stroke-width: 7; stroke-linejoin: round; }
+.ev-trazado .pista { stroke: #0b0b0d; stroke-width: 4; stroke-linejoin: round; }
+.ev-trazado .meta { fill: var(--rojo-vivo); }
+@media (max-width: 640px) { .ev-trazado { width: 96px; opacity: .35; } }
+.ev-trazado { width: 104px; top: -8px; }
+.ev-trazado .borde { stroke-width: 5; } .ev-trazado .pista { stroke-width: 2.6; }
+.ev-credito { font-size: 11px; color: var(--gris); margin-top: 8px !important; }

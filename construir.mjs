@@ -175,6 +175,11 @@ function tarjetaEvento(e, raiz = "", soloCoche = null) {
   }).join("");
   const enlace = e.enlace ? '<p><a href="' + esc(e.enlace) + '" rel="noopener">Más información &rarr;</a></p>' : "";
   const lugar = t(e.lugar), fechaTxt = t(e.fecha_texto);
+  // Trazado del circuito, de adorno (datos/eventos.json → trazado: { d, meta: [x, y], nombre }). Dibujo propio y esquemático: ni el gráfico ni el logo del circuito.
+  const trazado = e.trazado?.d
+    ? '<svg class="ev-trazado" viewBox="' + esc(e.trazado.caja || "0 0 200 120") + '" fill="none" aria-hidden="true"><path class="borde" d="' + esc(e.trazado.d) + '"/><path class="pista" d="' + esc(e.trazado.d) + '"/>' +
+      (e.trazado.meta ? '<rect class="meta" x="' + (e.trazado.meta[0] - 1.5) + '" y="' + (e.trazado.meta[1] - 6) + '" width="3" height="12"/>' : "") + '</svg>'
+    : "";
   // A la derecha de un evento que aún no ha pasado: un coche «preparándose» (llave arriba, esponja abajo). Solo adorno.
   const HOY = new Date().toISOString().slice(0, 10);
   const prep = !soloCoche && (e.fecha || FECHA_SIN_CERRAR) >= HOY
@@ -186,9 +191,9 @@ function tarjetaEvento(e, raiz = "", soloCoche = null) {
     : "";
   return '    <article class="ev-card' + (prep ? " con-prep" : "") + '" data-fecha="' + esc(e.fecha || FECHA_SIN_CERRAR) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
     '      ' + bloqueFecha + '\n' +
-    '      <div class="ev-info"><h3>' + t(e.nombre) + insigniaEjemplo(e) + '</h3>' +
+    '      <div class="ev-info' + (trazado ? " con-trazado" : "") + '">' + trazado + '<h3>' + t(e.nombre) + insigniaEjemplo(e) + '</h3>' +
     (fechaTxt ? '<p class="nota">' + fechaTxt + '</p>' : "") + (lugar ? '<p class="ev-lugar">' + lugar + '</p>' : "") + (e.nota ? '<p class="ev-nota">' + t(e.nota) + '</p>' : "") + enlace +
-    (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + '</div>\n' + prep + '    </article>';
+    (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + (e.trazado?.credito ? '<p class="ev-credito">' + t(e.trazado.credito) + '</p>' : "") + '</div>\n' + prep + '    </article>';
 }
 const listaEventos = (lista, raiz = "", soloCoche = null) => '<div class="ev-lista">\n' + lista.map((e) => tarjetaEvento(e, raiz, soloCoche)).join("\n") + '\n  </div>';
 
@@ -292,6 +297,11 @@ pagina({
     lema: esc(club.lema),
     fondo_hero: fondoHero,
     filosofia_video: filosofiaVideo,
+    // Vídeo de fondo de toda la sección (datos/club.json → filosofia_fondo): sin sonido, en bucle y oscurecido. Alojado aquí, sin YouTube.
+    filosofia_fondo: club.filosofia_fondo
+      ? `<video class="filosofia-fondo" src="${esc(club.filosofia_fondo)}" poster="${esc(club.filosofia_fondo.replace(/.mp4$/, ".jpg"))}" muted loop playsinline preload="none" aria-hidden="true" data-fondo></video><div class="filosofia-velo" aria-hidden="true"></div>`
+      : "",
+    clase_fondo: club.filosofia_fondo ? " con-fondo" : "",
     clase_filosofia: filosofiaConVideo ? " con-video" : "",
     texto_club: parrafos(club.quienes_somos),
     filosofia: club.filosofia.map((f, i) => `      <div class="filosofia-parte" data-anim="izq" data-pronto style="--d:${i * 0.1}s"><h3>${esc(f.titulo)}</h3>\n${parrafos(f.parrafos)}\n      </div>`).join("\n"),
