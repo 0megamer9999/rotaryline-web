@@ -24,11 +24,11 @@
   {
     "id": "volrace-ice",
     "nombre": "Volrace Ice",
-    "fecha": "",
-    "fecha_texto": "",
-    "lugar": "",
+    "fecha": "2027-02-20",
+    "fecha_texto": "20 y 21 de febrero de 2027",
+    "lugar": "Navarra",
     "hay_expo": true,
-    "enlace": "",
+    "enlace": "https://volrace.com",
     "nota": "Vamos de público: no corremos ni hacemos drift. Si estaremos en la expo, se verá.",
     "asistentes": [
       {
@@ -44,6 +44,11 @@
       {
         "miembro": "dani",
         "coche": "hyundai-i20n-dani",
+        "expo": "por-confirmar"
+      },
+      {
+        "miembro": "barbas",
+        "coche": "ford-fiesta-st-line",
         "expo": "por-confirmar"
       }
     ]
