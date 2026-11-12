@@ -519,3 +519,25 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 .ev-fecha.sin-fecha span { font-size: 22px; margin-top: 0; }
 .ev-fecha.sin-fecha small { font-size: 11px; margin-top: 4px; }
 .ev-nota { color: var(--gris-claro); font-size: 15px; margin: 6px 0 0; }
+
+/* Eventos: filtro sin resultados (con la animación de «próximamente») y coche preparándose en la tarjeta (12 nov) */
+.sin-eventos { text-align: center; padding: 8px 0 12px; }
+.sin-eventos[hidden] { display: none; }
+.sin-eventos img { width: min(360px, 86%); height: auto; display: block; margin: 0 auto; }
+.sin-eventos .texto { margin: 0 auto; }
+.ev-card.con-prep { grid-template-columns: 112px minmax(0, 1fr) 190px; }
+.ev-prep { position: relative; display: grid; justify-items: center; align-content: center; gap: 2px; padding-left: 20px; border-left: 1px solid var(--linea); color: var(--gris-claro); }
+.ev-prep span { font-family: var(--f-cond); font-weight: 700; font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--gris); margin-top: 6px; text-align: center; }
+.ev-prep-coche { width: 150px; height: auto; color: #fff; animation: ev-bote 2.4s ease-in-out infinite; }
+.ev-prep-coche .rueda-fondo { fill: #0b0b0d; }
+.ev-prep-llave { width: 34px; height: 34px; color: var(--rojo-vivo); transform-origin: 30% 70%; animation: ev-llave 1.6s ease-in-out infinite; margin-bottom: -4px; }
+.ev-prep-esponja { width: 64px; height: 32px; color: var(--gris-claro); animation: ev-esponja 2.8s ease-in-out infinite; margin-top: -6px; }
+.ev-prep-esponja circle { animation: ev-burbuja 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.ev-prep-esponja .b2 { animation-delay: .5s; } .ev-prep-esponja .b3 { animation-delay: 1s; }
+@keyframes ev-llave { 0%, 100% { transform: rotate(-18deg); } 50% { transform: rotate(22deg); } }
+@keyframes ev-bote { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-2px); } }
+@keyframes ev-esponja { 0%, 100% { transform: translateX(-34px); } 50% { transform: translateX(30px); } }
+@keyframes ev-burbuja { 0%, 100% { opacity: .15; transform: scale(.6) translateY(4px); } 50% { opacity: 1; transform: scale(1) translateY(-3px); } }
+@media (max-width: 900px) { .ev-card.con-prep { grid-template-columns: 112px minmax(0, 1fr); } .ev-prep { display: none; } }
+@media (max-width: 640px) { .ev-card.con-prep { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .ev-prep-coche, .ev-prep-llave, .ev-prep-esponja, .ev-prep-esponja circle { animation: none; } }

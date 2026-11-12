@@ -175,11 +175,20 @@ function tarjetaEvento(e, raiz = "", soloCoche = null) {
   }).join("");
   const enlace = e.enlace ? '<p><a href="' + esc(e.enlace) + '" rel="noopener">Más información &rarr;</a></p>' : "";
   const lugar = t(e.lugar), fechaTxt = t(e.fecha_texto);
-  return '    <article class="ev-card" data-fecha="' + esc(e.fecha || FECHA_SIN_CERRAR) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
+  // A la derecha de un evento que aún no ha pasado: un coche «preparándose» (llave arriba, esponja abajo). Solo adorno.
+  const HOY = new Date().toISOString().slice(0, 10);
+  const prep = !soloCoche && (e.fecha || FECHA_SIN_CERRAR) >= HOY
+    ? '      <div class="ev-prep" aria-hidden="true">' +
+      '<svg class="ev-prep-llave" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M31 6a9 9 0 0 0-8.6 11.6L7.5 32.5a4 4 0 0 0 0 5.7l2.3 2.3a4 4 0 0 0 5.7 0l14.9-14.9A9 9 0 0 0 42 17l-6 6-6-1.5L28.5 15.5l6-6A9 9 0 0 0 31 6z"/></svg>' +
+      silueta("berlina", "ev-prep-coche") +
+      '<svg class="ev-prep-esponja" viewBox="0 0 60 30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="6" y="12" width="26" height="13" rx="4"/><circle class="b1" cx="40" cy="14" r="3.2"/><circle class="b2" cx="48" cy="9" r="2.2"/><circle class="b3" cx="44" cy="22" r="1.8"/></svg>' +
+      '<span>Preparando los coches</span></div>'
+    : "";
+  return '    <article class="ev-card' + (prep ? " con-prep" : "") + '" data-fecha="' + esc(e.fecha || FECHA_SIN_CERRAR) + '" data-coches="' + esc(e.asistentes.map((x) => x.coche).join(" ")) + '">\n' +
     '      ' + bloqueFecha + '\n' +
     '      <div class="ev-info"><h3>' + t(e.nombre) + insigniaEjemplo(e) + '</h3>' +
     (fechaTxt ? '<p class="nota">' + fechaTxt + '</p>' : "") + (lugar ? '<p class="ev-lugar">' + lugar + '</p>' : "") + (e.nota ? '<p class="ev-nota">' + t(e.nota) + '</p>' : "") + enlace +
-    (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + '</div>\n    </article>';
+    (quien ? '<ul class="ev-quien">' + quien + '</ul>' : "") + '</div>\n' + prep + '    </article>';
 }
 const listaEventos = (lista, raiz = "", soloCoche = null) => '<div class="ev-lista">\n' + lista.map((e) => tarjetaEvento(e, raiz, soloCoche)).join("\n") + '\n  </div>';
 
