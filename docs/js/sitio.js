@@ -43,6 +43,20 @@
     }, { threshold: 0.05 }).observe(fondo);
   }
 
+  // Tarjeta «Próximo evento» del inicio: el primero que no ha pasado (las fechas vienen ordenadas)
+  var prox = document.querySelector("[data-proximo-evento]");
+  if (prox) {
+    var hoyP = new Date().toISOString().slice(0, 10);
+    var elegido = null;
+    prox.querySelectorAll(".prox-ev[data-fecha]").forEach(function (e) {
+      var ok = !elegido && e.getAttribute("data-fecha") >= hoyP;
+      if (ok) elegido = e;
+      e.hidden = !ok;
+    });
+    var vacioP = prox.querySelector(".prox-vacio");
+    if (vacioP) vacioP.hidden = !!elegido;
+  }
+
   // Filtro de eventos por coche y por fecha
   var lista = document.getElementById("lista-eventos");
   if (lista) {

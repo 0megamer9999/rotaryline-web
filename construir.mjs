@@ -262,7 +262,26 @@ ${parrafo(m.texto, "texto", "      ")}
       ${chips}
     </div></div></article>`;
 };
+/**
+ * Tarjeta «Próximo evento» (13 nov): lleva todos los eventos futuros (sin ejemplos) y el navegador enseña el primero que no ha pasado
+ * (estatico/js/sitio.js). Sin JavaScript se ve el primero según la fecha de construcción. Sin ninguno, «cuadrando el calendario».
+ */
+function proximoEventoHtml(i) {
+  const hoy = new Date().toISOString().slice(0, 10);
+  const futuros = eventosOrdenados.filter((e) => !e.ejemplo && (e.fecha || FECHA_SIN_CERRAR) >= hoy);
+  const items = futuros.map((e, n) => {
+    const coches = e.asistentes.map((x) => cocheDe(x.coche)).filter(Boolean).map((c) => '<span class="insignia">' + t(nombreCoche(c)) + '</span>').join(" ");
+    const cuando = [t(e.fecha_texto) || (e.fecha ? "" : "Fecha por confirmar"), t(e.lugar)].filter(Boolean).join(" · ");
+    return '<div class="prox-ev" data-fecha="' + esc(e.fecha || FECHA_SIN_CERRAR) + '"' + (n ? " hidden" : "") + '><h3>' + t(e.nombre) + '</h3>' +
+      (cuando ? '<p class="nota">' + cuando + '</p>' : "") + (coches ? '<p class="prox-coches">' + coches + '</p>' : "") + '</div>';
+  }).join("");
+  const vacio = '<div class="prox-ev prox-vacio"' + (futuros.length ? " hidden" : "") + '><h3>Cuadrando el calendario</h3><p>En cuanto cerremos el siguiente, sale aquí.</p></div>';
+  const anim = ` data-anim="difumina" style="--d:${(i % 3) * 0.18}s"`;
+  return `      <a class="tarjeta tarjeta-proximo" data-proximo-evento${anim} href="eventos.html"><div class="cuerpo"><span class="insignia rojo">Próximo evento</span>${items}${vacio}<span class="mas">Ver todos los eventos &rarr;</span></div></a>`;
+}
+
 const trabajoHtml = (p, i = 0) => {
+  if (p.tipo === "proximo-evento") return proximoEventoHtml(i);
   const c = p.coche ? cocheDe(p.coche) : null;
   const estado = t(p.estado);
   const cuerpo = `<div class="cuerpo">${estado ? `<span class="insignia ${/desarrollo/i.test(p.estado) ? "dorado" : "rojo"}">${estado}</span>` : ""}${p.ejemplo && !PUBLICAR ? '<span class="ejemplo" style="align-self:flex-start">Ejemplo</span>' : ""}<h3>${t(p.titulo)}</h3>${c ? `<p class="nota">En el ${t(nombreCoche(c))}</p>` : ""}${parrafo(p.texto, "", "")}${p.enlace ? `<span class="mas">${esc(p.enlace.texto)} &rarr;</span>` : ""}</div>`;

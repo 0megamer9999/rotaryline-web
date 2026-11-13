@@ -558,3 +558,8 @@ figure.paso-captura img { width: 100%; height: auto; border-radius: var(--radio)
 .ev-trazado { width: 104px; top: -8px; }
 .ev-trazado .borde { stroke-width: 5; } .ev-trazado .pista { stroke-width: 2.6; }
 .ev-credito { font-size: 11px; color: var(--gris); margin-top: 8px !important; }
+
+/* Inicio: tarjeta «Próximo evento» (13 nov) */
+.tarjeta-proximo .prox-ev[hidden] { display: none; }
+.tarjeta-proximo .prox-ev h3 { margin-top: 10px; }
+.tarjeta-proximo .prox-coches { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
