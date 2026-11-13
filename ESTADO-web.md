@@ -44,6 +44,8 @@
 
 - **12 nov:** ficha de Dani completa (texto, Instagram @d_de_anyy y su Hyundai i20 BC3 1.0 100 CV de 2022). Primer evento real: Volrace Ice, con el BMW, el RX-8 y el i20 azul, de público (no corremos ni hacemos drift) y la expo por confirmar. La página de Eventos admite ahora un evento sin fecha cerrada (`fecha: ""` → «Fecha por confirmar»), `expo: "por-confirmar"` y una `nota`. Fecha y lugar puestos el 12 nov: Navarra, 20 y 21 de febrero de 2027 (volrace.com); también va el Barbas con el Fiesta.
 
+- **13 nov (subido):** vídeo de fondo en Filosofía (`estatico/video/filosofia.mp4`, clip de dron del 2:59 al 4:42, 960 px, 4,4 MB, oscurecido; se reproduce solo a la vista; `filosofia_fondo` en `datos/club.json`). En Eventos: coche «preparándose» a la derecha de los eventos futuros, animación de «cuadrando el calendario» cuando el filtro no tiene eventos, y el trazado del circuito de Navarra en la Volrace Ice (de OpenStreetMap, con su crédito; campo `trazado` del evento). Logos de eventos: solo con permiso del organizador.
+
 ## Pendiente
 1. **Respuestas de los miembros:** `cuestionario-miembros.md`. La excusa es el contenido del canal, porque **la web es una sorpresa**. Con ellas se rellenan los textos de cada persona y las fichas de los coches.
 2. **Aplicación Garaje:** capturas reales del programa con datos de ejemplo y textos. Es lo siguiente que propuso Claude.
