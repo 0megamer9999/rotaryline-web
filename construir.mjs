@@ -483,6 +483,8 @@ pagina({
 const correoLegal = /^\[/.test(club.correo) ? t(club.correo) : `<a href="mailto:${esc(club.correo)}">${esc(club.correo)}</a>`;
 if (legalesPublicadas.includes("aviso-legal")) pagina({ ruta: "aviso-legal.html", pagina: "aviso-legal", titulo: "Aviso legal", contenido: usar("aviso-legal", { correo: correoLegal, dominio: esc(club.dominio) }) });
 if (legalesPublicadas.includes("privacidad")) pagina({ ruta: "privacidad.html", pagina: "privacidad", titulo: "Privacidad", contenido: usar("privacidad", { correo: correoLegal, dominio: esc(club.dominio) }) });
+// La de la app Garaje (programa y app de Android), con su propia URL para la ficha de Google Play (18 nov 2026).
+pagina({ ruta: "privacidad-garaje.html", pagina: "privacidad", titulo: "Privacidad de R&L Garaje", contenido: usar("privacidad-garaje", { correo: correoLegal }) });
 if (legalesPublicadas.includes("cookies")) pagina({ ruta: "cookies.html", pagina: "cookies", titulo: "Cookies", contenido: usar("cookies", { dominio: esc(club.dominio) }) });
 pagina({ ruta: "404.html", pagina: "", titulo: "Página no encontrada", contenido: plantilla("404") });
 
